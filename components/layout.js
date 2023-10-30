@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import NavBar from './navbar';
 import Footer from './footer';
+import styles from './styles/layout.module.css';
 
 
 export default function Layout({ children }) { // {home}
@@ -11,9 +12,9 @@ export default function Layout({ children }) { // {home}
         {/* <SEO /> */}
         <title>Jose Izarra</title>
       </Head>
-        <NavBar />
-        <main>{children}</main>
-        <Footer />
+      <NavBar />
+      <main className={styles.container}>{children}</main>
+      <Footer />
     </>
   )
   }

@@ -1,3 +1,15 @@
+
+.section {
+  margin: 20% auto;
+}
+
+
+.name {
+  color: red;
+}
+
+
+
 .container {
   min-height: 100vh;
   padding: 0 0.5rem;
@@ -6,6 +18,10 @@
   justify-content: center;
   align-items: center;
 }
+
+
+
+
 
 .title a {
   color: #0070f3;

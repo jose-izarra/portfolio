@@ -1,16 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}"
+    "./app/**/*.{js,ts,jsx,tsx,mdx,css,module.css}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx,css,module.css}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx,css,module.css}"
   ],
   theme: {
     extend: {},
     colors: {
       'main': "#222222",
-      'title': "#F39C6B",
-      'subtitle': "#EEEEFF",
+      'title': "#FFE1DA",//"#E88349",//"#F39C6B", 
+      'subtitle': "#FFE1DA",//"#EEEEFF",
       'cool': "#639FAB",
     }
   },
