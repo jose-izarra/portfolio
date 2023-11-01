@@ -1,1 +1,3 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+## Hello, My name is Jose and this is my personal portfolio! 
+
+### Hope you like the design.
