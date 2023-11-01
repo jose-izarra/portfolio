@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Image from 'next/image';
 import Layout, { siteTitle } from '../components/layout';
 import styles from '../styles/Home.module.css';
 
@@ -7,18 +7,21 @@ export default function Home() {
     <Layout home>
       {/* Introduction Section */}
       <section className={styles.section}>
-        <header>
-          <h2>Software Developer and Creator</h2>
-          <h1>Jose Izarra</h1>
-    
+        <header className='pt-[100px]'>
+          
+          <h1 id="main-title" className='pl-32 inline-block'>Jose Izarra</h1>
+          <h2 id="main-sub" className='pl-2 inline-block'>- Software Developer and Creator</h2>
           {/* About Me section */}
-          <h2>Hello, I am Jose and I like to code</h2>
+        </header>
+      </section>
+      <section className={styles.section}>
+        <h2>Hello, I am Jose and I like to code</h2>
+        <div>
+          <Image className={styles.profilepic} src="/images/profile.jpg" height={144} width={144} alt="Jose Izarra"/>
+        </div>
           {/* <p>[Your Self Introduction]</p>
-          <p>
-            (This is a sample website - you’ll be building a site like this on{' '}
-            <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-          </p> */}
-          </header>
+              picture of myself 
+          */}
       </section>
       {/* Currently working on */}
       <section className={styles.section}>
@@ -50,7 +53,7 @@ export default function Home() {
           </div>
         </span>
         <span>
-          <h1>Currently learning .. </h1>
+          <h1>currently learning .. </h1>
           <div>
             <ul>
               <li>{/* currently_learning.json */}</li>
