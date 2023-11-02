@@ -1,22 +1,22 @@
 [
     {
         "name": "Home",
-        "link": ""
+        "href": "/"
     },
     {
         "name": "About Me",
-        "link": ""
+        "href": "/aboutme"
     },
     {
         "name": "Cool Projects",
-        "link": ""
+        "href": "/coolprojects"
     },
     {
         "name": "Experience",
-        "link": ""
+        "href": "/experience"
     },
     {
         "name": "My Thoughts",
-        "link": ""
+        "href": "/mythoughts"
     }
 ]

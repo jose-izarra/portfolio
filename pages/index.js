@@ -1,10 +1,11 @@
 import Image from 'next/image';
-import Layout, { siteTitle } from '../components/layout';
+import Layout from '../components/layout';
 import styles from '../styles/Home.module.css';
+
 
 export default function Home() {
   return (
-    <Layout home>
+    <Layout page="Home" title="Jose Izarra | Home">
       {/* Introduction Section */}
       <section className={styles.section}>
         <header className='pt-[100px]'>

@@ -4,14 +4,14 @@ import Footer from './footer';
 import styles from './styles/layout.module.css';
 
 
-export default function Layout({ children }) { // {home}
+export default function Layout({ children, title, page }) { // {home}
   return (
     <>
       <Head>
         {/* <SEO /> */}
-        <title>Jose Izarra</title>
+        <title>{title}</title>
       </Head>
-      <NavBar />
+      <NavBar page={page} />
       <main className={styles.container}>{children}</main>
       <Footer />
     </>

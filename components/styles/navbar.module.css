@@ -1,0 +1,14 @@
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+
+.navbar li :hover {
+    background-color: rgba(235, 235, 255, 0.8);
+    color: rgba(255, 156, 107, 1);
+}
