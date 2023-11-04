@@ -12,17 +12,14 @@ export default function Footer() {
             {
                         socials.map((current) => {
                             return (
-                                <li class="inline-block mx-4 py-5 px-[50px]">
-                                    <h3 class="text-sm pt-2">{current.name}</h3>
+                                <li className="inline-block mx-4 py-6 px-[50px]">
+                                    <a href={current.link} className="flex justify-center" target="_blank">
+                                    <svg xmlns={current.xmlns} x="0px" y="0px" width="50" height="50" viewBox="0 0 24 24">
+                                        <path d={current.d} className="fill-cool"/>
+                                    </svg>                                    
+                                    </a>
+                                    <h3 className="text-sm pt-2">{current.name}</h3>
                                 </li>
-                                // <div class="flex flex-col items-center px-10 w-fit">
-                                //     {/* <a href={current.link} class="block">
-                                //         <svg xmlns={current.xmlns} x="0px" y="0px" width="50" height="50" viewBox="0 0 24 24">
-                                //         <path d={current.d} class="dark:fill-slate-300"></path>
-                                //         </svg>
-                                //     </a> */}
-                                    
-                                // </div>
                             )
                         })
                     }

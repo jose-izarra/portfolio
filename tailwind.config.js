@@ -12,6 +12,7 @@ module.exports = {
       'title': "#FFE1DA",//"#E88349",//"#F39C6B", 
       'subtitle': "#FFE1DA",//"#EEEEFF",
       'cool': "#639FAB",
+      'ok' : "#cbd5e1"
     }
   },
   plugins: [],
