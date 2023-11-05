@@ -12,7 +12,7 @@ export default function Skills() {
                     skills.map((current) => {
                         return (
                             <li>
-                                <Image src={current.link}
+                                <Image src="/images/react.svg"
                                 height={25} width={25}
                                 />
                             </li>

@@ -72,29 +72,12 @@
         "link": ""
     },
     {
-        "name": "VirtualBox",
-        "d": "",
-        "xlmns": "",
-        "link": ""
-    },
-    {
-        "name": "Linux",
-        "d": "",
-        "xlmns": "",
-        "link": ""
-    },
-    {
         "name": "Azure",
         "d": "",
         "xlmns": "",
         "link": ""
     },
-    {
-        "name": "EC2 Container",
-        "d": "",
-        "xlmns": "",
-        "link": ""
-    },
+
     {
         "name": "Arduino",
         "d": "",
