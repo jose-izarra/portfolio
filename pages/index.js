@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Layout from '../components/layout';
 import styles from '../styles/Home.module.css';
-import Skills from "../components/skills";
+import SkillDisplay from "../components/skillDisplay";
 
 export default function Home() {
   return (
@@ -42,7 +42,7 @@ export default function Home() {
 
       {/* Skills Section */}
       <section className={styles.section}>
-        <Skills />
+        <SkillDisplay />
       </section>
     </Layout>
   );
