@@ -1,16 +1,13 @@
 [
     {
         "name": "Personal Portfolio Website",
-        "teaser": "A website to show my personal + professional life",
+        "teaser": "A website to show my personal and professional life",
         "link": "https://github.com/jose-izarra/portfolio",
-        "techStack" : "NextJS, TailwindCSS",
-        "completion": 50
-    },
-    {
-        "name": "Personal Portfolio Website",
-        "teaser": "A website to show my personal + professional life",
-        "link": "https://github.com/jose-izarra/portfolio",
-        "techStack" : "NextJS, TailwindCSS",
+        "src": "/images/bruh.png",
+        "techStack" : [
+            {"name": "NextJs", "link": "https://nextjs.org/"},
+            {"name": "TailwindCSS", "link":"https://tailwindcss.com/"}
+        ],
         "completion": 50
     }
 ]

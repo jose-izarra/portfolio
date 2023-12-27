@@ -37,7 +37,7 @@ export default function Home() {
 
 
       {/* Currently working on */}
-      <section className="flex">
+      <section className="">
           <WorkingOnProjects />          
       </section>
 

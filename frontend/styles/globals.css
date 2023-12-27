@@ -17,6 +17,8 @@
     --cool:#639FAB;
     --select-bg-color: rgba(235, 235, 255, 0.8);
     --select-text-color:rgba(255, 156, 107, 1);
+    --ok : #cbd5e1;
+    --lightbg-text : ##5a5a66;
     
 }
 
@@ -87,15 +89,28 @@ img {
   height: auto;
 }
 
-/* 
-#nav-item :hover {
-  background-color: var(--select-bg-color);
-  color: var(--select-text-color);
-  
-} */
+#navbar {
+  z-index: 10000;
+}
 
 nav li:hover {
   background-color: var(--select-bg-color);
   border-radius: 0.5rem;
   color: var(--select-text-color);
+}
+
+
+
+#ong-project-1, #ong-project-2 {
+  width: 35rem;
+  height: 25rem;
+  border: 2px solid var(--lightbg-text);
+  z-index: 100;
+  background-color: var(--ok);
+  /* padding: 0 2rem 0 2rem; */
+  transition: box-shadow 0.3s ease;
+}
+
+#ong-project-1:hover {
+  box-shadow: 0 0 15px var(--cool);
 }
