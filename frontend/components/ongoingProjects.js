@@ -24,7 +24,7 @@ export default function WorkingOnProjects() {
                             const lengthTech = current.techStack.length || 0;
                             return (
                                 <div key={`ong-project-${num}`} id={`ong-project-${num}`} 
-                                    className='flex ml-auto mr-auto flex-col items-center mx-3 rounded-2xl'>
+                                    className='flex ml-auto mr-auto flex-col items-center mx-3 rounded-2xl shadow-animation'>
                                     <Link href={current.link} target="_blank" className='m-0 p-0'>
                                         <Image src={current.src} 
                                             width={0} 

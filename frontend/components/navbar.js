@@ -7,6 +7,8 @@ import styles from './styles/navbar.module.css';
 
 export default function NavBar({ page }) {
     //make current page get lit up in the navbar
+    console.log(page);
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -32,16 +34,21 @@ export default function NavBar({ page }) {
 
     return (
         // first 3 class values are for fixed
-        <nav id="navbar" className="flex h-fit justify-center items-center w-full pt-5 overflow-auto"> {/*//"fixed w-[100%] top-5 m-0 p-0"> */}
+        <nav id="navbar" className="flex h-fit justify-center items-center w-full pt-5 overflow-auto transition ease-in "> {/*//"fixed w-[100%] top-5 m-0 p-0"> */}
             {/* <div className="rounded-xl bg-cool m-auto w-fit opacity-90"> */}
             <ul className="bg-cool opacity-90 w-fit rounded-lg flex justify-center items-center">
                 {
                     navbarlinks.map((current) => {
-                        return (
-                            <li id="nav-item" key={current.name} className='text-subtitle px-6 h-[50px] leading-[50px] text-lg'>
+                        return current.name === page? (
+                            <li id="current-tab" key={current.name} className='text-subtitle px-6 h-[50px] leading-[50px] text-lg hover:transition hover:ease-in duration-200'>
+                                    <Link href={current.href} className='p-2 rounded-md'>{current.name}</Link>
+                            </li>
+                            )
+                            :
+                            <li id="nav-item" key={current.name} className="text-subtitle px-6 h-[50px] leading-[50px] text-lg hover:transition hover:ease-in duration-200">
                                 <Link href={current.href} className='p-2 rounded-md'>{current.name}</Link>
                             </li>
-                        )
+                            
                     })
                 }
             

@@ -18,7 +18,7 @@
     --select-bg-color: rgba(235, 235, 255, 0.8);
     --select-text-color:rgba(255, 156, 107, 1);
     --ok : #cbd5e1;
-    --lightbg-text : ##5a5a66;
+    --lightbg-text : #242429;
     
 }
 
@@ -43,6 +43,22 @@ body {
     sans-serif;
   background-color: #222222;
   color: #EEEEFF;
+}
+
+#navbar {
+  z-index: 10000;
+}
+
+#current-tab {
+  background-color: rgba(235, 235, 255, 0.2);
+  border-radius: 0.5rem;
+  color: #ffffff;
+}
+
+nav li:hover, #current-tab:hover {
+  background-color: var(--select-bg-color);
+  border-radius: 0.5rem;
+  color: var(--select-text-color);
 }
 
 section {
@@ -89,17 +105,6 @@ img {
   height: auto;
 }
 
-#navbar {
-  z-index: 10000;
-}
-
-nav li:hover {
-  background-color: var(--select-bg-color);
-  border-radius: 0.5rem;
-  color: var(--select-text-color);
-}
-
-
 
 #ong-project-1, #ong-project-2 {
   width: 35rem;
@@ -114,3 +119,12 @@ nav li:hover {
 #ong-project-1:hover {
   box-shadow: 0 0 15px var(--cool);
 }
+
+footer svg {
+  transition: box-shadow 0.3s ease;
+}
+
+footer svg:hover {
+  box-shadow: 0 0 15px var(--cool);
+}
+
