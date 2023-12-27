@@ -17,6 +17,7 @@
     --cool:#639FAB;
     --select-bg-color: rgba(235, 235, 255, 0.8);
     --select-text-color:rgba(255, 156, 107, 1);
+    
 }
 
 html,
@@ -42,25 +43,43 @@ body {
   color: #EEEEFF;
 }
 
+section {
+  
+  margin: 1em 4em;
+  padding: 0 2.5em 1.5em 1em;
+  /* padding: 1em 4em; */
+  
+}
+
 h1 {
-  font-size: 60px;
+  font-size: 5rem;
+  /* line-height: 6.75rem; */
+  line-height: 5.75rem;
   color: var(--title-color);
 }
 
+#main-sub {
+  color: var(--subtitle-color);
+  font-size: 1.25rem;
+  line-height: 2.75rem;
+}
+
+
+
 h2 {
   color: var(--subtitle-color);
-  font-size: 20px;
+  font-size: 4.75rem;
 }
 
 p {
   color: var(--p-color);
 }
 
-
+/* 
 a {
   color: inherit;
   text-decoration: none;
-}
+} */
 
 
 img {
@@ -69,9 +88,14 @@ img {
 }
 
 /* 
-#navbar li :hover {
+#nav-item :hover {
   background-color: var(--select-bg-color);
   color: var(--select-text-color);
   
 } */
 
+nav li:hover {
+  background-color: var(--select-bg-color);
+  border-radius: 0.5rem;
+  color: var(--select-text-color);
+}

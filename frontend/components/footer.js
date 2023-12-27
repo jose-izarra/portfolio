@@ -6,7 +6,7 @@ export default function Footer() {
     return (
         <footer className="text-center my-5">
             
-            <h2 class="text-3xl pb-10">Interact with me on</h2>
+            <h2 className="text-3xl pb-10">Interact with me on</h2>
             
             <ul className="list">
             {

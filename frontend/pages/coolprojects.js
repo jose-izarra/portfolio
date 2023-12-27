@@ -2,9 +2,9 @@ import Layout from '../components/layout';
 
 
 
-export default function Experience() {
+export default function Projects() {
     return (
-        <Layout page="Cool Projects" title="Jose Izarra | Cool Projects">
+        <Layout page="Projects" title="Jose Izarra | Projects">
             
         </Layout>
         

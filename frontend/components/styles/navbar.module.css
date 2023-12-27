@@ -1,12 +1,21 @@
 
 .navbar {
     position: fixed;
-    width: 100%;
+    overflow: hidden;
+    top: 10;
+    /* width: fit-content;
     top: 20px;
     margin: 0;
     padding: 0;
+    z-index: 10000; */
 }
 
+
+.sticky {
+    position: fixed;
+    top: 1.25rem;
+    
+}
 
 .navbar li :hover {
     background-color: rgba(235, 235, 255, 0.8);

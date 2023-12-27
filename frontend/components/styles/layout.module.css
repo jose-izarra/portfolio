@@ -2,9 +2,9 @@
 
 
 .container {
-    max-width: 65%;
-    padding: 0 1rem;
-    margin: 3rem auto 6rem;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
   }
   
   .header {

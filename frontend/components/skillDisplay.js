@@ -5,21 +5,20 @@ import Skills from './skills';
 export default function SkillDisplay() {
     return (
         <>
-            <span>
-            <h1>I am fluent in ...</h1>
-            <div className="w-[50%]">
-                <Skills />   
-            </div>  
-            </span>
-            <span>
-            <h1>currently learning .. </h1>
-            <div>
-                <ul>
-                <li>{/* currently_learning.json */}</li>
-                <li>LLMs + Sonic Pi</li>
-                </ul>
-            </div>
-            </span>
+            <h2>I am fluent in ...</h2>
+    
+            <Skills />   
+        
+            
+
+            
+            <h2>currently learning .. </h2>
+
+            <ul>
+            <li>{/* currently_learning.json */}</li>
+            <li>LLMs + Sonic Pi</li>
+            </ul>
+            
         </>
     )
 }
