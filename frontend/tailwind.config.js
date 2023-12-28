@@ -14,7 +14,8 @@ module.exports = {
       'subtitle': "#FFE1DA",//"#EEEEFF",
       'cool': "#639FAB",
       'ok' : "#cbd5e1",
-      "lightbg-text" : "#5a5a66"
+      "lightbg-text" : "#5a5a66",
+      'darkbg-text' : "#cbd5e1",
     }
   },
   plugins: [],

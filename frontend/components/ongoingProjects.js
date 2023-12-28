@@ -11,12 +11,12 @@ export default function WorkingOnProjects() {
     return (
         <>
             <div className='flex items-center'>
-                <div className='flex-1 flex justify-center'>
+                <div className='ml-auto flex justify-center'>
                     <h3 className='text-4xl text-subtitle-color'>{`< Current Project />`}</h3>
                 </div>
                 {/* Currently Working On */}      
                 
-                <div className='flex flex-1 itemx-center justify-center'>
+                <div className='flex mx-auto items-center justify-center'>
                     {   
                         
                         ongoingProjects.map((current) => {

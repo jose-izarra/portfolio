@@ -1,20 +1,8 @@
 
-.navbar {
-    position: fixed;
-    overflow: hidden;
-    top: 10;
-    /* width: fit-content;
-    top: 20px;
-    margin: 0;
-    padding: 0;
-    z-index: 10000; */
-}
-
 
 .sticky {
     position: fixed;
-    top: 1.25rem;
-    
+    top: 0;
 }
 
 .navbar li :hover {

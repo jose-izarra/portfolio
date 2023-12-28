@@ -18,8 +18,8 @@
     --select-bg-color: rgba(235, 235, 255, 0.8);
     --select-text-color:rgba(255, 156, 107, 1);
     --ok : #cbd5e1;
-    --lightbg-text : #242429;
-    
+    --lightbg-text: #242429;
+    --darkbg-text: #cbd5e1;
 }
 
 html,
@@ -61,12 +61,18 @@ nav li:hover, #current-tab:hover {
   color: var(--select-text-color);
 }
 
+
 section {
-  
-  margin: 1em 4em;
-  padding: 0 2.5em 1.5em 1em;
-  /* padding: 1em 4em; */
-  
+  margin: 1em 0;
+  padding: 0 0 9em 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+   /* margin: 1em 4em;
+   padding: 0 2.5em 1.5em 1em;   */
+}
+
+.visible {
+  opacity: 1;
 }
 
 h1 {
@@ -82,7 +88,12 @@ h1 {
   line-height: 2.75rem;
 }
 
-
+#profile-pic  {
+  max-width: 100%;
+  height: auto;
+  border-radius: 2rem;
+  overflow: hidden;
+}
 
 h2 {
   color: var(--subtitle-color);
@@ -93,30 +104,22 @@ p {
   color: var(--p-color);
 }
 
-/* 
-a {
-  color: inherit;
-  text-decoration: none;
-} */
 
 
-img {
-  max-width: 100%;
-  height: auto;
+#profile-pic {
+  transition: box-shadow 0.3s ease;
 }
 
-
-#ong-project-1, #ong-project-2 {
+#ong-project-1 {
   width: 35rem;
   height: 25rem;
   border: 2px solid var(--lightbg-text);
   z-index: 100;
   background-color: var(--ok);
-  /* padding: 0 2rem 0 2rem; */
   transition: box-shadow 0.3s ease;
 }
 
-#ong-project-1:hover {
+#ong-project-1:hover, #profile-pic:hover {
   box-shadow: 0 0 15px var(--cool);
 }
 
