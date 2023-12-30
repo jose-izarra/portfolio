@@ -5,26 +5,25 @@ import ongoingProjects from "../scripts/ongoingProjects";
 
 
 
-export default function WorkingOnProjects() {
+export default function CurrentProject() {
     let num = 0;  
 
     return (
         <>
-            <div className='flex items-center'>
-                <div className='ml-auto flex justify-center'>
+            <div className='flex flex-wrap items-center justify-center'>
+                <div className='flex justify-end pb-5 mx-auto'>
                     <h3 className='text-4xl text-subtitle-color'>{`< Current Project />`}</h3>
                 </div>
                 {/* Currently Working On */}      
                 
-                <div className='flex mx-auto items-center justify-center'>
+                <div id='project-container' className='flex mx-auto items-center justify-center overflow-auto shadow-animation rounded-2xl'>
                     {   
-                        
                         ongoingProjects.map((current) => {
                             num += 1;
                             const lengthTech = current.techStack.length || 0;
                             return (
                                 <div key={`ong-project-${num}`} id={`ong-project-${num}`} 
-                                    className='flex ml-auto mr-auto flex-col items-center mx-3 rounded-2xl shadow-animation'>
+                                    className='flex m-auto flex-col items-center rounded-2xl'>
                                     <Link href={current.link} target="_blank" className='m-0 p-0'>
                                         <Image src={current.src} 
                                             width={0} 
@@ -35,7 +34,7 @@ export default function WorkingOnProjects() {
                                         />
                                     </Link>
                                     <h4 className='text-lightbg-text text-2xl font-bold mt-auto'>{current.name}</h4>
-                                    <p className='mb-auto pt-2 text-lg text-[#ffffff] font-bold'>
+                                    <p className='mb-auto pt-2 text-lg text-white font-bold'>
                                         {
                                             current.techStack.map((tech, index) => {
                                                 return (

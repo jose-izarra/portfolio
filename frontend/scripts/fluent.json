@@ -1,0 +1,32 @@
+[
+    {
+        "name": "python",
+        "path": "/images/python.svg",
+        "link": "https://www.python.org/"
+    },
+    {
+        "name": "react",
+        "path": "/images/react.svg",
+        "link": "https://react.dev/"
+    },
+    {
+        "name": "html",
+        "path": "/images/html.svg",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTML"
+    },
+    {
+        "name": "css",
+        "path": "/images/css.svg",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/CSS"
+    },
+    {
+        "name": "javascript",
+        "path": "/images/javascript.svg",
+        "link": "https://www.javascript.com/"
+    },
+    {
+        "name": "tailwindcss",
+        "path": "/images/tailwindcss.svg",
+        "link": "https://tailwindcss.com/"
+    }
+]

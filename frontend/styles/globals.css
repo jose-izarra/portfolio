@@ -13,7 +13,6 @@
     --background-color: #222222;
     --title-color: #FFE1DA;
     --subtitle-color: #EBEBFF;
-    --p-color: white;
     --cool:#639FAB;
     --select-bg-color: rgba(235, 235, 255, 0.8);
     --select-text-color:rgba(255, 156, 107, 1);
@@ -64,7 +63,7 @@ nav li:hover, #current-tab:hover {
 
 section {
   margin: 1em 0;
-  padding: 0 0 9em 0;
+  padding: 0 0 8em 0;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
    /* margin: 1em 4em;
@@ -101,27 +100,64 @@ h2 {
 }
 
 p {
-  color: var(--p-color);
+  color: var(--darkbg-text);
 }
 
-
-
-#profile-pic {
-  transition: box-shadow 0.3s ease;
+#linkedin-svg svg g {
+  transition: fill 300ms ease;
 }
+#linkedin-svg:hover svg g{
+  fill: #639FAB;
+} 
+
+
 
 #ong-project-1 {
   width: 35rem;
   height: 25rem;
-  border: 2px solid var(--lightbg-text);
   z-index: 100;
   background-color: var(--ok);
-  transition: box-shadow 0.3s ease;
+  
 }
 
-#ong-project-1:hover, #profile-pic:hover {
+#project-container {
+  transition: box-shadow 0.3s ease;
+}
+#project-container:hover {/* #ong-project-1:hover { */
   box-shadow: 0 0 15px var(--cool);
 }
+
+
+/* SKILLS */
+#fluent-container {
+  /* background: rgba(235, 235, 255, 1);*/
+  /* background: rgb(203, 213, 225); */
+  border: 1px dashed rgb(203, 213, 225);
+}
+
+#worked-container {
+  border: 1px dashed rgb(203, 213, 225);
+}
+
+#fluent-container:hover {
+  box-shadow: 0 0 10px var(--cool);
+}
+
+#worked-container:hover {
+  box-shadow: 0 0 10px var(--cool);
+}
+
+#fluent-container:hover #fluent-project-1 {
+  transform: scale(1.1);
+}
+
+#worked-container:hover #worked-project-1 {
+  transform: scale(1.1);
+}
+
+
+
+
 
 footer svg {
   transition: box-shadow 0.3s ease;

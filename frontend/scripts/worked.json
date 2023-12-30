@@ -1,0 +1,67 @@
+[
+    {
+        "name": "astro",
+        "path" : "/images/astro.svg",
+        "link": "https://astro.build/"
+    },
+    {
+        "name": "next",
+        "path" : "/images/nextjs.svg",
+        "link": "https://nextjs.org/"
+    },
+    {
+        "name": "mysql",
+        "path" : "/images/mysql.svg",
+        "link": "https://www.mysql.com/"
+    },
+    {
+        "name": "express",
+        "path" : "/images/express.svg",
+        "link": "https://expressjs.com/"
+    },
+    {
+        "name": "mongodb",
+        "path" : "/images/mongodb.svg",
+        "link": "https://www.mongodb.com/"
+    },
+    {
+        "name": "docker",
+        "path" : "/images/docker.svg",
+        "link": "https://www.docker.com/    "
+    },
+    {
+        "name": "linux",
+        "path" : "/images/linux.svg",
+        "link": "https://www.linux.org/"
+    },
+    {
+        "name": "azure",
+        "path" : "/images/azure.svg",
+        "link": "https://azure.microsoft.com/"
+    },
+    {
+        "name": "arduino",
+        "path" : "/images/arduino.svg",
+        "link": "https://www.arduino.cc/"
+    },
+    {
+        "name": "bash",
+        "path" : "/images/bash.svg",
+        "link": "https://devhints.io/bash"
+    },
+    {
+        "name": "typescript",
+        "path" : "/images/typescript.svg",
+        "link": "https://www.typescriptlang.org/"
+    },
+    {
+        "name": "firebase",
+        "path" : "/images/firebase.svg",
+        "link": "https://firebase.google.com/?hl=es-419"
+    },
+    {
+        "name": "aws",
+        "path" : "/images/aws.svg",
+        "link": "https://aws.amazon.com/"
+    }
+]

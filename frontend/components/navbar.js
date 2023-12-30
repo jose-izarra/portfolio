@@ -31,7 +31,7 @@ export default function NavBar({ page }) {
 
     return (
         // first 3 class values are for fixed
-        <nav id="navbar" className="fixed flex h-fit justify-center items-center w-full pt-5 overflow-auto transition ease-in "> {/*//"fixed w-[100%] top-5 m-0 p-0"> */}
+        <nav id="navbar" className="fixed flex h-fit justify-center items-center w-full pt-5 overflow-auto transition ease-in"> 
             {/* <div className="rounded-xl bg-cool m-auto w-fit opacity-90"> */}
             <ul className="bg-cool opacity-90 w-fit rounded-lg flex justify-center items-center">
                 {

@@ -4,11 +4,11 @@
         "href": "/"
     },
     {
-        "name": "About Me",
+        "name": "About",
         "href": "/aboutme"
     },
     {
-        "name": "Cool Projects",
+        "name": "Projects",
         "href": "/coolprojects"
     },
     {
@@ -16,7 +16,7 @@
         "href": "/experience"
     },
     {
-        "name": "My Thoughts",
-        "href": "/mythoughts"
+        "name": "Thoughts",
+        "href": "/thoughts"
     }
 ]

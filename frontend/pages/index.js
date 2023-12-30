@@ -4,10 +4,12 @@ import Layout from '../components/layout';
 import styles from '../styles/Home.module.css';
 import socials from '../scripts/socials';
 import { useState, useEffect } from 'react';
+
 // components imports
-import SkillDisplay from "../components/skillDisplay";
-import WorkingOnProjects from '../components/ongoingProjects';
 import Intro from '../components/intro';
+import CurrentProject from '../components/currentProject';
+import Skills from "../components/skills";
+import Projects from "../components/projects";
 
 export default function Home() {
   const [ visibleSections, setVisibleSections] = useState([]);
@@ -35,10 +37,10 @@ export default function Home() {
       };
 
     
-  }, [visibleSections]);
+  }, []);
+
   return (
     <Layout page="Home" title="Jose Izarra | Home">
-      
       <header className='flex flex-col justify-center items-center pb-[2.5em] pt-[5em] mb-[1em] h-[100vh]'>
         <div className='flex justify-center my-auto'>
           <div className="flex items-center">
@@ -46,15 +48,12 @@ export default function Home() {
           </div>
         </div>
           <div className='flex justify-center items-center my-auto '>
-            <Link href={socials[0].link} target="_blank">
               <Image src="/images/profile.jpg" 
                 height={200} width={200} alt="Jose Izarra"
                 // style={{ width: '100%', height: 'auto' }}
-                className=' w-64 ' 
+                className='w-64 ' 
                 id='profile-pic'
               />
-            </Link>
-            
           </div>
       </header>
 
@@ -65,15 +64,20 @@ export default function Home() {
 
       {/* Currently working on */}
       <section id="section-2" className={` ${visibleSections.includes("section-2")? 'visible' : ''}`}>
-        <WorkingOnProjects />          
+        <CurrentProject />          
       </section>
 
 
       {/* Skills Section */}
-      <section id="section-3" className={` ${visibleSections.includes("section-3")? 'visible' : ''}`}>
-        <SkillDisplay />
+      <section id="section-3" className={`${visibleSections.includes("section-3")? 'visible' : ''}`}>
+        <Skills isFluent={true} />
+        <Skills isFluent={false} />
       </section>
 
+      {/* Project Section */}
+      <section id="section-4" className={`pb-10 ${visibleSections.includes("section-4")? 'visible' : ''}`}>
+        <Projects />
+      </section>
     </Layout>
   );
 }
