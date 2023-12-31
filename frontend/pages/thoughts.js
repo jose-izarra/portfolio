@@ -1,12 +1,9 @@
 import Layout from '../components/layout';
+import UnderConstruction from '../components/underConstruction';
 
 
-
-export default function Thoughts() {
+export default function AboutMe() {
     return (
-        <Layout page="Thoughts" title="Jose Izarra | Thoughts">
-            
-        </Layout>
-        
+        <UnderConstruction />
     )
 }

@@ -1,12 +1,9 @@
 import Layout from '../components/layout';
+import UnderConstruction from '../components/underConstruction';
 
 
-
-export default function Projects() {
+export default function AboutMe() {
     return (
-        <Layout page="Cool Projects" title="Jose Izarra | Projects">
-            
-        </Layout>
-        
+        <UnderConstruction />
     )
 }

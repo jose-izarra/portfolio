@@ -1,3 +1,86 @@
 [
-    {}
+    {
+        "name": "Robotics Club Website",
+        "tech": {
+            "frontend": ["Astro, TailwindCSS"],
+            "backend": ["Express, MongoDB, Docker"]
+        },
+        "techIcons": ["/images/astro.svg", "/images/tailwindcss.svg", "/images/express.svg","/images/mongodb.svg","/images/docker.svg"],
+        "description": "Website for the IE Robotics & AI Club. Displays information about the club, its members, and its projects.",
+        "photo": "/images/ierobotics.png",
+        "github": "https://github.com/IERoboticsClub/club-website",
+        "link": "https://ieroboticsclub.com"
+    },
+    {
+        "name": "C Whale",
+        "tech": {
+            "frontend": [],
+            "backend": ["C", "Bison GNU", "Flex GNU"]
+        },
+        "techIcons": ["/images/c.svg"],
+        "description": "Programming language based on C to facilitate the process of managing Docker containers and images. User friendly without the need to memorize docker commands.",
+        "photo": "/images/c_whale.png",
+        "github": "https://github.com/rorosaga/C_whale/",
+        "link": ""
+    },
+    {
+        "name": "Qwicker",
+        "tech": {
+            "frontend": ["Vite", "React", "TailwindCSS"],
+            "backend": ["Azure Functions", "MySQL"]
+        },
+        "techIcons": ["/images/vite.svg", "/images/react.svg", "/images/tailwindcss.svg","/images/azure.svg","/images/mysql.svg"],
+        "description": "Attendance system for teachers and students. Teachers start sessions for the subject with a code and students enrolled in the class mark themselves present.",
+        "photo": "/images/qwicker.png",
+        "github": "https://github.com/jose-izarra/attendance_system",
+        "link": ""
+    },
+    {
+        "name": "Personal Portfolio Website",
+        "tech": {
+            "frontend": ["Astro, TailwindCSS"],
+            "backend": []
+        },
+        "techIcons": ["/images/nextjs.svg", "/images/tailwindcss.svg"],
+        "description": "A personal portfolio website built with NextJs and TailwindCSS.",
+        "photo": "",
+        "github": "https://github.com/jose-izarra/portfolio",
+        "link": "https://joseizarra.com/"
+    },
+    {
+        "name": "CLAI",
+        "tech": {
+            "frontend": [],
+            "backend": ["Python", "GPT-3.5", "GPT-4"]
+        },
+        "techIcons": ["/images/python.svg"],
+        "description": "Itelligent document processing model using gpt-3.5 / gpt-4 to extract valuable information from PDFs. AI Hackathon in collaboration with Foqum Analytics",
+        "photo": "",
+        "github": "https://github.com/velocitatem/ai-hackathon-ie-2023",
+        "link": ""
+    },
+    {
+        "name": "Text Based Game in Python",
+        "tech": {
+            "frontend": [],
+            "backend": ["Python"]
+        },
+        "techIcons": ["/images/python.svg"],
+        "description": "A personal portfolio website built with NextJs and TailwindCSS.",
+        "photo": "",
+        "github": "https://github.com/jose-izarra/text-game-project",
+        "link": ""
+    },
+    {
+        "name": "Jenga Tower Game ",
+        "tech": {
+            "frontend": [],
+            "backend": ["Python"]
+        },
+        "techIcons": ["/images/python.svg"],
+        "description": "A personal portfolio website built with NextJs and TailwindCSS.",
+        "photo": "",
+        "github": "https://github.com/jose-izarra/jenga-game",
+        "link": ""
+    }
 ]

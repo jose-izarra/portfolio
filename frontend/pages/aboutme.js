@@ -1,12 +1,9 @@
 import Layout from '../components/layout';
-
+import UnderConstruction from '../components/underConstruction';
 
 
 export default function AboutMe() {
     return (
-        <Layout page="About Me" title="Jose Izarra | About Me">
-            
-        </Layout>
-        
+        <UnderConstruction />
     )
 }

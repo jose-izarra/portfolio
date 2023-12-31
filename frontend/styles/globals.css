@@ -63,7 +63,7 @@ nav li:hover, #current-tab:hover {
 
 section {
   margin: 1em 0;
-  padding: 0 0 8em 0;
+  padding: 0 0 6em 0;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
    /* margin: 1em 4em;
@@ -99,6 +99,11 @@ h2 {
   font-size: 4.75rem;
 }
 
+h3 {
+  font-size: 3rem;
+  color: var(--subtitle-color)
+}
+
 p {
   color: var(--darkbg-text);
 }
@@ -113,8 +118,6 @@ p {
 
 
 #ong-project-1 {
-  width: 35rem;
-  height: 25rem;
   z-index: 100;
   background-color: var(--ok);
   

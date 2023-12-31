@@ -12,7 +12,7 @@ export default function CurrentProject() {
         <>
             <div className='flex flex-wrap items-center justify-center'>
                 <div className='flex justify-end pb-5 mx-auto'>
-                    <h3 className='text-4xl text-subtitle-color'>{`< Current Project />`}</h3>
+                    <h3>{`< Current Project />`}</h3>
                 </div>
                 {/* Currently Working On */}      
                 
@@ -24,17 +24,18 @@ export default function CurrentProject() {
                             return (
                                 <div key={`ong-project-${num}`} id={`ong-project-${num}`} 
                                     className='flex m-auto flex-col items-center rounded-2xl'>
-                                    <Link href={current.link} target="_blank" className='m-0 p-0'>
+                                    <a  className='m-0 p-0 pointer-events-none'>
                                         <Image src={current.src} 
                                             width={0} 
                                             height={0} 
                                             sizes="100vh" 
-                                            style={{ width: '100%', height: 'auto' }} alt="Project preview"
-                                            className='rounded-2xl p-1'
+                                            style={{ width: '100%', height: 'auto' }} 
+                                            alt="Project preview"
+                                            className='rounded-2xl p-2 min-w-[555px] max-h-[290px]'
                                         />
-                                    </Link>
+                                    </a>
                                     <h4 className='text-lightbg-text text-2xl font-bold mt-auto'>{current.name}</h4>
-                                    <p className='mb-auto pt-2 text-lg text-white font-bold'>
+                                    <p className='mb-auto pt-2 text-lg text-white font-bold text-center'>
                                         {
                                             current.techStack.map((tech, index) => {
                                                 return (
@@ -46,7 +47,7 @@ export default function CurrentProject() {
                                             })
                                         }
                                         </p>
-                                    <p className='mb-auto text-lightbg-text'>{current.teaser}</p>
+                                    <p className='mb-auto text-lightbg-text p-2 text-center'>{current.teaser}</p>
                                 </div>
                             )
                         })
@@ -54,8 +55,6 @@ export default function CurrentProject() {
             
                 </div>
             </div>
-            
-
         </>
     )
 };

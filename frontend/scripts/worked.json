@@ -63,5 +63,15 @@
         "name": "aws",
         "path" : "/images/aws.svg",
         "link": "https://aws.amazon.com/"
+    },
+    {
+        "name": "vite",
+        "path" : "/images/vite.svg",
+        "link": "https://vitejs.dev/"
+    },
+    {
+        "name": "c",
+        "path" : "/images/c.svg",
+        "link": "https://www.w3schools.com/c/c_intro.php"
     }
 ]

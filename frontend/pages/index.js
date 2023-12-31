@@ -47,18 +47,11 @@ export default function Home() {
             <h1 id="main-title" className=''>Jose Izarra<span id="main-sub" className='pl-5 inline-block'>- Software Developer and Creator</span></h1>
           </div>
         </div>
-          <div className='flex justify-center items-center my-auto '>
-              <Image src="/images/profile.jpg" 
-                height={200} width={200} alt="Jose Izarra"
-                // style={{ width: '100%', height: 'auto' }}
-                className='w-64 ' 
-                id='profile-pic'
-              />
-          </div>
+          
       </header>
 
       {/* Introduction Section */}
-      <section id="section-1" className={` ${visibleSections.includes("section-1")? 'visible' : ''}`}>
+      <section id="section-1" className={`pb-[6rem] ${visibleSections.includes("section-1")? 'visible' : ''}`}>
         <Intro />
       </section>
 
@@ -76,7 +69,7 @@ export default function Home() {
 
       {/* Project Section */}
       <section id="section-4" className={`pb-10 ${visibleSections.includes("section-4")? 'visible' : ''}`}>
-        <Projects />
+        <Projects page="home"/>
       </section>
     </Layout>
   );
