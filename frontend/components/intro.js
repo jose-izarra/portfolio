@@ -14,22 +14,22 @@ export default function Intro() {
                 </div> 
                 */}
                 <div className='flex flex-col justify-center items-center mx-auto mb-7'>
-                    <h3 className='text-xl font-bold mx-auto leading-8'>
+                    <h3 className='text-xl text-center font-bold mx-auto leading-8'>
                         Welcome to my personal portoflio website! <br/><br/>
                         
                     </h3>
-                    <h3 className='text-xl mx-auto leading-8'>
+                    <h3 className='text-xl text-center mx-auto leading-8'>
                         This is a website I built for myself to showcase my personality as an individual,
                         </h3>
-                    <h3 className='text-xl mx-auto leading-8'> 
+                    <h3 className='text-xl text-center mx-auto leading-8'> 
                         as well as my skills and experience as a <span className='font-bold text-cool'>software developer</span>.
                         I think that interpersonal relations 
                         </h3>
-                    <h3 className='text-xl mx-auto leading-8'>
+                    <h3 className='text-xl text-center mx-auto leading-8'>
                         are the key to leading a, not only happy, but also 
                         successful life, so here I am, trying to
                         </h3>
-                    <h3 className='text-xl mx-auto leading-8'>
+                    <h3 className='text-xl text-center mx-auto leading-8'>
                     connect with you. Help me make it mutual by adding me on LinkedIn!
                     </h3>
                 </div>

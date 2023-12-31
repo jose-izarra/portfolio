@@ -12,7 +12,7 @@ export default function Skills({ isFluent }) {
         <> 
             <div className="flex flex-col w-full mb-[3.5em]">
                 <div className="flex mx-auto">
-                        <h3 className="mb-[2rem]">Fluent in</h3>
+                        <h3 className="mb-[2rem] text-center">Fluent in</h3>
                 </div>
                 <ul id="fluent-container" className='max-w-[650px] mx-auto flex flex-wrap w-fit items-center justify-center rounded-xl p-3'>
                     {
@@ -38,7 +38,7 @@ export default function Skills({ isFluent }) {
         <>
             <div className="flex flex-col w-full">
                 <div className="flex mx-auto ">
-                        <h3 className="mb-[3rem]">Frameworks and Languages I've worked with</h3>
+                        <h3 className="mb-[3rem] text-center">Frameworks and Languages I've worked with</h3>
                     </div>
                 <ul id="worked-container"className='max-w-[550px] flex flex-wrap mx-auto  items-center justify-center rounded-xl p-3'>
                     {

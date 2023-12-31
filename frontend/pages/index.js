@@ -44,7 +44,7 @@ export default function Home() {
       <header className='flex flex-col justify-center items-center pb-[2.5em] pt-[5em] mb-[1em] h-[100vh]'>
         <div className='flex justify-center my-auto'>
           <div className="flex items-center">
-            <h1 id="main-title" className=''>Jose Izarra<span id="main-sub" className='pl-5 inline-block'>- Software Developer and Creator</span></h1>
+            <h1 id="main-title" className='text-center'>Jose Izarra<span id="main-sub" className='pl-5 inline-block'>- Software Developer and Creator</span></h1>
           </div>
         </div>
           

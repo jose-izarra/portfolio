@@ -12,7 +12,7 @@ export default function CurrentProject() {
         <>
             <div className='flex flex-wrap items-center justify-center'>
                 <div className='flex justify-end pb-5 mx-auto'>
-                    <h3>{`< Current Project />`}</h3>
+                    <h3 className='text-center'>{`< Current Project />`}</h3>
                 </div>
                 {/* Currently Working On */}      
                 
@@ -31,7 +31,7 @@ export default function CurrentProject() {
                                             sizes="100vh" 
                                             style={{ width: '100%', height: 'auto' }} 
                                             alt="Project preview"
-                                            className='rounded-2xl p-2 min-w-[555px] max-h-[290px]'
+                                            className='rounded-2xl p-2 min-w-[300px] max-h-[290px]'
                                         />
                                     </a>
                                     <h4 className='text-lightbg-text text-2xl font-bold mt-auto'>{current.name}</h4>

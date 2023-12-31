@@ -13,7 +13,7 @@ export default function Projects({ page }) {
         <>
             <div className='flex flex-col items-center'>
                 <div className='mx-auto'>
-                    <h3 className=''>Latest Projects</h3>
+                    <h3 className='text-center'>Latest Projects</h3>
                 </div>
 
                 <div className='flex flex-wrap max-w-full mx-auto'>
