@@ -6,6 +6,8 @@ import socials from '../scripts/socials';
 import { useState, useEffect } from 'react';
 
 // components imports
+import Header from '../components/header';
+import NavBar from '../components/navbar';
 import Intro from '../components/intro';
 import CurrentProject from '../components/currentProject';
 import Skills from "../components/skills";
@@ -38,19 +40,13 @@ export default function Home() {
 
     
   }, []);
-
   return (
     <Layout page="Home" title="Jose Izarra | Home">
-      <header className='flex flex-col justify-center items-center pb-[2.5em] pt-[5em] mb-[1em] h-[100vh]'>
-        <div className='flex justify-center my-auto'>
-          <div className="flex items-center">
-            <h1 id="main-title" className='text-center'>Jose Izarra<span id="main-sub" className='pl-5 inline-block'>- Software Developer and Creator</span></h1>
-          </div>
-        </div>
-          
-      </header>
-
+      <section id="section-0" className={`m-0 p-0 ${visibleSections.includes("section-0")? 'visible' : ''}`}>
+        <Header />
+      </section>
       {/* Introduction Section */}
+      
       <section id="section-1" className={`pb-[6rem] ${visibleSections.includes("section-1")? 'visible' : ''}`}>
         <Intro />
       </section>

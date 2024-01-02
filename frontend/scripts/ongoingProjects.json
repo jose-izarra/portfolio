@@ -6,6 +6,7 @@
         "src": "/current.png",
         "techStack" : [
             {"name": "Vite", "link": "https://vitejs.dev/"},
+            {"name": "React", "link": "https://react.dev/"},
             {"name": "TailwindCSS", "link":"https://tailwindcss.com/"}
         ],
         "completion": 50

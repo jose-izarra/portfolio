@@ -90,7 +90,7 @@ h1 {
 #profile-pic  {
   max-width: 100%;
   height: auto;
-  border-radius: 2rem;
+  border-radius: 1rem;
   overflow: hidden;
 }
 

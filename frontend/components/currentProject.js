@@ -12,7 +12,7 @@ export default function CurrentProject() {
         <>
             <div className='flex flex-wrap items-center justify-center'>
                 <div className='flex justify-end pb-5 mx-auto'>
-                    <h3 className='text-center'>{`< Current Project />`}</h3>
+                    <h3 className='text-center'>{`<Current Project />`}</h3>
                 </div>
                 {/* Currently Working On */}      
                 

@@ -11,6 +11,9 @@ export default function Layout({ children, title, page }) { // {home}
         {/* <SEO /> */}
         <title>{title}</title>
       </Head>
+      {/* {
+        page !== 'Home' && <NavBar page={page} />
+      } */}
       <NavBar page={page} />
       <main className={styles.container}>{children}</main>
       <Footer />
