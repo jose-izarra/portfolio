@@ -12,7 +12,7 @@ export default function Header() {
                 
             </div>
             <div className={`${styles.overlay} ml-auto hidden sm:block sm:w-[30%] lg:w-[25%]  transition ease-in `}>
-                <Image src='/sego.jpg'
+                <Image src='/sego.JPG'
                     width={0} 
                     height={0} 
                     sizes="100vh" 
