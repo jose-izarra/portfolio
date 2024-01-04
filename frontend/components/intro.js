@@ -41,7 +41,7 @@ export default function Intro() {
                     <Image src="/jose.jpg" 
                         height={200} width={200} alt="Jose Izarra"
                         // style={{ width: '100%', height: 'auto' }}
-                        className='w-64 ' 
+                        className='w-64 z-10' 
                         id='profile-pic'
                     />
                 </div>

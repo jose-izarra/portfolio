@@ -1,11 +1,31 @@
 
 
-
-
-
-.profilepic {
-  border-radius: 999px;
+.waves {
+  display: block;
+  position: relative;
 }
+
+
+
+
+
+
+
+
+
+/* 
+.waves:before {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  width: 100%;
+  height: 300px;
+  background-color: var(cool);
+  right: -25%;
+  top: 20px;
+}
+*/
 
 
 
@@ -17,4 +37,6 @@
 }
 
 */
+
+
 

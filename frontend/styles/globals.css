@@ -13,7 +13,7 @@
     --background-color: #222222;
     --title-color: #FFE1DA;
     --subtitle-color: #EBEBFF;
-    --cool:#639FAB;
+    --cool:hwb(190 25% 59%);
     --select-bg-color: rgba(235, 235, 255, 0.8);
     --select-text-color:rgba(255, 156, 107, 1);
     --ok : #cbd5e1;
@@ -62,8 +62,8 @@ nav li:hover, #current-tab:hover {
 
 
 section {
-  margin: 1em 0;
-  padding: 0 0 6em 0;
+  margin: 1em 0 6em 0;
+  padding: 1.5em 0;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
    /* margin: 1em 4em;
@@ -169,4 +169,9 @@ footer svg {
 footer svg:hover {
   box-shadow: 0 0 15px var(--cool);
 }
+
+
+
+
+/* svg dividers */
 

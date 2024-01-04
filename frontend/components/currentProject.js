@@ -10,8 +10,9 @@ export default function CurrentProject() {
 
     return (
         <>
-            <div className='flex flex-wrap items-center justify-center'>
-                <div className='flex justify-end pb-5 mx-auto'>
+            
+            <div className='flex flex-wrap items-center justify-center z-10 h-[70vh]'>
+                <div className='flex justify-end pb-5 mx-auto my-auto z-10'>
                     <h3 className='text-center'>{`<Current Project />`}</h3>
                 </div>
                 {/* Currently Working On */}      

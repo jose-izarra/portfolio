@@ -42,17 +42,17 @@ export default function Home() {
   }, []);
   return (
     <Layout page="Home" title="Jose Izarra | Home">
-      <section id="section-0" className={`m-0 p-0 ${visibleSections.includes("section-0")? 'visible' : ''}`}>
+      <section id="section-0" className={`m-0 p-0 ${visibleSections.includes("section-0")? 'visible' : ''} `}>
         <Header />
       </section>
       {/* Introduction Section */}
       
-      <section id="section-1" className={`pb-[6rem] ${visibleSections.includes("section-1")? 'visible' : ''}`}>
+      <section id="section-1" className={` ${visibleSections.includes("section-1")? 'visible' : ''} `}>
         <Intro />
       </section>
 
       {/* Currently working on */}
-      <section id="section-2" className={` ${visibleSections.includes("section-2")? 'visible' : ''}`}>
+      <section id="section-2" className={`bg-cool h-[90vh] ${visibleSections.includes("section-2")? 'visible' : ''} ${styles.waves}`}>
         <CurrentProject />          
       </section>
 
