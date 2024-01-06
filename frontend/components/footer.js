@@ -16,7 +16,7 @@ export default function Footer() {
 
     return (
         <footer className="flex items-center justify-center text-center my-5">     
-            <SpotifySongs />
+            {/* <SpotifySongs /> */}
             <div className="flex items-center ">       
                 <h2 className="text-3xl">Interact with me on</h2>
             </div>
