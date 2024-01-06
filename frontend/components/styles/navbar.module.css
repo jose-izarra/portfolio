@@ -1,11 +1,127 @@
 
-
-.sticky {
-    position: fixed;
-    top: 0;
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 99999;
+    transition: 0.3s ease;
 }
 
-.navbar li :hover {
-    background-color: rgba(235, 235, 255, 0.8);
-    color: rgba(255, 156, 107, 1);
+.verticalNavbar {
+    left: 0;
+    top: 0;
+    width: 8%;
+    height: 100vh;
+    margin-top: 0;
+    margin-left: 0;
+    min-width: 50px;
+}
+
+.verticalContainer {
+    transform: rotate(-90deg);
+}
+
+.container {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}
+
+
+.li {
+    position: relative;
+    color: var(--title-color);
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+
+.link::after {
+    overflow-y: hidden;
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--title-color);
+    transition: 0.4s ease;
+}
+
+.link:hover::after {
+    width: 100%;
+}
+
+.current::after {
+    overflow-y: hidden;
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: var(--title-color);
+    transition: 0.3s ease;
+}
+
+.current:hover::after {
+    width: 0;
+}
+
+
+.background {
+    background-color: var(--cool);
+}
+
+
+
+
+/* for responsive toggle navbar */
+
+.toggleButton {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    /* display: none; */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.toggleButton svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: white;
+    position: absolute;
+    top: 0.75rem;
+    left: 0.5rem;
+}
+
+.openIcon {
+    display: block;
+}
+
+.closeIcon {
+    display: none; 
+}
+
+.toggleButton.open .openIcon {
+    display: none;
+}
+
+.toggleButton.open .closeIcon {
+    display: block;
+}
+
+.container.open {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav.open {
+    flex-direction: column;
+    align-items: flex-start;
 }

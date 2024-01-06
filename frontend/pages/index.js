@@ -52,7 +52,7 @@ export default function Home() {
       </section>
 
       {/* Currently working on */}
-      <section id="section-2" className={`bg-cool h-[90vh] ${visibleSections.includes("section-2")? 'visible' : ''} ${styles.waves}`}>
+      <section id="section-2" className={`h-[90vh] ${visibleSections.includes("section-2")? 'visible' : ''} ${styles.waves}`}>
         <CurrentProject />          
       </section>
 

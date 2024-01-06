@@ -18,6 +18,7 @@ export default function Header() {
                     sizes="100vh" 
                     style={{ width: '100%', height: 'auto' }} 
                     className={`${styles.pic}`} 
+                    alt="Jose Izarra"
                 />
             </div>
             <div className="flex mx-auto justify-center items-center z-10 ">

@@ -13,7 +13,7 @@
     --background-color: #222222;
     --title-color: #FFE1DA;
     --subtitle-color: #EBEBFF;
-    --cool:hwb(190 25% 59%);
+    --cool:#639FAB;
     --select-bg-color: rgba(235, 235, 255, 0.8);
     --select-text-color:rgba(255, 156, 107, 1);
     --ok : #cbd5e1;
@@ -44,21 +44,6 @@ body {
   color: #EEEEFF;
 }
 
-#navbar {
-  z-index: 10000;
-}
-
-#current-tab {
-  background-color: rgba(235, 235, 255, 0.2);
-  border-radius: 0.5rem;
-  color: #ffffff;
-}
-
-nav li:hover, #current-tab:hover {
-  background-color: var(--select-bg-color);
-  border-radius: 0.5rem;
-  color: var(--select-text-color);
-}
 
 
 section {
@@ -66,6 +51,8 @@ section {
   padding: 1.5em 0;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
+  overflow-x: hidden;
+  z-index: 0;
    /* margin: 1em 4em;
    padding: 0 2.5em 1.5em 1em;   */
 }
