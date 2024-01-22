@@ -5,7 +5,7 @@
     align-items: center;
     width: 100%;
     z-index: 99999;
-    transition: 0.3s ease;
+    transition: 0.8s ease-in;
 }
 
 .verticalNavbar {
@@ -31,7 +31,7 @@
 
 .li {
     position: relative;
-    color: var(--title-color);
+    color: var(--nav-links);
     padding: 0.5rem 1rem;
     margin: 0 0.5rem;
     text-transform: uppercase;
@@ -47,7 +47,7 @@
     width: 0;
     bottom: 0;
     left: 0;
-    background: var(--title-color);
+    background: var(--nav-links);
     transition: 0.4s ease;
 }
 
@@ -63,8 +63,8 @@
     width: 100%;
     bottom: 0;
     left: 0;
-    background: var(--title-color);
-    transition: 0.3s ease;
+    background: var(--nav-links);
+    transition: 0.5s ease;
 }
 
 .current:hover::after {
@@ -72,9 +72,6 @@
 }
 
 
-.background {
-    background-color: var(--cool);
-}
 
 
 

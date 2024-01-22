@@ -4,21 +4,17 @@
 
 
 
-/* 'main': "#222222",
-      'title': "#FFE1DA",//"#E88349",//"#F39C6B", 
-      'subtitle': "#FFE1DA",//"#EEEEFF",
-      'cool': "#639FAB", */
-
 :root {
-    --background-color: #222222;
-    --title-color: #FFE1DA;
-    --subtitle-color: #EBEBFF;
-    --cool:#639FAB;
-    --select-bg-color: rgba(235, 235, 255, 0.8);
-    --select-text-color:rgba(255, 156, 107, 1);
-    --ok : #cbd5e1;
-    --lightbg-text: #242429;
-    --darkbg-text: #cbd5e1;
+    --background-color: hsla(177, 2%, 20%, 1);/*hsl(177, 20%, 20%); /* #222222 */
+    --title-color: hsla(30, 100%, 90%, 0.8); 
+    --subtitle-color: hsla(0, 20%, 70%, 1);
+    --cool:hsla(190, 30%, 53%, 1);
+    --select-bg-color: hsla(240, 100%, 96%, 0.8);
+    --select-text-color:rgb(13, 12, 12);
+    --ok : hsla(213, 27%, 84%, 1);
+    --lightbg-text: hsla(240, 6%, 15%, 1);
+    --darkbg-text: hsla(213, 27%, 84%, 1);
+    --nav-links: hsla(11, 100%, 85%, 1);
 }
 
 html,
@@ -40,8 +36,12 @@ body {
     Droid Sans,
     Helvetica Neue,
     sans-serif;
-  background-color: #222222;
+  background-color: var(--background-color);
   color: #EEEEFF;
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
+  min-width: 0;
+
 }
 
 
@@ -68,11 +68,7 @@ h1 {
   color: var(--title-color);
 }
 
-#main-sub {
-  color: var(--subtitle-color);
-  font-size: 1.25rem;
-  line-height: 2.75rem;
-}
+
 
 #profile-pic  {
   max-width: 100%;

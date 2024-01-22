@@ -13,6 +13,8 @@ import CurrentProject from '../components/currentProject';
 import Skills from "../components/skills";
 import Projects from "../components/projects";
 
+
+
 export default function Home() {
   const [ visibleSections, setVisibleSections] = useState([]);
 
@@ -42,18 +44,18 @@ export default function Home() {
   }, []);
   return (
     <Layout page="Home" title="Jose Izarra | Home">
-      <section id="section-0" className={`m-0 p-0 ${visibleSections.includes("section-0")? 'visible' : ''} `}>
+      <section id="section-0" className={`m-0 p-0 overflow-hidden relative ${visibleSections.includes("section-0")? 'visible' : ''} `}>
         <Header />
       </section>
       {/* Introduction Section */}
       
-      <section id="section-1" className={` ${visibleSections.includes("section-1")? 'visible' : ''} `}>
+      <section id="section-1" className={`z-[100] ${visibleSections.includes("section-1")? 'visible' : ''} `}>
         <Intro />
       </section>
 
       {/* Currently working on */}
-      <section id="section-2" className={`h-[90vh] ${visibleSections.includes("section-2")? 'visible' : ''} ${styles.waves}`}>
-        <CurrentProject />          
+      <section id="section-2" className={`${visibleSections.includes("section-2")? 'visible' : ''} `}>
+      <Projects page="home"/>     
       </section>
 
 
@@ -65,7 +67,7 @@ export default function Home() {
 
       {/* Project Section */}
       <section id="section-4" className={`pb-10 ${visibleSections.includes("section-4")? 'visible' : ''}`}>
-        <Projects page="home"/>
+        <CurrentProject />  
       </section>
     </Layout>
   );
