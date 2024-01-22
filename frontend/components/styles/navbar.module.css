@@ -36,7 +36,9 @@
     margin: 0 0.5rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    font-weight: 700
 }
+
 
 
 .link::after {
@@ -70,8 +72,6 @@
 .current:hover::after {
     width: 0;
 }
-
-
 
 
 

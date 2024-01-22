@@ -21,36 +21,9 @@ export default function Header() {
 
 
     return (
-        <header className={`${styles.header} z-10 flex items-center justify-center h-[100vh] w-full`}>
+        <header className={`${styles.header} z-10 flex items-center justify-center w-full`}>
             <div className={`${styles.overlay} absolute top-[50px] left-[25em] hidden sm:block sm:w-[30%] lg:w-[25%] mr-5 transition ease-in`}>
-            </div>
-            
-            {
-                pictures.map((current, index) => {
-                    console.log(picSizes[index].width)
-                    return (
-                        <BackgroundImage 
-                            key={index}
-                            imageUrl={current.path}
-                            width={picSizes[index].width}
-                            top={picSizes[index].top}
-                            left={picSizes[index].left}
-                            zIndex={picSizes[index].zIndex}
-                        />
-                    )
-                })
-            }
-            {/* <div className={ok}>
-            <Image
-                src={`/images/space.jpg`}
-                width={0}
-                height={0}
-                sizes="100vh"
-                style={{ width: '100%', height: 'auto' }} 
-                alt="Image from Unsplash"
-                />
-            </div> */}
-
+            </div>          
 
             {/* sego pic on hover */}
             {/* <div className={`${styles.overlay} ml-auto hidden sm:block sm:w-[30%] lg:w-[25%]  transition ease-in `}>
@@ -63,6 +36,7 @@ export default function Header() {
                     alt="Jose Izarra"
                 />
             </div> */}
+
             <div className="flex mx-auto justify-center items-center z-10 ">
                 <h1 id="main-title" className={`${styles.maintitle} text-center`}>Jose Izarra<span id="main-sub" className={`${styles.mainsub} pl-5 inline-block`}>- Software Developer and Creator</span></h1>
             </div>
