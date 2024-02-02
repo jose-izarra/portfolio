@@ -3,22 +3,22 @@
 @tailwind utilities;
 
 
-
-/* 'main': "#222222",
-      'title': "#FFE1DA",//"#E88349",//"#F39C6B", 
-      'subtitle': "#FFE1DA",//"#EEEEFF",
-      'cool': "#639FAB", */
+/* https://www.canva.com/colors/color-wheel/  pick color: #00ccbb*/
 
 :root {
-    --background-color: #222222;
-    --title-color: #FFE1DA;
-    --subtitle-color: #EBEBFF;
-    --cool:#639FAB;
-    --select-bg-color: rgba(235, 235, 255, 0.8);
-    --select-text-color:rgba(255, 156, 107, 1);
-    --ok : #cbd5e1;
-    --lightbg-text: #242429;
-    --darkbg-text: #cbd5e1;
+    --primary-color: hsla(175, 100%, 40%, 1);
+    --secondary-color: hsla(0, 0%, 50%, 1); /*#BB00CC;/*hsla(0, 20%, 70%, 1);*/
+
+    --light-background-color: hsla(0, 0%, 100%, 1);/*hsl(177, 20%, 20%); /* #222222 */
+    --dark-background-color: hsla(213, 30%, 80%, 1);/*#222222;*/
+
+    --select-bg-color: hsla(240, 100%, 96%, 0.8);
+    --select-text-color:rgb(13, 12, 12);
+
+    --lightbg-p: hsla(240, 0%, 50%, 1);
+    --darkbg-p: hsla(213, 27%, 84%, 1);
+    
+    --nav-links: hsla(175, 100%, 30%, 1); /*hsla(11, 100%, 87%, 1);*/
 }
 
 html,
@@ -40,10 +40,32 @@ body {
     Droid Sans,
     Helvetica Neue,
     sans-serif;
-  background-color: #222222;
-  color: #EEEEFF;
+  background-color: var(--light-background-color);
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
+h1 {
+  font-size: 4rem;
+  line-height: 5.75rem;
+  color: var(--primary-color);
+}
+
+h2 {
+  font-size: 3rem;
+  color: var(--primary-color);
+}
+
+h3 {
+  color: var(--secondary-color);
+  font-size: 2.5rem;
+}
+
+p {
+  color: var(--lightbg-p);
+  font-size: 1.25rem;
+}
 
 
 section {
@@ -53,26 +75,12 @@ section {
   transition: opacity 0.5s ease-in-out;
   overflow-x: hidden;
   z-index: 0;
-   /* margin: 1em 4em;
-   padding: 0 2.5em 1.5em 1em;   */
 }
 
 .visible {
   opacity: 1;
 }
 
-h1 {
-  font-size: 5rem;
-  /* line-height: 6.75rem; */
-  line-height: 5.75rem;
-  color: var(--title-color);
-}
-
-#main-sub {
-  color: var(--subtitle-color);
-  font-size: 1.25rem;
-  line-height: 2.75rem;
-}
 
 #profile-pic  {
   max-width: 100%;
@@ -81,32 +89,20 @@ h1 {
   overflow: hidden;
 }
 
-h2 {
-  color: var(--subtitle-color);
-  font-size: 4.75rem;
-}
-
-h3 {
-  font-size: 3rem;
-  color: var(--subtitle-color)
-}
-
-p {
-  color: var(--darkbg-text);
-}
 
 #linkedin-svg svg g {
+  fill: var(--secondary-color);
   transition: fill 300ms ease;
 }
 #linkedin-svg:hover svg g{
-  fill: #639FAB;
+  fill: hsla(175, 100%, 40%, 1);
 } 
 
 
 
 #ong-project-1 {
   z-index: 100;
-  background-color: var(--ok);
+  background-color: var(--dark-background-color);
   
 }
 
@@ -114,7 +110,7 @@ p {
   transition: box-shadow 0.3s ease;
 }
 #project-container:hover {/* #ong-project-1:hover { */
-  box-shadow: 0 0 15px var(--cool);
+  box-shadow: 0 0 15px var(--primary-color);
 }
 
 
@@ -122,19 +118,19 @@ p {
 #fluent-container {
   /* background: rgba(235, 235, 255, 1);*/
   /* background: rgb(203, 213, 225); */
-  border: 1px dashed rgb(203, 213, 225);
+  border: 1px dashed var(--dark-background-color);
 }
 
 #worked-container {
-  border: 1px dashed rgb(203, 213, 225);
+  border: 1px dashed var(--dark-background-color);
 }
 
 #fluent-container:hover {
-  box-shadow: 0 0 10px var(--cool);
+  box-shadow: 0 0 10px var(--primary-color);
 }
 
 #worked-container:hover {
-  box-shadow: 0 0 10px var(--cool);
+  box-shadow: 0 0 10px var(--primary-color);
 }
 
 #fluent-container:hover #fluent-project-1 {
@@ -154,11 +150,9 @@ footer svg {
 }
 
 footer svg:hover {
-  box-shadow: 0 0 15px var(--cool);
+  box-shadow: 0 0 15px var(--primary-color);
 }
 
 
 
-
-/* svg dividers */
 

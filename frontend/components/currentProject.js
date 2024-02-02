@@ -11,9 +11,9 @@ export default function CurrentProject() {
     return (
         <>
             
-            <div className='flex flex-wrap items-center justify-center z-10 h-[70vh]'>
+            <div className='flex flex-wrap items-center justify-center z-10 h-full'>
                 <div className='flex justify-end pb-5 mx-auto my-auto z-10'>
-                    <h3 className='text-center'>{`<Current Project />`}</h3>
+                    <h2 className='text-center'>{`<Current Project />`}</h2>
                 </div>
                 {/* Currently Working On */}      
                 

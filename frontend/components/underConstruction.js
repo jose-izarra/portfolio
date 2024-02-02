@@ -8,7 +8,7 @@ export default function UnderConstruction() {
             <h1>Under Construction</h1>
             <p>This page is currently under construction. Check back soon!</p>
             <p>
-                Click <Link href='/' className='text-cool hover:text-title'>here</Link> to go back to the home page.
+                Click <Link href='/' className='text-cool hover:text-teal-800 '>here</Link> to go back to the home page.
 
             </p>
         </div>
