@@ -10,10 +10,18 @@ export default function Layout({ children, title, page }) { // {home}
       <Head>
         {/* <SEO /> */}
         <title>{title}</title>
+        <meta name="description" content="Jose Izarra's Personal Portfolio" />
+        <meta name="author" content="Jose Izarra"/>
+        <meta name="keywords" content='Software Developer, Web Developer, Full Stack Developer, Jose Izarra, Jose Izarra Portfolio, Jose Izarra Software Developer, Jose Izarra Web Developer, Jose Izarra Full Stack Developer,  Jose Izarra Full Stack Engineer, Jose Izarra Web, Jose Izarra Full Stack, Jose Izarra Software'/>
+        <link rel="canonical" href="https://joseizarra.com/"/>
+        
+        {/* og tags */}
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content="Jose Izarra's Personal Portfolio" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://joseizarra.com/" />
+
       </Head>
-      {/* {
-        page !== 'Home' && <NavBar page={page} />
-      } */}
       <NavBar page={page} />
       <main className={styles.container}>{children}</main>
       <Footer />

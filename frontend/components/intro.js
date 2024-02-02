@@ -14,11 +14,11 @@ export default function Intro() {
                 </div> 
                 */}
                 <div className='flex flex-col justify-center items-center mx-auto mb-7'>
-                    <h3 className='text-4xl text-center font-bold mx-auto leading-8'>
+                    <h1 className='text-4xl text-center font-bold mx-auto leading-8'>
                         Welcome to my personal portoflio website! <br/><br/>
                         
-                    </h3>
-                    <h3 className='text-xl text-center leading-8'>
+                    </h1>
+                    <p className='text-xl text-center leading-8'>
                         This is a website I built to showcase my personality as an individual, as well as
                         <br/>
                         my skills and experience as a <span className='font-bold text-cool'>software developer</span>. 
@@ -28,7 +28,7 @@ export default function Intro() {
                         interpersonal relations 
                         <br/>are the key to leading a happy and also successful life
                         <br/><br/>For this same reason, feel free to connect with me on LinkedIn!
-                    </h3>
+                    </p>
                 </div>
                 
                 

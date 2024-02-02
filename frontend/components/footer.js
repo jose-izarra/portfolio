@@ -3,7 +3,7 @@ import Link from 'next/link';
 import socials from '../scripts/socials';
 import styles from './styles/footer.module.css';
 
-import SpotifySongs from './spotify';
+// import SpotifySongs from './spotify';
 
 export default function Footer() {
 
