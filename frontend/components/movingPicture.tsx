@@ -1,32 +1,41 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import styles from './styles/header.module.css';
 
 
+export default function MovingContainer({ col, left, picsShuffled, speeds }) {
 
+    const pics = picsShuffled.slice(col*5, (col*5) + 5);
 
-export default function MovingContainer({ col, left }) {
-    // range from 25- 40
     return (
-        <motion.div id="moving-container-0"
-                className='absolute  top-0 w-1/6 h-[50vh]'
-                initial={{ y: col % 2 === 0 ? '-300vh' : '150vh'}}
+        <motion.div id={`MovingContainer-${col}`}
+                className='absolute top-0 w-1/6 h-[50vh]'
+                initial={{ y: col % 2 === 0 ? '-250vh' : '120vh'}}
                 animate={{ y: col % 2 === 0 ? '150vh' : '-300vh' }}
                 transition={{
                             repeat: Infinity,
-                            duration: 20,
+                            duration: speeds[col],
                             ease: 'linear',
                             yoyo: Infinity,
                         }}
                 style={{ left: `${left}%` }}
             >
-                <MovingPicture path="/sego.JPG" row={0} col={col} timeout={2000}/>
-                <MovingPicture path="/sego.JPG" row={1} col={col} timeout={2000}/>
-                <MovingPicture path="/sego.JPG" row={2} col={col} timeout={2000}/>
-                <MovingPicture path="/sego.JPG" row={3} col={col} timeout={2000}/>
-                <MovingPicture path="/sego.JPG" row={4} col={col} timeout={2000}/>
-                <MovingPicture path="/images/space.jpg" row={5} col={col} timeout={2000}/>
+                {
+                  pics.map((pic, row: number) => {
+                    
+                    return (
+                        <MovingPicture path={pic.path} row={row} col={col} key={`MovingPicture-${col}-${row}`}/>
+                    )
+                  })
+                }
+                {/* <MovingPicture path="/sego.JPG" row={0} col={col} />
+                <MovingPicture path="/sego.JPG" row={1} col={col} />
+                <MovingPicture path="/sego.JPG" row={2} col={col} />
+                <MovingPicture path="/sego.JPG" row={3} col={col} />
+                <MovingPicture path="/sego.JPG" row={4} col={col} />
+                
+                <MovingPicture path="/images/space2.jpg" row={6} col={col} /> */}
         </motion.div>
     )
 }
@@ -38,14 +47,14 @@ function MovingPicture({ path, row, col }) {
     useEffect(() => {
         const el = document.getElementById(`moving-pic-${col}-${row}`);
         const intervalId = setInterval(() => {
-            const rect = el.getBoundingClientRect();
+            const rect = el!.getBoundingClientRect();  // the ! is needed to tell tsx that el is not null
 
             if (rect.bottom > 0) {
-                el.style.opacity = 1;
+                el!.style.opacity = "0.8";
             }
 
             if (rect.top > window.innerHeight) {
-                el.style.opacity = 0;
+                el!.style.opacity = "0";
             }
         }, 300);
 

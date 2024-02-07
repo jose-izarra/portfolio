@@ -1,9 +1,7 @@
 import styles from './styles/header.module.css';
 import { useState, useEffect } from 'react';
-import pictures from '../scripts/backgroundPics.json';
+import pictures from '../json/backgroundPics.json';
 import MovingContainer from './movingPicture';
-import { Fragment } from 'react';
-import { motion } from 'framer-motion';
 
 const leftValues = [
     Math.floor(Math.random() * 4) + 2,
@@ -11,6 +9,25 @@ const leftValues = [
     Math.floor(Math.random() * 6) + 49,
     Math.floor(Math.random() * 4) + 78
 ];
+
+
+const shuffle = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array
+}
+
+const speeds= shuffle([20, 24, 28, 32]);
+
+
+interface Picture {
+    path: string;
+    category: string;
+}
+
+const picsShuffled : Picture[] = shuffle(pictures);
 
 export default function Header() {
     
@@ -20,21 +37,17 @@ export default function Header() {
             <div className={`${styles.overlay} absolute top-[50px] left-[25em] hidden sm:block sm:w-[30%] lg:w-[25%] mr-5 transition ease-in`}>
             </div>          
 
-
-            
-            
             {/* <MovingPicture path="/sego.JPG"  left="7" time={20} delay={0} index="0"/>
             <MovingPicture path="/images/space2.jpg" left="7" time={20} delay={4} index="1"/> */}
 
-            {/* {
+            {
                 [0, 1, 2, 3].map((col) => {
                     return (
-                        <MovingContainer col={col} left={leftValues[col]} key={`MovingContainer-${col}`}/>
+                        <MovingContainer col={col} left={leftValues[col]} picsShuffled={picsShuffled} speeds={speeds} key={`MovingContainer-${col}`}/>
                     )
                 })
-            } */}
+            }
                        
-            
 
             <div className="flex mx-auto justify-center items-center z-10 ">
                 <h1 id="main-title" className={`${styles.maintitle} text-center`}>Jose Izarra<span id="main-sub" className={`${styles.mainsub} pl-5 inline-block`}>- Software Developer and Creator</span></h1>

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import navbarlinks from '../scripts/navbarlinks';
+import navbarlinks from '../json/navbarlinks.json';
 import styles from './styles/navbar.module.css';
 
 
@@ -29,14 +29,11 @@ export default function NavBar({ page }) {
 
 
     useEffect(() => {
-        // const onScroll = e => {
-        //     setScroll(e.target.documentElement.scrollTop);
-        // }
-        // window.addEventListener("scroll", onScroll)
+        
         const windowWidth = window.innerWidth;
-        const nav = document.getElementById("nav");
+        const nav = document.getElementById("nav")!;
         const windowHeight = window.innerHeight;
-        const container = document.getElementById("nav-container");
+        const container = document.getElementById("nav-container")!;
 
         if (scroll > windowHeight - 100 && windowWidth > 640) {
             nav.classList.add(styles.verticalNavbar);

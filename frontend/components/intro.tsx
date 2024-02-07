@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 // import LinkedIn from '../public/linkedin.svg';
-import socials from '../scripts/socials';
+import socials from '../json/socials.json';
 
 export default function Intro() {
     

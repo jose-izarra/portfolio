@@ -1,18 +1,11 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
-import socials from '../scripts/socials';
+import socials from '../json/socials.json';
 import styles from './styles/footer.module.css';
 
 // import SpotifySongs from './spotify';
 
 export default function Footer() {
-
-    useEffect(() => {
-        const token = 'BQAZTptrRDO6BO7h8rX3IeSxEqMtbVe2_9Xwtm5OgbsUv-ywVEV9-fbQHd6ZiTHaFG5t7BwVSBMdP_Hu0Wh3uu6HeyGgiAb9QXWZCLiezXh0Ee3GNsHQCslgVfXKkicforBD3GAg96lKBBJ1PfG_bQaq4ivhXlEIMpZKzPnZ86qpQGBBHQGCrZ-SPaQV7yCN0575L7QbkmgIOx1ikA1w0obz36pAppM9AR94V0FA16pb8kicLunOFNIhUBiTZITDYD6Q';
-
-
-
-    }, []);
 
     return (
         <footer className="flex items-center justify-center text-center my-5">     
