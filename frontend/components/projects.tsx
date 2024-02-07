@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import projects from '../scripts/projects.json';
+import projects from '../json/projects.json';
 
 
 

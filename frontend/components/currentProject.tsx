@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Fragment } from 'react';
-import ongoingProjects from "../scripts/ongoingProjects";
+import ongoingProjects from "../json/ongoingProjects.json";
 
 
 

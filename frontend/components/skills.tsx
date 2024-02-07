@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import fluent from '../scripts/fluent';
-import worked from '../scripts/worked';
+import fluent from '../json/fluent.json';
+import worked from '../json/worked.json';
 
 
 export default function Skills({ isFluent }) {

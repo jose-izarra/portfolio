@@ -1,13 +1,9 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import Layout from '../components/layout';
 import styles from '../styles/Home.module.css';
-import socials from '../scripts/socials';
 import { useState, useEffect } from 'react';
 
-// components imports
+// component imports
 import Header from '../components/header';
-import NavBar from '../components/navbar';
 import Intro from '../components/intro';
 import CurrentProject from '../components/currentProject';
 import Skills from "../components/skills";
@@ -16,12 +12,12 @@ import Projects from "../components/projects";
 
 
 export default function Home() {
-  const [ visibleSections, setVisibleSections] = useState([]);
+  const [ visibleSections, setVisibleSections] = useState<string[]>([]);
 
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll("section");
-      const newVisibleSections = [];
+      const newVisibleSections : string[] = [];
 
       sections.forEach( (section) => {
         const rect = section.getBoundingClientRect();
