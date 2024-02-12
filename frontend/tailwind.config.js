@@ -8,6 +8,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        "primary-color": "hsla(175, 100%, 40%, 1)",
+        "secondary-color": "hsla(0, 0%, 50%, 1)",
+        
         'background': "#222222",
         'title': "#FFE1DA",//"#E88349",//"#F39C6B", 
         // 'subtitle': "#FFE1DA",//"#EEEEFF",

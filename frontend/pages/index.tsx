@@ -7,7 +7,7 @@ import Header from '../components/header';
 import Intro from '../components/intro';
 import CurrentProject from '../components/currentProject';
 import Skills from "../components/skills";
-import Projects from "../components/projects";
+import ProjectDisplay from "../components/projectDisplay";
 
 
 
@@ -39,7 +39,7 @@ export default function Home() {
     
   }, []);
   return (
-    <Layout page="Home" title="Jose Izarra | Home">
+    <Layout page="Home" title="Home | Jose Izarra">
       <section id="section-0" className={`m-0 p-0 overflow-hidden relative ${visibleSections.includes("section-0")? 'visible' : ''} `}>
         <Header />
       </section>
@@ -51,7 +51,7 @@ export default function Home() {
 
       {/* Currently working on */}
       <section id="section-2" className={`${visibleSections.includes("section-2")? 'visible' : ''} `}>
-      <Projects page="home"/>     
+        <ProjectDisplay page="home"/>     
       </section>
 
 

@@ -9,7 +9,7 @@
     --primary-color: hsla(175, 100%, 40%, 1);
     --secondary-color: hsla(0, 0%, 50%, 1); /*#BB00CC;/*hsla(0, 20%, 70%, 1);*/
 
-    --light-background-color: hsla(0, 0%, 100%, 1);/*hsl(177, 20%, 20%); /* #222222 */
+    --light-background-color: hsla(0, 0%, 95%, 1);/*hsl(177, 20%, 20%); /* #222222 */
     --dark-background-color: hsla(213, 30%, 80%, 1);/*#222222;*/
 
     --select-bg-color: hsla(240, 100%, 96%, 0.8);
@@ -50,6 +50,7 @@ h1 {
   font-size: 4rem;
   line-height: 5.75rem;
   color: var(--primary-color);
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 h2 {
@@ -107,10 +108,10 @@ section {
 }
 
 #project-container {
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.5s ease;
 }
 #project-container:hover {/* #ong-project-1:hover { */
-  box-shadow: 0 0 15px var(--primary-color);
+  box-shadow: 0 0 10px hsla(175, 50%, 50%, 0.6);
 }
 
 
@@ -119,19 +120,22 @@ section {
   /* background: rgba(235, 235, 255, 1);*/
   /* background: rgb(203, 213, 225); */
   border: 1px dashed var(--dark-background-color);
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
 }
 
 #worked-container {
   border: 1px dashed var(--dark-background-color);
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
 }
 
-#fluent-container:hover {
+#fluent-container:hover, #worked-container:hover {
   box-shadow: 0 0 10px var(--primary-color);
+  transform: scale(1.01);
 }
 
-#worked-container:hover {
+/* #worked-container:hover {
   box-shadow: 0 0 10px var(--primary-color);
-}
+} */
 
 #fluent-container:hover #fluent-project-1 {
   transform: scale(1.1);
