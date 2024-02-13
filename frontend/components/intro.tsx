@@ -21,7 +21,7 @@ export default function Intro() {
                     <p className='text-xl text-center leading-8'>
                         This is a website I built to showcase my personality as an individual, as well as
                         <br/>
-                        my skills and experience as a <span className='font-bold text-cool'>software developer</span>. 
+                        my skills and experience as a software developer. 
                         This website is also a way for me to connect 
                         <br/>
                         with you and hopefully make a new friend or two. I think that 

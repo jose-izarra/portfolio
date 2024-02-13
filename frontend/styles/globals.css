@@ -9,7 +9,7 @@
     --primary-color: hsla(175, 100%, 40%, 1);
     --secondary-color: hsla(0, 0%, 50%, 1); /*#BB00CC;/*hsla(0, 20%, 70%, 1);*/
 
-    --light-background-color: hsla(0, 0%, 95%, 1);/*hsl(177, 20%, 20%); /* #222222 */
+    --light-background-color: hsla(0, 0%, 93%, 1);/*hsl(177, 20%, 20%); /* #222222 */
     --dark-background-color: hsla(213, 30%, 80%, 1);/*#222222;*/
 
     --select-bg-color: hsla(240, 100%, 96%, 0.8);
@@ -18,7 +18,7 @@
     --lightbg-p: hsla(240, 0%, 50%, 1);
     --darkbg-p: hsla(213, 27%, 84%, 1);
     
-    --nav-links: hsla(175, 100%, 30%, 1); /*hsla(11, 100%, 87%, 1);*/
+    --nav-links: hsla(175, 100%, 30%, 1); /**/
 }
 
 html,
@@ -65,7 +65,7 @@ h3 {
 
 p {
   color: var(--lightbg-p);
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 }
 
 

@@ -22,12 +22,9 @@ const shuffle = (array) => {
 const speeds= shuffle([20, 24, 28, 32]);
 
 
-interface Picture {
-    path: string;
-    category: string;
-}
 
-const picsShuffled : Picture[] = shuffle(pictures);
+
+const picsShuffled  = shuffle(pictures);
 
 export default function Header() {
     
