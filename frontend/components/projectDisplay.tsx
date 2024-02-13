@@ -3,21 +3,46 @@ import Link from 'next/link';
 import projects from '../json/projects.json';
 import styles from './styles/projects.module.css';
 
-
+const projects1 = [0, 2, 5];
+const projects2 = [1, 3, 4];
 
 export default function ProjectDisplay({ page }) {
     return page !== "home" ? (
-        <div className='flex flex-col items-center'>
-            
-
-            <div className='flex flex-wrap max-w-full mx-auto'>
-                {/* {
-                    [0, 1, 2].map((projectIndex) => (
-                        <ProjectCard key={`project-no-${projectIndex}`} index={projectIndex} />
-                    ))
-                } */}
+        <div className='flex justify-center items-start flex-wrap mx-5 xl:mx-12'>
+            <div className='flex flex-col items-center lg:pl-10 lg:w-6/12 h-fit '>
+                {
+                    projects1.map((project, index) => {
+                        return index % 2 === 0 ? (
+                            <ProjectCard direction="horizontal" index={project} key={`projects1-${project}`}/>
+                        )
+                        :
+                        (
+                            <ProjectCard direction="vertical" index={project} key={`projects1-${project}`}/>
+                        )
+                    })
+                }
+                {/* <ProjectCard direction="horizontal" index={0} />
+                <ProjectCard direction="vertical" index={5} />
+                <ProjectCard direction="horizontal" index={3} />
+                <ProjectCard direction="horizontal" index={4} /> */}
             </div>
-        </div>
+            <div className='flex flex-col items-center justify-center lg:w-6/12 '>
+                {
+                    projects2.map((project, index) => {
+                        return index % 2 === 0 ? (
+                            <ProjectCard direction="vertical" index={project} key={`projects2-${project}`}/>
+                        )
+                        :
+                        (
+                            <ProjectCard direction="horizontal" index={project} key={`projects2-${project}`}/>
+                        )
+                    })
+                }
+                {/* <ProjectCard direction="vertical" index={2} />
+                <ProjectCard direction="horizontal" index={1} /> */}
+            </div>
+            
+        </div> 
     )
     :
     (
@@ -51,7 +76,6 @@ function ProjectCard({ direction, index }: ProjectCardProps) {
 
     return (
         <>
-            
             {/* Horizontal Project Card */}
             { direction === "horizontal" && (
                 // <div className="w-full  lg:ml-[3.5rem] h-fit flex justify-center">
@@ -60,14 +84,14 @@ function ProjectCard({ direction, index }: ProjectCardProps) {
                         <div className={`${styles.projectCard} ${styles.horizontalProjectCard}`}>
                             <div className='flex flex-col w-7/12 justify-center py-4'>
                                 <h4 className=' text-2xl font-bold p-2'>{project.name}</h4>
-                                <p className='py-2 px-5'>{project.paragraph}</p>
+                                <p className='py-4 px-5'>{project.paragraph}</p>
                                 <ul className='flex flex-wrap justify-center'>
                                 {
                                     project.techIcons.map((path, index) => {
                                         return (
                                             <li key={`icon-${index}`} className='p-3 content-center'>
                                                 <Image src={path}
-                                                height={30} width={30} 
+                                                height={40} width={40} 
                                                 className=''
                                                 alt={'icon'} />
                                             </li>
@@ -76,14 +100,14 @@ function ProjectCard({ direction, index }: ProjectCardProps) {
                                 }
                                 </ul>
                             </div>
-                            <div className='flex justify-center items-center w-5/12 pr-1'>
+                            <div className='flex justify-center items-center w-5/12  pr-1 '>
                                 <Image src={project.photo} 
                                     width={0} 
                                     height={0} 
                                     sizes="100vh" 
                                     style={{ width: '100%', height: 'auto' }} 
                                     alt={`${project.name} Preview`}
-                                    className='rounded-2xl p-2 '
+                                    className='rounded-xl'
                                 />
                                 
                             </div>
@@ -96,7 +120,7 @@ function ProjectCard({ direction, index }: ProjectCardProps) {
             {/* Vertical Project Card */}
             { direction === 'vertical' && (
             // <div className={`w-full sm:w-[40%] md:w-[70%]  h-fit md:mx-[2%] flex justify-center`}>
-                <div className={`h-full w-[90%]`}>
+                <div className={`h-full w-[95%]`}>
                     <Link className={``} href={project.link !== ""? project.link : project.github} target="_blank">
                         <div className={`${styles.projectCard} ${styles.verticalProjectCard}`}>
                             <div className='flex flex-col h-4/6 justify-center py-5'>
@@ -108,7 +132,7 @@ function ProjectCard({ direction, index }: ProjectCardProps) {
                                         return (
                                             <li key={`icon-${index}`} className='p-2 content-center'>
                                                 <Image src={path}
-                                                height={30} width={30} 
+                                                height={40} width={40} 
                                                 className=''
                                                 alt={'icon'} />
                                             </li>
@@ -117,14 +141,14 @@ function ProjectCard({ direction, index }: ProjectCardProps) {
                                 }
                                 </ul>
                             </div>
-                            <div className='flex justify-center items-center h-2/6 p-2'>
+                            <div className='flex justify-center items-center h-2/6 p-2 '>
                                 <Image src={project.photo} 
                                     width={0} 
                                     height={0} 
                                     sizes="100vh" 
                                     style={{ width: 'auto', height: '100%' }} 
                                     alt={`${project.name} Preview`}
-                                    className='rounded-2xl p-2 max-h-[200px]'
+                                    className='rounded-xl max-h-[200px]'
                                 />
                             </div>
                         </div>
@@ -138,51 +162,6 @@ function ProjectCard({ direction, index }: ProjectCardProps) {
 
     
 }
-
-
-
-
-
-// function ProjectCard({  projectIndex }) {
-//     const project = projects[projectIndex];
-
-//     return (
-//         <>  
-//             <div className='flex mx-auto overflow-auto p-5'> {/* shadow-animation */}
-//                 <div className='flex flex-col bg-ok min-w-[10rem] max-w-[20rem] rounded-2xl items-center'>
-//                     <Link href={project.link !== ""? project.link : project.github} target="_blank" className='m-0 p-0'>
-//                         <Image src={project.photo} 
-//                             width={0} 
-//                             height={0} 
-//                             sizes="100vh" 
-//                             style={{ width: '100%', height: 'auto' }} 
-//                             alt={`${project.name} Preview`}
-//                             className='rounded-2xl p-2 '
-//                         />
-//                     </Link>
-                
-//                     <h4 className='text-lightbg-text text-2xl font-bold text-center p-2'>{project.name}</h4>
-//                     <p className='text-lightbg-text p-2 text-center'>{project.description}</p>
-
-                    // <ul className='flex flex-wrap justify-center'>
-                    //     {
-                    //         project.techIcons.map((path, index) => {
-                    //             return (
-                    //                 <li key={`icon-${index}`} className='p-3 content-center'>
-                    //                     <Image src={path}
-                    //                     height={30} width={30} 
-                    //                     className=''
-                    //                     alt={'icon'} />
-                    //                 </li>
-                    //             )
-                    //         })
-                    //     }
-                    // </ul>
-//                 </div>
-//             </div>
-//         </>
-//     )
-// }
 
 
 

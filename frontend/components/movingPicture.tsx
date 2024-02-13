@@ -4,7 +4,14 @@ import Image from 'next/image';
 import styles from './styles/header.module.css';
 
 
-export default function MovingContainer({ col, left, picsShuffled, speeds }) {
+interface Picture {
+    path: string;
+    category: string;
+}
+
+
+export default function MovingContainer({ col, left, picsShuffled, speeds } 
+    : { col: number, left: number, picsShuffled: Picture[], speeds: number[] }) {
 
     const pics = picsShuffled.slice(col*5, (col*5) + 5);
 
