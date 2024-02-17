@@ -1,69 +1,99 @@
-import { useEffect } from 'react';
-import Link from 'next/link';
 import socials from '../json/socials.json';
 import styles from './styles/footer.module.css';
 
-// import SpotifySongs from './spotify';
 
-export default function Footer() {
+
+import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
+import type { InferGetStaticPropsType, GetStaticProps } from 'next'
+
+
+import Image from 'next/image';
+
+import { useState, useEffect } from 'react';
+
+import Trial from './trial';
+
+
+
+// export const getStaticProps = (async () => {
+//     // Fetch data from external API
+//     const res = await fetch('http://localhost:8888/api/v1/login');
+//     const currentlyPlayed= await res.json()
+//     // Pass data to the page via props
+//     console.log(currentlyPlayed);
+//     return { props: { currentlyPlayed } }
+//   }) satisfies GetStaticProps;
+
+
+
+export default function Footer({ 
+    currentlyPlayed,
+     } ) {
+
+    // const data = getStaticProps();
 
     return (
-        <footer className="flex items-center justify-center text-center my-5">     
-            {/* <SpotifySongs /> */}
-            <div className="flex items-center ">       
-                <h2 className="text-3xl">Interact with me on</h2>
+        
+        <footer id="footer-container" className={`${styles.footerContainer}`}>
+            
+
+            <Trial />
+
+            {/* spotify */}
+            <div className="flex flex-col items-center justify-center ml-12 w-7/12">
+                <div className={`${styles.spotifyContainer} w-2/3 flex p-2`}>
+                    <Image className="m-2" src="/spotify.svg" alt="Spotify Logo" width={50} height={50} />
+                    <div className='flex flex-col'>
+                        <h4>Currently Listening To:</h4>
+
+                        {/* { currentlyPlayed && <p>{currentlyPlayed.name}</p> } */}
+                    </div>
+                </div>
             </div>
-            <ul className="">
-            {
+
+            {/* contact */}
+            <div className='flex flex-col w-5/12'>
+                <h3>Contact</h3>
+                
+                <ul className=''>
+                    {
                         socials.map((current) => {
                             return (
-                                <li key={current.name} className="inline-block mx-4 py-6 px-[50px]">
-                                    <a href={current.link} className="flex justify-center" target="_blank">
-                                    <svg xmlns={current.xmlns} x="0px" y="0px" width="50" height="50" viewBox="0 0 24 24" className='rounded-lg'>
-                                        <path d={current.d} className="fill-cool"/>
-                                    </svg>                                    
-                                    </a>
-                                    <h3 className="text-sm pt-2">{current.name}</h3>
+                                <li className='' key={`footer-${current.name}-icon`}>
+                                    <a href={current.href} target="_blank" className=''>{current.name}</a>
                                 </li>
                             )
                         })
                     }
-            </ul>
+                </ul>
+            </div>
+
         </footer>
     )
 }
 
 
-/*
-Code
-JS
-JavaScript
-// Authorization token that must have been created previously. See : https://developer.spotify.com/documentation/web-api/concepts/authorization
-const token = 'BQBwEr2srQhZkxHgLCXYL4Yd3JcELpnG7pn6l9wPM2_qxgETntIj23Lm5yn-SOEHSjOn_suOSZqnun2HQoNV7N7xX6lvjocFhIZOXLeOtccVc_vbs6lu5o-Uq_itXdo2543vy9-aNjGJXuKWY1O8Fs1wxvYkmsXCNCNESmp1v51YXJ9_yW92KDSJwET_sFN2eo6xnnlh4RKeFh5iXdE4F0Qn4PmxU7Oa1u0zfVOdgMHdhEpmyGz2eDIjhStC7194SoGT';
-async function fetchWebApi(endpoint, method, body) {
-  const res = await fetch(`https://api.spotify.com/${endpoint}`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-    method,
-    body:JSON.stringify(body)
-  });
-  return await res.json();
-}
 
-async function getTopTracks(){
-  // Endpoint reference : https://developer.spotify.com/documentation/web-api/reference/get-users-top-artists-and-tracks
-  return (await fetchWebApi(
-    'v1/me/top/tracks?time_range=long_term&limit=5', 'GET'
-  )).items;
-}
 
-const topTracks = await getTopTracks();
-console.log(
-  topTracks?.map(
-    ({name, artists}) =>
-      `${name} by ${artists.map(artist => artist.name).join(', ')}`
-  )
-);
-
-*/
+// <footer className="flex items-center justify-center text-center my-5">     
+    //     {/* <SpotifySongs /> */}
+    //     <div className="flex items-center ">       
+    //         <h2 className="text-3xl">Interact with me on</h2>
+    //     </div>
+    //     <ul className="">
+    //     {
+    //                 socials.map((current) => {
+    //                     return (
+    //                         <li key={current.name} className="inline-block mx-4 py-6 px-[50px]">
+    //                             <a href={current.link} className="flex justify-center" target="_blank">
+    //                             <svg xmlns={current.xmlns} x="0px" y="0px" width="50" height="50" viewBox="0 0 24 24" className='rounded-lg'>
+    //                                 <path d={current.d} className="fill-cool"/>
+    //                             </svg>                                    
+    //                             </a>
+    //                             <h3 className="text-sm pt-2">{current.name}</h3>
+    //                         </li>
+    //                     )
+    //                 })
+    //             }
+    //     </ul>
+    // </footer>

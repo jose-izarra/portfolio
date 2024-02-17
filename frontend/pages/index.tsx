@@ -12,21 +12,21 @@ import ProjectDisplay from "../components/projectDisplay";
 
 
 export default function Home() {
-  const [ visibleSections, setVisibleSections] = useState<string[]>([]);
+  const [ visibleArticles, setVisibleArticles] = useState<string[]>([]);
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = document.querySelectorAll("section");
-      const newVisibleSections : string[] = [];
+      const articles = document.querySelectorAll("article");
+      const newVisibleArticles : string[] = [];
 
-      sections.forEach( (section) => {
-        const rect = section.getBoundingClientRect();
+      articles.forEach( (article) => {
+        const rect = article.getBoundingClientRect();
         const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
         if (isVisible) {
-          newVisibleSections.push(section.id);
+          newVisibleArticles.push(article.id);
         }
       });
-      setVisibleSections(newVisibleSections);
+      setVisibleArticles(newVisibleArticles);
     };
 
       window.addEventListener('scroll', handleScroll);
@@ -39,32 +39,32 @@ export default function Home() {
     
   }, []);
   return (
-    <Layout page="Home" title="Home | Jose Izarra">
-      <section id="section-0" className={`m-0 p-0 overflow-hidden relative ${visibleSections.includes("section-0")? 'visible' : ''} `}>
+    <Layout page="Home" title="Home">
+      <article id="article-0" className={`m-0 p-0 overflow-hidden relative ${visibleArticles.includes("article-0")? 'visible' : ''} `}>
         <Header />
-      </section>
+      </article>
       {/* Introduction Section */}
       
-      <section id="section-1" className={`z-[100] ${visibleSections.includes("section-1")? 'visible' : ''} `}>
+      <article id="article-1" className={`z-[100] ${visibleArticles.includes("article-1")? 'visible' : ''} `}>
         <Intro />
-      </section>
+      </article>
 
       {/* Currently working on */}
-      <section id="section-2" className={`${visibleSections.includes("section-2")? 'visible' : ''} `}>
+      <article id="article-2" className={`${visibleArticles.includes("article-2")? 'visible' : ''} `}>
         <ProjectDisplay page="home"/>     
-      </section>
+      </article>
 
 
       {/* Skills Section */}
-      <section id="section-3" className={`${visibleSections.includes("section-3")? 'visible' : ''}`}>
+      <article id="article-3" className={`${visibleArticles.includes("article-3")? 'visible' : ''}`}>
         <Skills isFluent={true} />
         <Skills isFluent={false} />
-      </section>
+      </article>
 
       {/* Project Section */}
-      <section id="section-4" className={`pb-10 ${visibleSections.includes("section-4")? 'visible' : ''}`}>
+      <article id="article-4" className={`pb-10 ${visibleArticles.includes("article-4")? 'visible' : ''}`}>
         <CurrentProject />  
-      </section>
+      </article>
     </Layout>
   );
 }

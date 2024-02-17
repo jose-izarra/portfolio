@@ -1,3 +1,45 @@
-.footer {
-    margin: 5% 0;
+
+
+
+
+.footerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    margin-top: 2rem;
+}
+
+.footerContainer h3 {
+    color: var(--nav-links);
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.footerContainer li {
+    list-style: none;
+    margin: 1rem 0;
+    color: var(--third-color);
+    font-weight: 400;
+}
+
+.footerContainer a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footerContainer a:hover {
+    color: var(--nav-links);
+}
+
+
+
+/* spotify */
+.spotifyContainer {
+    background-color: var(--project-card-bg);
+    border-radius: 3rem;
+}
+
+.spotifyContainer h4 {
+   
 }

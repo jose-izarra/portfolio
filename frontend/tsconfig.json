@@ -28,7 +28,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "app/page.js", "components/layout.js"  ],
+, "app/page.js", "components/layout.js", "pages/api/callback.ts"  ],
   "exclude": [
     "node_modules"
   ]

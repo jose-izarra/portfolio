@@ -3,9 +3,9 @@
 
 
 .projectCard {
-    background-color: hsla(162, 10%, 70%, 0.7);
+    background-color: var(--project-card-bg);
     border-radius: 1rem;
-    border: 1px solid hsla(162, 10%, 70%, 0.7);
+    border: 1px solid var(--project-card-bg);
     overflow: hidden;
     transition: box-shadow 0.4s ease, transform 0.4s ease, background-color 0.4s ease;
     margin: 1rem 0;
