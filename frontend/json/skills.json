@@ -1,0 +1,107 @@
+[
+    {
+        "name": "python",
+        "path": "/images/python.svg",
+        "link": "https://www.python.org/"
+    },
+    {
+        "name": "react",
+        "path": "/images/react.svg",
+        "link": "https://react.dev/"
+    },
+    {
+        "name": "html",
+        "path": "/images/html.svg",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTML"
+    },
+    {
+        "name": "css",
+        "path": "/images/css.svg",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/CSS"
+    },
+    {
+        "name": "javascript",
+        "path": "/images/javascript.svg",
+        "link": "https://www.javascript.com/"
+    },
+    {
+        "name": "tailwindcss",
+        "path": "/images/tailwindcss.svg",
+        "link": "https://tailwindcss.com/"
+    },
+    {
+        "name": "astro",
+        "path" : "/images/astro.svg",
+        "link": "https://astro.build/"
+    },
+    {
+        "name": "next",
+        "path" : "/images/nextjs.svg",
+        "link": "https://nextjs.org/"
+    },
+    {
+        "name": "mysql",
+        "path" : "/images/mysql.svg",
+        "link": "https://www.mysql.com/"
+    },
+    {
+        "name": "express",
+        "path" : "/images/express.svg",
+        "link": "https://expressjs.com/"
+    },
+    {
+        "name": "mongodb",
+        "path" : "/images/mongodb.svg",
+        "link": "https://www.mongodb.com/"
+    },
+    {
+        "name": "docker",
+        "path" : "/images/docker.svg",
+        "link": "https://www.docker.com/    "
+    },
+    {
+        "name": "linux",
+        "path" : "/images/linux.svg",
+        "link": "https://www.linux.org/"
+    },
+    {
+        "name": "azure",
+        "path" : "/images/azure.svg",
+        "link": "https://azure.microsoft.com/"
+    },
+    {
+        "name": "arduino",
+        "path" : "/images/arduino.svg",
+        "link": "https://www.arduino.cc/"
+    },
+    {
+        "name": "bash",
+        "path" : "/images/bash.svg",
+        "link": "https://devhints.io/bash"
+    },
+    {
+        "name": "typescript",
+        "path" : "/images/typescript.svg",
+        "link": "https://www.typescriptlang.org/"
+    },
+    {
+        "name": "firebase",
+        "path" : "/images/firebase.svg",
+        "link": "https://firebase.google.com/?hl=es-419"
+    },
+    {
+        "name": "aws",
+        "path" : "/images/aws.svg",
+        "link": "https://aws.amazon.com/"
+    },
+    {
+        "name": "vite",
+        "path" : "/images/vite.svg",
+        "link": "https://vitejs.dev/"
+    },
+    {
+        "name": "c",
+        "path" : "/images/c.svg",
+        "link": "https://www.w3schools.com/c/c_intro.php"
+    }
+]
