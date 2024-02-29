@@ -4,6 +4,7 @@ import Footer from './footer';
 import styles from './styles/layout.module.css';
 
 
+
 export default function Layout({ children, title, page }) { // {home}
   return (
     <>
