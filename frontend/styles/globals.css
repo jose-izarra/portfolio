@@ -9,6 +9,9 @@
     --primary-color: hsla(175, 100%, 40%, 1);
     --secondary-color: hsla(0, 0%, 50%, 1); /*#BB00CC;/*hsla(0, 20%, 70%, 1);*/
 
+    --white-color: hsla(162, 100%, 100%, 1);
+    --black-color: hsla(162, 100%, 0%, 1);
+
     --light-background-color: hsla(0, 0%, 93%, 1);/*hsl(177, 20%, 20%); /* #222222 */
     --dark-background-color: hsla(213, 30%, 80%, 1);/*#222222;*/
 
@@ -51,6 +54,8 @@ h1 {
   line-height: 5.75rem;
   color: var(--primary-color);
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  /* text shadow */
+  text-shadow: 2px 2px 2px hsla(0, 0%, 0%, 0.2);
 }
 
 h2 {
