@@ -16,7 +16,7 @@ export default function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = document.querySelectorAll("section");
+      const sections = document.querySelectorAll("article");
       const newVisibleSections : string[] = [];
 
       sections.forEach( (section) => {
@@ -40,31 +40,30 @@ export default function Home() {
   }, []);
   return (
     <Layout page="Home" title="Home | Jose Izarra">
-      <section id="section-0" className={`m-0 p-0 overflow-hidden relative ${visibleSections.includes("section-0")? 'visible' : ''} `}>
+      <article id="hero-0" className={`m-0 p-0 overflow-hidden relative opacity-0 ${visibleSections.includes("hero-0")? 'visible' : ''} `}>
         <Header />
-      </section>
+      </article>
       {/* Introduction Section */}
       
-      <section id="section-1" className={`z-[100] ${visibleSections.includes("section-1")? 'visible' : ''} `}>
+      <article id="intro-1" className={`z-[100] opacity-0 ${visibleSections.includes("intro-1")? 'visible' : ''} `}>
         <Intro />
-      </section>
+      </article>
 
       {/* Currently working on */}
-      <section id="section-2" className={`${visibleSections.includes("section-2")? 'visible' : ''} `}>
+      <article id="project-display-2" className={`opacity-0 ${visibleSections.includes("project-display-2")? 'visible' : ''} `}>
         <ProjectDisplay page="home"/>     
-      </section>
+      </article>
 
 
       {/* Skills Section */}
-      <section id="section-3" className={`${visibleSections.includes("section-3")? 'visible' : ''}`}>
-        <Skills isFluent={true} />
-        <Skills isFluent={false} />
-      </section>
+      <article id="skills-3" className={`flex items-center justify-center opacity-0 ${visibleSections.includes("skills-3")? 'visible' : ''}`}>
+        <Skills />
+      </article>
 
       {/* Project Section */}
-      <section id="section-4" className={`pb-10 ${visibleSections.includes("section-4")? 'visible' : ''}`}>
+      <article id="current-project-4" className={`pb-10 opacity-0 ${visibleSections.includes("current-project-4")? 'visible' : ''}`}>
         <CurrentProject />  
-      </section>
+      </article>
     </Layout>
   );
 }

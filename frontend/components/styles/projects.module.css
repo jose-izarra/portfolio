@@ -16,7 +16,7 @@
 .projectCard:hover {
     background-color: hsla(162, 12%, 69%, 0.7);
     box-shadow: 0 0 15px hsla(162, 12%, 70%, 0.7);
-    transform: translateY(-2px)/*scale3d(1.025, 1.025, 1.025);*/
+    transform: scale3d(1.025, 1.025, 1.025);
 
 }
 
