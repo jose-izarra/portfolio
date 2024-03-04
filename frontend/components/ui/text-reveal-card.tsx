@@ -77,7 +77,7 @@ export const TextRevealCard = ({
                   clipPath: `inset(0 ${100 - widthPercentage}% 0 0)`,
                 }
           }
-          transition={isMouseOver ? { duration: 0 } : { duration: 0.4 }}
+          transition={isMouseOver ? { duration: 0 } : { duration: 0.6 }}
           className="absolute rounded-full bg-nav-links z-20  will-change-transform"
         >
           <p
@@ -92,12 +92,14 @@ export const TextRevealCard = ({
         
         {/* [mask-image:linear-gradient(to_bottom,transparent,white,transparent)] */}
         <div className=" overflow-hidden "> 
-          <p className="text-base sm:text-[3rem]  text-nav-links py-10 font-bold bg-clip-text ">
+          <p className="text-base sm:text-[3rem]  text-primary-color [text-shadow:_2px_2px_2px_rgb(0_0_0_/_20%)] py-10 font-bold bg-clip-text ">
             {text}
           </p>
-          <MemoizedStars />
+          
         </div>
+        
       </div>
+      <MemoizedStars />
     </div>
   );
 };
