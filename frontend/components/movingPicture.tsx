@@ -75,11 +75,11 @@ function MovingPicture({ path, row, col } : { path: string, row: number, col: nu
                 src={path}
                 width={200}
                 height={200}
-                sizes="100vh"
-                style={{ opacity: 0 }}
-                // ${translateY - 100100 != 0 ? '' : 'hidden'}
+                style={{ opacity: 0, width: 'auto' }}
                 className={`${styles.image} my-10`}
                 alt="Jose Izarra"
+                // largest contentful
+                priority={path === '/images/fut.jpg'? true : false}
             />
             
         </>

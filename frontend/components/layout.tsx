@@ -18,7 +18,7 @@ export default function Layout({ children, title, page }) {
         <link rel="canonical" href="https://joseizarra.com/"/>
         
         {/* og tags */}
-        {/* <meta property="og:title" content={title} /> */}
+        <meta property="og:title" content={title} />
         <meta property="og:description" content="Jose Izarra's Personal Portfolio" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://joseizarra.com/" />

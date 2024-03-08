@@ -33,9 +33,6 @@ export default function Header() {
             <div className={`${styles.overlay} absolute top-[50px] left-[25em] hidden sm:block sm:w-[30%] lg:w-[25%] mr-5 transition ease-in`}>
             </div>          
 
-            {/* <MovingPicture path="/sego.JPG"  left="7" time={20} delay={0} index="0"/>
-            <MovingPicture path="/images/space2.jpg" left="7" time={20} delay={4} index="1"/> */}
-
             {
                 [0, 1, 2, 3].map((col) => {
                     return (
