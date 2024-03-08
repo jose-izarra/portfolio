@@ -1,5 +1,4 @@
 import styles from './styles/header.module.css';
-import { useState, useEffect } from 'react';
 import pictures from '../json/backgroundPics.json';
 import MovingContainer from './movingPicture';
 

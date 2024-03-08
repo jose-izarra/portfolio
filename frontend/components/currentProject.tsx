@@ -27,10 +27,10 @@ export default function CurrentProject() {
                                     className='flex m-auto flex-col items-center rounded-2xl'>
                                     <a  className='m-0 p-0 pointer-events-none'>
                                         <Image src={current.src} 
-                                            width={0} 
-                                            height={0} 
+                                            width={500} 
+                                            height={500} 
                                             sizes="100vh" 
-                                            style={{ width: '100%', height: 'auto' }} 
+                                            // style={{ width: '100%', height: 'auto' }} 
                                             alt="Project preview"
                                             className='rounded-2xl p-2 min-w-[300px] max-h-[290px]'
                                         />

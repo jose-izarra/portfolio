@@ -3,8 +3,10 @@ import NavBar from './navbar';
 import Footer from './footer';
 import styles from './styles/layout.module.css';
 
+import { Analytics } from "@vercel/analytics/react"
 
-export default function Layout({ children, title, page }) { // {home}
+
+export default function Layout({ children, title, page }) { 
   return (
     <>
       <Head>
@@ -16,14 +18,17 @@ export default function Layout({ children, title, page }) { // {home}
         <link rel="canonical" href="https://joseizarra.com/"/>
         
         {/* og tags */}
-        <meta property="og:title" content={title} />
+        {/* <meta property="og:title" content={title} /> */}
         <meta property="og:description" content="Jose Izarra's Personal Portfolio" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://joseizarra.com/" />
 
       </Head>
       <NavBar page={page} />
-      <main className={styles.container}>{children}</main>
+      <main className={styles.container}>
+          {children}
+          <Analytics />
+      </main>
       <Footer />
     </>
   )

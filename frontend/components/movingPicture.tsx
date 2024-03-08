@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import styles from './styles/header.module.css';
@@ -49,7 +49,7 @@ export default function MovingContainer({ col, left, picsShuffled, speeds }
 
 
 
-function MovingPicture({ path, row, col }) {
+function MovingPicture({ path, row, col } : { path: string, row: number, col: number }) {
 
     useEffect(() => {
         const el = document.getElementById(`moving-pic-${col}-${row}`);
@@ -73,10 +73,10 @@ function MovingPicture({ path, row, col }) {
             <Image
                 id={`moving-pic-${col}-${row}`}
                 src={path}
-                width={0}
-                height={0}
+                width={200}
+                height={200}
                 sizes="100vh"
-                style={{ width: '100%', height: 'auto', opacity: 0}}
+                style={{ opacity: 0 }}
                 // ${translateY - 100100 != 0 ? '' : 'hidden'}
                 className={`${styles.image} my-10`}
                 alt="Jose Izarra"
@@ -86,69 +86,3 @@ function MovingPicture({ path, row, col }) {
     )
 }
 
-// export default function MovingPicture({ path, delay, time, left, row, col }) {
-
-//     const [isVisible, setIsVisible] = useState(false);
-
-//     useEffect(() => {
-        
-
-
-//         // Set an interval to upload translateY value every second
-//         const uploadInterval = setInterval(() => {
-//             const myElement = document.getElementById(`moving-container-${col}-${row}`);
-//             const myImg = document.getElementById(`moving-pic-${col}-${row}`);
-            
-//             const computedStyle = window.getComputedStyle(myElement);
-
-//             const transformStyle = computedStyle.transform;
-//             const val = +transformStyle.replace(/[^\d.]/g, '');
-            
-
-//             const threshold = 100100;
-//             if (val - threshold !== 0) {
-//                 myImg.classList.remove('hidden');
-//             }
-
-//         }, 500); // Upload every second
-        
-        
-//         // Cleanup the interval when the component is unmounted
-//         return () => clearInterval(uploadInterval);
-//       }, []);
-
-
-//     // depend on duration, and height
-
-//     const divString = `absolute top-0 w-1/6` 
-    
-//     return (
-//         <>
-//             <motion.div
-//                 id={`moving-container-${col}-${row}`}
-//                 className={`${divString} `}
-//                 initial={{ y: col % 2 === 0? '-30vh' : '130vh' }}
-//                 animate={{ y: col % 2 === 0? '200vh' : '-200vh' }}
-//                 transition={{
-//                     repeat: Infinity,
-//                     duration: parseInt(time),
-//                     ease: 'linear',
-//                     delay: delay,
-//                 }}
-//                 style={{ left: `${left}%` }}
-//             >
-//                 <Image
-//                     id={`moving-pic-${col}-${row}`}
-//                     src={path}
-//                     width={0}
-//                     height={0}
-//                     sizes="100vh"
-//                     style={{ width: '100%', height: 'auto'}}
-//                     // ${translateY - 100100 != 0 ? '' : 'hidden'}
-//                     className={`backgroundPicsTransition visible`}
-//                     alt="Jose Izarra"
-//                 />
-//             </motion.div>
-//         </>
-//     )
-// };
