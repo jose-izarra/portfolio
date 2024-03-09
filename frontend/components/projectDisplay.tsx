@@ -105,7 +105,7 @@ function ProjectCard({ direction, index }: ProjectCardProps) {
                                     width={300} 
                                     height={300} 
                                     sizes="100vh" 
-                                    // style={{ width: '100%', height: 'auto' }} 
+                                    style={{ width: 'auto'}} 
                                     alt={`${project.name} Preview`}
                                     className='rounded-xl'
                                 />
@@ -143,9 +143,10 @@ function ProjectCard({ direction, index }: ProjectCardProps) {
                             </div>
                             <div className='flex justify-center items-center h-2/6 p-2 '>
                                 <Image src={project.photo} 
-                                    width={500} 
+                                    width={400} 
                                     height={100} 
                                     sizes="100vh" 
+                                    style={{ width: 'auto'}}
                                     alt={`${project.name} Preview`}
                                     className='rounded-xl max-h-[200px]'
                                 />

@@ -41,7 +41,6 @@ export default function Header() {
                 })
             }
                        
-
             <div className="flex mx-auto justify-center items-center z-10 ">
                 <h1 id="main-title" className={`${styles.maintitle} text-center`}>Jose Izarra<span id="main-sub" className={`${styles.mainsub} pl-5 inline-block`}>- Software Developer and Creator</span></h1>
             </div>

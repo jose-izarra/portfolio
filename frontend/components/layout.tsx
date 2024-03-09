@@ -4,7 +4,7 @@ import Footer from './footer';
 import styles from './styles/layout.module.css';
 
 import { Analytics } from "@vercel/analytics/react"
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function Layout({ children, title, page }) { 
   return (
@@ -28,6 +28,7 @@ export default function Layout({ children, title, page }) {
       <main className={styles.container}>
           {children}
           <Analytics />
+          <SpeedInsights />
       </main>
       <Footer />
     </>
