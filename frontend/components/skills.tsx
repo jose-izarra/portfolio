@@ -1,14 +1,16 @@
 "use client";
 
-import { useEffect, useState, useRef } from 'react';
-import Image from 'next/image';
+import { useRef } from 'react';
 import skills from '../json/skills.json';
+import SkillIcon from './skillIcon';
+
 
 export default function Skills({  }) {
+    const containerRef = useRef<HTMLDivElement>(null);
 
     return (
-        <div id='skills-container' className='flex items-center justify-center mx-2 sm:mx-0 overflow-hidden'>
-            <div className=''>
+        <div ref={containerRef} id='skills-container' className='flex items-center justify-center mx-2 sm:mx-0 overflow-hidden'>
+            <div className='skill-div'>
                 {
                     skills.slice(0, 5).map((skill) => {
                         return (
@@ -17,7 +19,7 @@ export default function Skills({  }) {
                     })
                 }
             </div>
-            <div className=''>
+            <div className='skill-div'>
                 {
                 skills.slice(5, 10).map((skill) => {
                     return (
@@ -27,7 +29,7 @@ export default function Skills({  }) {
                 }
             </div>
             <h2 className="text-2xl sm:text-4xl lg:text-5xl leading-[1.125em] max-w-[40%] mx-5">My<br/>Frameworks<br/>&<br/>Languages</h2>
-            <div className=''>
+            <div className='skill-div'>
                 {
                     skills.slice(10, 15).map((skill) => {
                         return (
@@ -36,7 +38,7 @@ export default function Skills({  }) {
                     })
                 }
             </div>
-            <div className=''>
+            <div className='skill-div'>
                 {
                     skills.slice(15, 20).map((skill) => {
                         return (
@@ -50,80 +52,3 @@ export default function Skills({  }) {
     
 }
 
-
-
-
-function SkillIcon({ skill }) {
-    const imgRef = useRef<HTMLImageElement>(null);
-    const containerRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const img = imgRef.current;
-        const container = containerRef.current;
-
-        if (!img || !container) return;
-
-        const onMouseDown = (e: MouseEvent) => {
-            e.preventDefault();
-            // Record the initial mouse position and the image's starting position
-            const startX = e.clientX;
-            const startY = e.clientY;
-            const startLeft = img.offsetLeft;
-            const startTop = img.offsetTop;
-
-            // Define the mousemove handler dynamically inside mousedown
-            const onMouseMove = (moveEvent: MouseEvent) => {
-                // Calculate new position of the image
-                const nextX = moveEvent.clientX - startX + startLeft;
-                const nextY = moveEvent.clientY - startY + startTop;
-                
-                img.style.left = `${nextX}px`;
-                img.style.top = `${nextY}px`;
-                img.style.transition = 'none';
-            };
-
-            // Attach the mousemove and mouseup listeners to document to ensure wide coverage
-            document.addEventListener('mousemove', onMouseMove);
-            document.addEventListener('mouseup', () => {
-                // Remove listeners when mouse is released
-                document.removeEventListener('mousemove', onMouseMove);
-
-                // Calculate the "floor" position based on the container's height
-                const containerHeight = container.clientHeight;
-                const containerWidth = container.clientWidth;
-                const imgHeight = img.clientHeight;
-                const imgWidth = img.clientWidth;
-                const floorPosition = containerHeight - imgHeight;
-                const rightPosition = containerWidth - imgWidth;
-
-                // Animate the fall
-                img.style.top = `${floorPosition}px`;
-                img.style.left = `${rightPosition}px`;
-                img.style.transition = 'top 1s ease-out, left 1s ease-out';
-
-            }, { once: true }); // Use the `{ once: true }` option to auto-remove the listener
-
-        };
-
-        // Attach the mousedown listener to the image
-        img.addEventListener('mousedown', onMouseDown);
-
-        // Cleanup function to remove event listeners when the component unmounts
-        return () => {
-            img.removeEventListener('mousedown', onMouseDown);
-        };
-    }, []);
-
-    
-    return (
-        <div ref={containerRef} className='skills-icon-container'>
-            <Image 
-                ref={imgRef}
-                src={skill.path}
-                width={60} height={60} 
-                className=''
-                alt={skill.name} 
-            />
-        </div> 
-    )
-}

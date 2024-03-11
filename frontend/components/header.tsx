@@ -33,9 +33,6 @@ export default function Header() {
             <div className={`${styles.overlay} absolute top-[50px] left-[25em] hidden sm:block sm:w-[30%] lg:w-[25%] mr-5 transition ease-in`}>
             </div>          
 
-            {/* <MovingPicture path="/sego.JPG"  left="7" time={20} delay={0} index="0"/>
-            <MovingPicture path="/images/space2.jpg" left="7" time={20} delay={4} index="1"/> */}
-
             {
                 [0, 1, 2, 3].map((col) => {
                     return (
@@ -44,7 +41,6 @@ export default function Header() {
                 })
             }
                        
-
             <div className="flex mx-auto justify-center items-center z-10 ">
                 <h1 id="main-title" className={`${styles.maintitle} text-center`}>Jose Izarra<span id="main-sub" className={`${styles.mainsub} pl-5 inline-block`}>- Software Developer and Creator</span></h1>
             </div>

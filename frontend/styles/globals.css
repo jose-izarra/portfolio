@@ -130,6 +130,18 @@ article {
 
 
 /* SKILLS */
+@keyframes slideFromMiddle {
+  0% {
+    transform: translateX(50vh);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
 #skills-container > * {
   @apply sm:mx-2 md:mx-3 lg:mx-5;
   max-height: 100%;
@@ -180,10 +192,6 @@ article {
   cursor: -webkit-grabbing;
 }
 
-
-/* #skills-container div img:hover {
-  transform: scale(1.2);
-} */
 
 
 
