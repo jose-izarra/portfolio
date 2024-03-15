@@ -15,7 +15,7 @@ export default function Layout({ children, title, page }) {
         <meta name="description" content="Jose Izarra's Personal Portfolio" />
         <meta name="author" content="Jose Izarra"/>
         <meta name="keywords" content='Software Developer, Web Developer, Full Stack Developer, Jose Izarra, Jose Izarra Portfolio, Jose Izarra Software Developer, Jose Izarra Web Developer, Jose Izarra Full Stack Developer,  Jose Izarra Full Stack Engineer, Jose Izarra Web, Jose Izarra Full Stack, Jose Izarra Software'/>
-        <link rel="canonical" href="https://joseizarra.com/"/>
+        <link rel="canonical" href={`https://joseizarra.com/${page !== 'Home' ? page.toLowerCase() : ''}`}/>
         
         {/* og tags */}
         <meta property="og:title" content={title} />

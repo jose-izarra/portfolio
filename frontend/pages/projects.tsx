@@ -3,24 +3,6 @@ import dynamic from 'next/dynamic';
 
 
 const ProjectDisplay = dynamic(() => import('../components/projectDisplay'), {ssr: false});
-// import ProjectDisplay from '../components/projectDisplay';
-
-
-
-// const pics = [
-//     {
-//         path: "/sego.JPG",
-//         category: "people"
-//     },
-//     {
-//         path: "/images/space2.jpg",
-//         category: "space"
-//     },
-//     {
-//         path: "/images/space3.jpg",
-//         category: "space"
-//     }
-// ]
 
 
 
