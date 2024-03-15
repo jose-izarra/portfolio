@@ -1,3 +1,4 @@
+'use client';
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -36,13 +37,7 @@ export default function MovingContainer({ col, left, picsShuffled, speeds }
                     )
                   })
                 }
-                {/* <MovingPicture path="/sego.JPG" row={0} col={col} />
-                <MovingPicture path="/sego.JPG" row={1} col={col} />
-                <MovingPicture path="/sego.JPG" row={2} col={col} />
-                <MovingPicture path="/sego.JPG" row={3} col={col} />
-                <MovingPicture path="/sego.JPG" row={4} col={col} />
-                
-                <MovingPicture path="/images/space2.jpg" row={6} col={col} /> */}
+
         </motion.div>
     )
 }

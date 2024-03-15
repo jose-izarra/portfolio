@@ -83,7 +83,7 @@ function ProjectCard({ direction, index }: ProjectCardProps) {
                     <Link className=" " href={project.link !== ""? project.link : project.github} target="_blank" >
                         <div className={`${styles.projectCard} ${styles.horizontalProjectCard}`}>
                             <div className='flex flex-col w-7/12 justify-center py-4'>
-                                <h4 className=' text-2xl font-bold p-2'>{project.name}</h4>
+                                <h3 className=' text-2xl font-bold p-2'>{project.name}</h3>
                                 <p className='py-4 px-5'>{project.paragraph}</p>
                                 <ul className='flex flex-wrap justify-center'>
                                 {
@@ -124,7 +124,7 @@ function ProjectCard({ direction, index }: ProjectCardProps) {
                     <Link className={``} href={project.link !== ""? project.link : project.github} target="_blank">
                         <div className={`${styles.projectCard} ${styles.verticalProjectCard}`}>
                             <div className='flex flex-col h-4/6 justify-center py-5'>
-                                <h4 className=' text-2xl font-bold  p-2'>{project.name}</h4>
+                                <h3 className=' text-2xl font-bold  p-2'>{project.name}</h3>
                                 <p className=' py-2 px-5 text-center'>{project.paragraph}</p>
                                 <ul className='flex flex-wrap justify-center'>
                                 {

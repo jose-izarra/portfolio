@@ -1,13 +1,24 @@
+'use client';
 import Layout from '../components/layout';
-import styles from '../styles/Home.module.css';
 import { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
+
 
 // component imports
-import Header from '../components/header';
-import Intro from '../components/intro';
-import CurrentProject from '../components/currentProject';
-import Skills from "../components/skills";
-import ProjectDisplay from "../components/projectDisplay";
+
+const Header = dynamic(() => import('../components/header'), {ssr:false});
+const Intro = dynamic(() => import('../components/intro'));
+const CurrentProject = dynamic(() => import('../components/currentProject'));
+const Skills = dynamic(() => import("../components/skills"));
+const ProjectDisplay = dynamic(() => import("../components/projectDisplay"));
+
+// import Header from '../components/header';
+// import Intro from '../components/intro';
+// import CurrentProject from '../components/currentProject';
+// import Skills from "../components/skills";
+// import ProjectDisplay from "../components/projectDisplay";
+
+
 
 
 
@@ -56,7 +67,7 @@ export default function Home() {
 
 
       {/* Skills Section */}
-      <article id="skills-3" className={`flex items-center justify-center opacity-0 ${visibleSections.includes("skills-3")? 'visible' : ''}`}>
+      <article id="skills-3" className={` flex items-center justify-center opacity-0 ${visibleSections.includes("skills-3")? 'visible' : ''}`}>
         <Skills />
       </article>
 

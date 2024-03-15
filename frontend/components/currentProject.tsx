@@ -25,7 +25,7 @@ export default function CurrentProject() {
                             return (
                                 <div key={`ong-project-${num}`} id={`ong-project-${num}`} 
                                     className='flex m-auto flex-col items-center rounded-2xl'>
-                                    <a  className='m-0 p-0 pointer-events-none'>
+                                    {/* <a  className='m-0 p-0 pointer-events-none'> */}
                                         <Image src={current.src} 
                                             width={500} 
                                             height={500} 
@@ -34,8 +34,8 @@ export default function CurrentProject() {
                                             alt="Project preview"
                                             className='rounded-2xl p-2 min-w-[300px] max-h-[290px]'
                                         />
-                                    </a>
-                                    <h4 className='text-lightbg-text text-2xl font-bold mt-auto'>{current.name}</h4>
+                                    {/* </a> */}
+                                    <h3 className='text-lightbg-text text-2xl font-bold mt-auto'>{current.name}</h3>
                                     <p className='mb-auto pt-2 text-lg text-white font-bold text-center'>
                                         {
                                             current.techStack.map((tech, index) => {
