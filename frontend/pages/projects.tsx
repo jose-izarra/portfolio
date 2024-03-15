@@ -1,7 +1,9 @@
 import Layout from '../components/layout';
-import ProjectDisplay from '../components/projectDisplay';
-import UnderConstruction from '../components/underConstruction';
-import MovingContainer from '../components/movingPicture';
+import dynamic from 'next/dynamic';
+
+
+const ProjectDisplay = dynamic(() => import('../components/projectDisplay'), {ssr: false});
+// import ProjectDisplay from '../components/projectDisplay';
 
 
 

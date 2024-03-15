@@ -1,9 +1,5 @@
-import { useEffect } from 'react';
-import Link from 'next/link';
 import socials from '../json/socials.json';
-import styles from './styles/footer.module.css';
 
-// import SpotifySongs from './spotify';
 
 export default function Footer() {
 
@@ -18,10 +14,11 @@ export default function Footer() {
                         socials.map((current) => {
                             return (
                                 <li key={current.name} className="inline-block mx-4 py-6 px-[50px]">
-                                    <a href={current.link} className="flex justify-center" target="_blank">
-                                    <svg xmlns={current.xmlns} x="0px" y="0px" width="50" height="50" viewBox="0 0 24 24" className='rounded-lg'>
-                                        <path d={current.d} className="fill-cool"/>
-                                    </svg>                                    
+                                    <a href={current.link} className="flex justify-center" target="_blank" 
+                                      aria-label={`Learn more about Jose's contact information, exploring his ${current.name}`}>
+                                      <svg xmlns={current.xmlns} x="0px" y="0px" width="50" height="50" viewBox="0 0 24 24" className='rounded-lg'>
+                                          <path d={current.d} className="fill-cool"/>
+                                      </svg>                                    
                                     </a>
                                     <h3 className="text-sm pt-2">{current.name}</h3>
                                 </li>

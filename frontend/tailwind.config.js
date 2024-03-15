@@ -14,7 +14,6 @@ module.exports = {
         'background': "#222222",
         'title': "#FFE1DA",//"#E88349",//"#F39C6B", 
         // 'subtitle': "#FFE1DA",//"#EEEEFF",
-        'subtitle': "#BB00CC",
         
         'white-color': 'hsla(162, 0%, 90%)',
         'black-color': 'hsla(162, 50%, 10%, 1)',
