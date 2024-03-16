@@ -42,7 +42,7 @@
     {
         "name": "Jenga Tower Game",
         "techIcons": ["/images/python.svg"],
-        "paragraph": "A personal portfolio website built with NextJs and TailwindCSS.",
+        "paragraph": "Game of Jenga implemented in Python using the Pygame library.",
         "photo": "/images/jenga.png",
         "github": "https://github.com/jose-izarra/jenga-game",
         "link": ""

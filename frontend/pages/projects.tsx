@@ -11,9 +11,9 @@ export default function Projects() {
         
         <Layout title="Projects | Jose Izarra" page="Projects">
             {/* <MovingContainer col={0} left={25} picsShuffled={pics} speeds={[20, 25, 30]}/> */}
-            <div className='flex justify-center items-end h-[40vh] pb-16 '>
+            <header className='flex justify-center items-end h-[40vh] pb-16 '>
                 <h1 className="text-center">Projects I've worked On</h1>
-            </div>
+            </header>
             <ProjectDisplay page="projects"/>
         </Layout>
     )
