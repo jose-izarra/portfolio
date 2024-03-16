@@ -1,10 +1,19 @@
 import Head from 'next/head';
 import NavBar from './navbar';
 import Footer from './footer';
-import styles from './styles/layout.module.css';
 
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+
+// shadcn
+import { cn } from "../lib/utils"
+import { Inter as FontSans } from "next/font/google"
+
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
+
 
 export default function Layout({ children, title, page }) { 
   return (
@@ -15,7 +24,7 @@ export default function Layout({ children, title, page }) {
         <meta name="description" content="Jose Izarra's Personal Portfolio" />
         <meta name="author" content="Jose Izarra"/>
         <meta name="keywords" content='Software Developer, Web Developer, Full Stack Developer, Jose Izarra, Jose Izarra Portfolio, Jose Izarra Software Developer, Jose Izarra Web Developer, Jose Izarra Full Stack Developer,  Jose Izarra Full Stack Engineer, Jose Izarra Web, Jose Izarra Full Stack, Jose Izarra Software'/>
-        <link rel="canonical" href="https://joseizarra.com/"/>
+        <link rel="canonical" href={`https://joseizarra.com/${page !== 'Home' ? page.toLowerCase() : ''}`}/>
         
         {/* og tags */}
         <meta property="og:title" content={title} />
@@ -24,13 +33,13 @@ export default function Layout({ children, title, page }) {
         <meta property="og:url" content="https://joseizarra.com/" />
 
       </Head>
-      <NavBar page={page} />
-      <main className={styles.container}>
+      { page !== 'CV' && <NavBar page={page} />}
+      <main className={cn("min-h-screen  font-sans antialiased", fontSans.variable)}>
           {children}
           <Analytics />
           <SpeedInsights />
       </main>
-      <Footer />
+      { page !== 'CV' && <Footer /> }
     </>
   )
   }
