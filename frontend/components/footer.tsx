@@ -7,7 +7,7 @@ export default function Footer() {
         <footer className="flex items-center justify-center text-center my-5">     
             {/* <SpotifySongs /> */}
             <div className="flex items-center ">       
-                <h2 className="text-3xl">Interact with me on</h2>
+                <h2 className="text-3xl">Socials</h2>
             </div>
             <ul className="">
             {

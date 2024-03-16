@@ -91,9 +91,9 @@ function ProjectCard({ direction, index }: ProjectCardProps) {
                                         return (
                                             <li key={`icon-${index}`} className='p-3 content-center'>
                                                 <Image src={path}
-                                                height={40} width={40} 
-                                                className=''
-                                                alt={'icon'} />
+                                                    height={40} width={40} 
+                                                    className=''
+                                                    alt={'icon'} />
                                             </li>
                                         )
                                     })

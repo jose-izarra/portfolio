@@ -1,10 +1,19 @@
 import Head from 'next/head';
 import NavBar from './navbar';
 import Footer from './footer';
-import styles from './styles/layout.module.css';
 
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+
+// shadcn
+import { cn } from "../lib/utils"
+import { Inter as FontSans } from "next/font/google"
+
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
+
 
 export default function Layout({ children, title, page }) { 
   return (
@@ -24,13 +33,13 @@ export default function Layout({ children, title, page }) {
         <meta property="og:url" content="https://joseizarra.com/" />
 
       </Head>
-      <NavBar page={page} />
-      <main className={styles.container}>
+      { page !== 'CV' && <NavBar page={page} />}
+      <main className={cn("min-h-screen  font-sans antialiased", fontSans.variable)}>
           {children}
           <Analytics />
           <SpeedInsights />
       </main>
-      <Footer />
+      { page !== 'CV' && <Footer /> }
     </>
   )
   }

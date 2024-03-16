@@ -18,6 +18,7 @@
 //     YearProgressLogo,
 //   } from "@/images/logos";
 //   import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons";
+import Image from 'next/image';
 
 
   export const cv_data = {
@@ -29,7 +30,7 @@
       "Software developer with a passion for creating and building new things.",
     summary:
       "Self-driven and highly motivated software developer currently pursuing a degree in Computer Science. Known for my compromise and dedication to my work, I am always looking for new challenges and opportunities to grow. Most of my work involves Web Development, AI, and Robotics, having worked with a variety of technologies and programming languages.",
-    avatarUrl: "https://avatars.githubusercontent.com/jose-izarra",
+    avatarUrl: '/jose.jpg',// "https://avatars.githubusercontent.com/jose-izarra",
     personalWebsiteUrl: "https://joseizarra.com/",
     contact: {
       email: "jaiza0912@gmail.com",
@@ -38,12 +39,12 @@
         {
           name: "GitHub",
           url: "https://github.com/jose-izarra",
-          icon: '/images/github.svg',
+          icon: <Image src='/images/github.svg' className='boder-transparent' width={30} height={30} alt='GitHub Icon'/>,
         },
         {
           name: "LinkedIn",
           url: "https://www.linkedin.com/in/jose-izarra/",
-          icon: '/images/linkedin.svg',
+          icon: <Image src='/linkedin.svg' width={30} height={30} alt='LinkedIn Icon'/>,
         },
       ],
     },
@@ -76,7 +77,7 @@
         start: "2023",
         end: "Present",
         description:
-          "Engaging in front-end web development projects, specializing in the creation and redesign of my clients' websites.",
+          "Engaging in front-end web development projects, specializing in the creation and redesign of my clients' websites. Technologies: React, Next.js, Vercel, Vite.js, Tailwind CSS, TypeScript.",
       },
     ],
     skills: [
@@ -163,4 +164,18 @@
         },
       },
     ],
+    languages: [
+      {
+        name: "Spanish",
+        level: "Native",
+      },
+      {
+        name: "English",
+        level: "Fluent",
+      },
+      {
+        name: "Portuguese",
+        level: "Intermediate",
+      }
+    ]
   } as const;

@@ -68,11 +68,11 @@ function MovingPicture({ path, row, col } : { path: string, row: number, col: nu
             <Image
                 id={`moving-pic-${col}-${row}`}
                 src={path}
-                width={200}
-                height={200}
+                width={150}
+                height={150}
                 style={{ opacity: 0, width: 'auto' }}
                 className={`${styles.image} my-10`}
-                alt="Jose Izarra"
+                alt={`Moving Picture ${row} ${col}`}
                 // largest contentful
                 priority={path === '/images/fut.jpg'? true : false}
             />

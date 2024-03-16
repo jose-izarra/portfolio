@@ -1,6 +1,11 @@
 import Layout from '../components/layout';
 import dynamic from 'next/dynamic';
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+    title: `Projects | Jose Izarra`,
+    description: `Selection of software projects I've workend on. From web development to AI and Robotics.`,
+  };
 
 const ProjectDisplay = dynamic(() => import('../components/projectDisplay'), {ssr: false});
 

@@ -41,7 +41,7 @@ export default function CurrentProject() {
                                             current.techStack.map((tech, index) => {
                                                 return (
                                                     <Fragment key={`fragment-${tech.name}`}>
-                                                        <Link key={tech.name} href={tech.link} className='hover:text-cool hover:transition hover:ease-in duration-200' target="_blank">{tech.name}</Link>
+                                                        <Link key={tech.name} href={tech.link} className='hover:text-nav-links hover:transition hover:ease-in duration-200' target="_blank">{tech.name}</Link>
                                                         <span key={`span-${tech.name}`}> {index !== lengthTech - 1 && "+"} </span>
                                                     </Fragment>
                                                 )
