@@ -55,7 +55,7 @@ export default function NavBar({ page }) {
 
     return (
         // first 3 class values are for fixed
-        <nav id='nav' className={`${styles.nav} ${styles.verticalNavbar} fixed mt-5 items-center justify-center`}>
+        <nav id='nav' className={`${styles.nav} fixed mt-5 items-center justify-center`}>
             
             <button id="toggle" className={`${styles.toggleButton} ${isOpen? styles.open : ""} block sm:hidden`} aria-label='toggle menu' onClick={handleClickButton}>
                 <svg id="openIcon" className={`${styles.openIcon}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -66,7 +66,7 @@ export default function NavBar({ page }) {
                 </svg>
             </button>
 
-            <ul id="nav-container" className={`${styles.container} ${styles.verticalContainer} ${isOpen? styles.open : ""} hidden sm:flex rounded-lg`}>
+            <ul id="nav-container" className={`${styles.container}  ${isOpen? styles.open : ""} hidden sm:flex rounded-lg`}>
                 {
                     navbarlinks.map((current) => {
                         return current.name === page? (
