@@ -2,24 +2,14 @@
 import Layout from '../components/layout';
 import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
-
+import { Metadata } from 'next';
 
 // component imports
-
 const Header = dynamic(() => import('../components/header'), {ssr:false});
 const Intro = dynamic(() => import('../components/intro'));
 const CurrentProject = dynamic(() => import('../components/currentProject'));
 const Skills = dynamic(() => import("../components/skills"));
 const ProjectDisplay = dynamic(() => import("../components/projectDisplay"));
-
-// import Header from '../components/header';
-// import Intro from '../components/intro';
-// import CurrentProject from '../components/currentProject';
-// import Skills from "../components/skills";
-// import ProjectDisplay from "../components/projectDisplay";
-
-
-
 
 
 export default function Home() {
