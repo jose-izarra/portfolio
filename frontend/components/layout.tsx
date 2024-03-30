@@ -15,7 +15,13 @@ const fontSans = FontSans({
 })
 
 
-export default function Layout({ children, title, page }) { 
+export default function Layout({ children, title, description ,page }
+  : {
+    children: React.ReactNode, 
+    title: string, 
+    description?: string,
+    page: string
+  }) { 
   return (
     <>
       <Head>

@@ -40,7 +40,7 @@ export default function Home() {
     
   }, []);
   return (
-    <Layout page="Home" title="Home | Jose Izarra">
+    <Layout page="Home" title="I'm Jose Izarra">
       <article id="hero-0" className={`m-0 p-0 overflow-hidden relative opacity-0 ${visibleSections.includes("hero-0")? 'visible' : ''} `}>
         <Header />
       </article>

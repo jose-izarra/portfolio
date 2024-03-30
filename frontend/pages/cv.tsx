@@ -13,10 +13,10 @@ import { ProjectCard } from "../components/cvProjectCard";
 
 
 
-export const metadata: Metadata = {
-    title: `${cv_data.name} | ${cv_data.about}`,
-    description: cv_data.summary,
-  };
+// export const metadata: Metadata = {
+//     title: `${cv_data.name} | adf ${cv_data.about}`,
+//     description: cv_data.summary,
+//   };
 
 
 
