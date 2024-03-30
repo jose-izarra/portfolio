@@ -14,7 +14,6 @@ export default function Intro() {
                 <div className='flex flex-col justify-center items-center mx-auto mb-7'>
                     <h1 className='text-4xl text-center font-bold mx-auto leading-8'>
                         Welcome to my personal portoflio website! <br/><br/>
-                        
                     </h1>
                     <p className='text-xl text-center leading-8'>
                         This is a website I built to showcase my personality as an individual, as well as

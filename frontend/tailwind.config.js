@@ -1,4 +1,10 @@
 const { fontFamily } = require("tailwindcss/defaultTheme")
+const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
+
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -34,8 +40,7 @@ module.exports = {
         "project-border-color": "hsla(162, 10%, 70%, 0.7)",
         
         'background': "#222222",
-        'title': "#FFE1DA",//"#E88349",//"#F39C6B", 
-        // 'subtitle': "#FFE1DA",//"#EEEEFF",
+        'title': "#FFE1DA",//"#E88349",
         
         'white-color': 'hsla(162, 0%, 90%)',
         'black-color': 'hsla(162, 50%, 10%, 1)',
@@ -103,5 +108,19 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    addVariablesForColors,
+  ],
+}
+
+function addVariablesForColors({ addBase, theme }) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+ 
+  addBase({
+    ":root": newVars,
+  });
 }

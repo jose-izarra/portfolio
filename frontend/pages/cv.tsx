@@ -8,15 +8,15 @@ import { Badge } from "../components/ui/badge";
 import { Section } from "../components/ui/section";
 import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
 import { Button } from "../components/ui/button";
-import { cv_data } from "../components/cv_data";
+import { cv_data } from "../components/data";
 import { ProjectCard } from "../components/cvProjectCard";
 
 
 
-export const metadata: Metadata = {
-    title: `${cv_data.name} | ${cv_data.about}`,
-    description: cv_data.summary,
-  };
+// export const metadata: Metadata = {
+//     title: `${cv_data.name} | adf ${cv_data.about}`,
+//     description: cv_data.summary,
+//   };
 
 
 
@@ -200,9 +200,7 @@ export default function CV() {
                         })}
                     </div>
                 </Section>
-                <Section >
-                    <p><Link href='/' className='underline hover:underline hover:underline-offset-2 '>Back to Home</Link></p>
-                </Section>
+                
             </section>
 
             {/* <CommandMenu

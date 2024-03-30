@@ -9,53 +9,55 @@ import styles from './styles/navbar.module.css';
 export default function NavBar({ page }) {
     const [ scroll, setScroll ] = useState(0);
     const [ isOpen, setIsOpen ] = useState(false);
+    const sections = 'cv';
 
     const handleClickButton = () => {
         setIsOpen(!isOpen);
     }
-
-    useEffect(() => {
-        const onScroll = () => {
-            setScroll(window.scrollY);
-        };
-        
-
-
-        window.addEventListener('scroll', onScroll);
     
-        return () => {
-            window.removeEventListener('scroll', onScroll);
-        };
-    }, []);
+    if (page.toLowerCase() !== 'cv') {
+        useEffect(() => {
+            const onScroll = () => {
+                setScroll(window.scrollY);
+            };
+            
 
-
-    useEffect(() => {
+            window.addEventListener('scroll', onScroll);
         
-        const windowWidth = window.innerWidth;
-        const nav = document.getElementById("nav")!;
-        const windowHeight = window.innerHeight;
-        const container = document.getElementById("nav-container")!;
+            return () => {
+                window.removeEventListener('scroll', onScroll);
+            };
+        }, []);
 
-        if (scroll > windowHeight - 100 && windowWidth > 640) {
-            nav.classList.add(styles.verticalNavbar);
-            container.classList.add(styles.verticalContainer);
-        }
-        else {
-            nav.classList.remove(styles.verticalNavbar);
-            container.classList.remove(styles.verticalContainer);
-        }
 
-        // check if the navbar is open and the window is resized
-        if (windowWidth > 640) {
-            container.classList.remove(styles.open);
-            setIsOpen(false);
-        }
+        useEffect(() => {
+            
+            const windowWidth = window.innerWidth;
+            const nav = document.getElementById("nav")!;
+            const windowHeight = window.innerHeight;
+            const container = document.getElementById("nav-container")!;
 
-    }, [scroll, isOpen]);
+            if (scroll > windowHeight - 100 && windowWidth > 640) {
+                nav.classList.add(styles.verticalNavbar);
+                container.classList.add(styles.verticalContainer);
+            }
+            else {
+                nav.classList.remove(styles.verticalNavbar);
+                container.classList.remove(styles.verticalContainer);
+            }
+
+            // check if the navbar is open and the window is resized
+            if (windowWidth > 640) {
+                container.classList.remove(styles.open);
+                setIsOpen(false);
+            }
+
+        }, [scroll, isOpen]);
+    }
 
     return (
         // first 3 class values are for fixed
-        <nav id='nav' className={`${styles.nav} fixed mt-5 items-center justify-center`}>
+        <nav id='nav' className={`${styles.nav} ${sections.includes(page.toLowerCase()) ? '' : 'fixed'} mt-5 items-center justify-center`}>
             
             <button id="toggle" className={`${styles.toggleButton} ${isOpen? styles.open : ""} block sm:hidden`} aria-label='toggle menu' onClick={handleClickButton}>
                 <svg id="openIcon" className={`${styles.openIcon}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

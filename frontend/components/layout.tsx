@@ -15,7 +15,13 @@ const fontSans = FontSans({
 })
 
 
-export default function Layout({ children, title, page }) { 
+export default function Layout({ children, title, description ,page }
+  : {
+    children: React.ReactNode, 
+    title: string, 
+    description?: string,
+    page: string
+  }) { 
   return (
     <>
       <Head>
@@ -33,7 +39,8 @@ export default function Layout({ children, title, page }) {
         <meta property="og:url" content="https://joseizarra.com/" />
 
       </Head>
-      { page !== 'CV' && <NavBar page={page} />}
+      {/* { page !== 'CV' && <NavBar page={page} />} */}
+      <NavBar page={page} />
       <main className={cn("min-h-screen  font-sans antialiased", fontSans.variable)}>
           {children}
           <Analytics />
