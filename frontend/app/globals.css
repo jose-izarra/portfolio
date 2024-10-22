@@ -5,79 +5,7 @@
 
 /* https://www.canva.com/colors/color-wheel/  pick color: #00ccbb*/
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
- 
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
- 
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
- 
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
- 
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
- 
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
- 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 10% 3.9%;
- 
-    --radius: 0.5rem;
-  }
- 
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
- 
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
- 
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
- 
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
- 
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
- 
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
- 
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
- 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
- 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-  }
-}
-
-.print-force-new-page {
-  page-break-before: always;
-}
-
-#cv h1, #cv h2, #cv h3, #cv h4, #cv p {
-  text-align: left;
-}
-
- 
 :root {
     --primary-color: hsla(175, 100%, 40%, 1);
     --secondary-color: hsla(0, 0%, 50%, 1); /*#BB00CC;/*hsla(0, 20%, 70%, 1);*/
@@ -93,7 +21,7 @@
 
     --lightbg-p: hsla(240, 0%, 50%, 1);
     --darkbg-p: hsla(213, 27%, 84%, 1);
-    
+
     --nav-links: hsla(175, 100%, 30%, 1); /**/
 }
 
@@ -111,7 +39,7 @@
 main {
   padding: 0;
   margin: 0;
-  scroll-behavior: smooth;
+
   overflow-x: hidden;
 }
 
@@ -138,7 +66,7 @@ body {
   background-color: var(--light-background-color);
   text-rendering: optimizeLegibility;
   box-sizing: border-box;
-  min-width: 0;
+  scroll-behavior: smooth; min-width: 0;
 }
 
 h1, h2, h3, h4, p {
@@ -149,7 +77,7 @@ h1 {
   color: var(--primary-color);
   /* text shadow */
   text-shadow: 2px 2px 2px rgb(0, 0, 0, 0.2);
-  
+
 }
 
 h2 {
@@ -195,14 +123,14 @@ article {
 }
 #linkedin-svg:hover svg g{
   fill: hsla(175, 100%, 40%, 1);
-} 
+}
 
 
 
 #ong-project-1 {
   z-index: 100;
   background-color: var(--dark-background-color);
-  
+
 }
 
 #project-container {
@@ -243,7 +171,7 @@ article {
   position: relative;
   cursor: grab;
   /* display:flex; */
-  
+
   z-index: 1001;
 
 }
@@ -291,5 +219,10 @@ footer svg:hover {
 }
 
 
+.print-force-new-page {
+  page-break-before: always;
+}
 
-
+#cv h1, #cv h2, #cv h3, #cv h4, #cv p {
+  text-align: left;
+}
