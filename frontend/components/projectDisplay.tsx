@@ -1,13 +1,15 @@
+'use client'
 import Image from 'next/image';
 import Link from 'next/link';
 import projects from '../json/projects.json';
 import styles from './styles/projects.module.css';
+import { usePathname } from 'next/navigation';
 
-const projects1 = [0, 2, 5];
-const projects2 = [1, 3, 4];
-
-export default function ProjectDisplay({ page }) {
-    return page !== "home" ? (
+export default function ProjectDisplay({ }) {
+    const path = usePathname();
+    const projects1 = [0, 2, 5];
+    const projects2 = [1, 3, 4];
+    return path !== "/" ? (
         <div className='flex justify-center items-start flex-wrap mx-5 xl:mx-12'>
             <div className='flex flex-col items-center lg:pl-10 lg:w-6/12 h-fit '>
                 {
@@ -41,8 +43,8 @@ export default function ProjectDisplay({ page }) {
                 {/* <ProjectCard direction="vertical" index={2} />
                 <ProjectCard direction="horizontal" index={1} /> */}
             </div>
-            
-        </div> 
+
+        </div>
     )
     :
     (
@@ -91,7 +93,7 @@ function ProjectCard({ direction, index }: ProjectCardProps) {
                                         return (
                                             <li key={`icon-${index}`} className='p-3 content-center'>
                                                 <Image src={path}
-                                                    height={40} width={40} 
+                                                    height={40} width={40}
                                                     className=''
                                                     alt={'icon'} />
                                             </li>
@@ -101,15 +103,15 @@ function ProjectCard({ direction, index }: ProjectCardProps) {
                                 </ul>
                             </div>
                             <div className='flex justify-center items-center w-5/12  pr-1 '>
-                                <Image src={project.photo} 
-                                    width={300} 
-                                    height={300} 
-                                    sizes="100vh" 
-                                    style={{ width: 'auto'}} 
+                                <Image src={project.photo}
+                                    width={300}
+                                    height={300}
+                                    sizes="100vh"
+                                    style={{ width: 'auto'}}
                                     alt={`${project.name} Preview`}
                                     className='rounded-xl'
                                 />
-                                
+
                             </div>
                         </div>
                     </Link>
@@ -132,7 +134,7 @@ function ProjectCard({ direction, index }: ProjectCardProps) {
                                         return (
                                             <li key={`icon-${index}`} className='p-2 content-center'>
                                                 <Image src={path}
-                                                height={40} width={40} 
+                                                height={40} width={40}
                                                 className=''
                                                 alt={'icon'} />
                                             </li>
@@ -142,10 +144,10 @@ function ProjectCard({ direction, index }: ProjectCardProps) {
                                 </ul>
                             </div>
                             <div className='flex justify-center items-center h-2/6 p-2 '>
-                                <Image src={project.photo} 
-                                    width={400} 
-                                    height={100} 
-                                    sizes="100vh" 
+                                <Image src={project.photo}
+                                    width={400}
+                                    height={100}
+                                    sizes="100vh"
                                     style={{ width: 'auto'}}
                                     alt={`${project.name} Preview`}
                                     className='rounded-xl max-h-[200px]'
@@ -154,14 +156,11 @@ function ProjectCard({ direction, index }: ProjectCardProps) {
                         </div>
                     </Link>
                 </div>
-               
+
             )}
-            
+
         </>
     )
 
-    
+
 }
-
-
-

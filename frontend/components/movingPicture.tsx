@@ -11,7 +11,7 @@ interface Picture {
 }
 
 
-export default function MovingContainer({ col, left, picsShuffled, speeds } 
+export default function MovingContainer({ col, left, picsShuffled, speeds }
     : { col: number, left: number, picsShuffled: Picture[], speeds: number[] }) {
 
     const pics = picsShuffled.slice(col*5, (col*5) + 5);
@@ -31,7 +31,7 @@ export default function MovingContainer({ col, left, picsShuffled, speeds }
             >
                 {
                   pics.map((pic, row: number) => {
-                    
+
                     return (
                         <MovingPicture path={pic.path} row={row} col={col} key={`MovingPicture-${col}-${row}`}/>
                     )
@@ -76,8 +76,7 @@ function MovingPicture({ path, row, col } : { path: string, row: number, col: nu
                 // largest contentful
                 priority={path === '/images/fut.jpg'? true : false}
             />
-            
+
         </>
     )
 }
-

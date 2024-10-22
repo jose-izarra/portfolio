@@ -1,28 +1,15 @@
 'use client';
-import Layout from '../components/layout';
 import { useState, useEffect } from 'react';
-import dynamic from 'next/dynamic';
 
 
 // component imports
-
-const Header = dynamic(() => import('../components/header'), {ssr:false});
-const Intro = dynamic(() => import('../components/intro'));
-const CurrentProject = dynamic(() => import('../components/currentProject'));
-const Skills = dynamic(() => import("../components/skills"));
-const ProjectDisplay = dynamic(() => import("../components/projectDisplay"));
-
-// import Header from '../components/header';
-// import Intro from '../components/intro';
-// import CurrentProject from '../components/currentProject';
-// import Skills from "../components/skills";
-// import ProjectDisplay from "../components/projectDisplay";
+import Header from '@/components/header';
+import Intro from '@/components/intro';
+import Skills from '@/components/skills';
+import ProjectDisplay from '@/components/projectDisplay';
 
 
-
-
-
-export default function Home() {
+export default function Page() {
   const [ visibleSections, setVisibleSections] = useState<string[]>([]);
 
   useEffect(() => {
@@ -47,22 +34,23 @@ export default function Home() {
         window.removeEventListener('scroll', handleScroll);
       };
 
-    
+
   }, []);
   return (
-    <Layout page="Home" title="Home | Jose Izarra">
+    <main>
+
       <article id="hero-0" className={`m-0 p-0 overflow-hidden relative opacity-0 ${visibleSections.includes("hero-0")? 'visible' : ''} `}>
         <Header />
       </article>
       {/* Introduction Section */}
-      
-      <article id="intro-1" className={`z-[100] opacity-0 ${visibleSections.includes("intro-1")? 'visible' : ''} `}>
+
+      <article id="about" className={`z-[100] opacity-0 ${visibleSections.includes("about")? 'visible' : ''} `}>
         <Intro />
       </article>
 
       {/* Currently working on */}
       <article id="project-display-2" className={`opacity-0 ${visibleSections.includes("project-display-2")? 'visible' : ''} `}>
-        <ProjectDisplay page="home"/>     
+        <ProjectDisplay />
       </article>
 
 
@@ -72,9 +60,6 @@ export default function Home() {
       </article>
 
       {/* Project Section */}
-      <article id="current-project-4" className={`pb-10 opacity-0 ${visibleSections.includes("current-project-4")? 'visible' : ''}`}>
-        <CurrentProject />  
-      </article>
-    </Layout>
+    </main>
   );
 }

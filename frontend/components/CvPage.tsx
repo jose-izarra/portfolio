@@ -1,15 +1,14 @@
-import Layout from '../components/layout';
+'use client'
 import { Metadata } from "next";
 import Link from 'next/link';
-import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar";
-import { Card, CardHeader, CardContent } from "../components/ui/card";
-import { Badge } from "../components/ui/badge";
-// import { CommandMenu } from "../components/cvCommandMenu";
-import { Section } from "../components/ui/section";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Section } from "@/components/ui/section";
 import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
-import { Button } from "../components/ui/button";
-import { cv_data } from "../components/cv_data";
-import { ProjectCard } from "../components/cvProjectCard";
+import { Button } from "@/components/ui/button";
+import { cv_data } from "@/components/cv_data";
+import { ProjectCard } from "@/components/cvProjectCard";
 
 
 
@@ -20,9 +19,9 @@ export const metadata: Metadata = {
 
 
 
-export default function CV() {
+export default function CvPage() {
     return (
-        <Layout title="CV | Jose Izarra" page="CV">
+        <main>
             <header className='flex justify-center items-end min-h-[30vh] pb-16 '>
                 <h1 className="text-center ">My Resume</h1>
             </header>
@@ -217,6 +216,6 @@ export default function CV() {
                 })),
                 ]}
             /> */}
-        </Layout>
+        </main>
     )
 }

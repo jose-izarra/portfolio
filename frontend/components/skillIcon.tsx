@@ -3,8 +3,13 @@ import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 
+interface Skill {
+    name: string;
+    path: string;
+    link: string;
+}
 
-export default function SkillIcon({ skill }) {
+export default function SkillIcon({ skill }: { skill: Skill }) {
     const imgRef = useRef<HTMLImageElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -27,7 +32,7 @@ export default function SkillIcon({ skill }) {
                 // Calculate new position of the image
                 const nextX = moveEvent.clientX - startX + startLeft;
                 const nextY = moveEvent.clientY - startY + startTop;
-                
+
                 img.style.left = `${nextX}px`;
                 img.style.top = `${nextY}px`;
                 img.style.transition = 'none';
@@ -65,16 +70,16 @@ export default function SkillIcon({ skill }) {
         };
     }, []);
 
-    
+
     return (
         <div ref={containerRef} className='skills-icon-container'>
-            <Image 
+            <Image
                 ref={imgRef}
                 src={skill.path}
-                width={60} height={60} 
+                width={60} height={60}
                 className=''
-                alt={skill.name} 
+                alt={skill.name}
             />
-        </div> 
+        </div>
     )
 }
