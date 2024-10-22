@@ -50,7 +50,7 @@ export default function Page() {
 
       {/* Currently working on */}
       <article id="project-display-2" className={`opacity-0 ${visibleSections.includes("project-display-2")? 'visible' : ''} `}>
-        <ProjectDisplay page="home"/>
+        <ProjectDisplay />
       </article>
 
 

@@ -15,7 +15,7 @@ export default function Page() {
             <header className='flex justify-center items-end h-[40vh] pb-16 '>
                 <h1 className="text-center">Projects I've worked On</h1>
             </header>
-            <ProjectDisplay page="projects"/>
+            <ProjectDisplay />
         </main>
     )
 }
