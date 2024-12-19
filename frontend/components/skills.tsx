@@ -25,10 +25,10 @@ export default function Skills({  }) {
                     return (
                         <SkillIcon key={skill.name}  skill={skill} />
                     )
-                    }) 
+                    })
                 }
             </div>
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl leading-[1.125em] max-w-[40%] mx-5">My<br/>Frameworks<br/>&<br/>Languages</h2>
+            {/* <h2 className="text-2xl sm:text-4xl lg:text-5xl leading-[1.125em] max-w-[40%] mx-5">My<br/>Frameworks<br/>&<br/>Languages</h2> */}
             <div className='skill-div'>
                 {
                     skills.slice(10, 15).map((skill) => {
@@ -49,6 +49,5 @@ export default function Skills({  }) {
             </div>
         </div>
     )
-    
-}
 
+}

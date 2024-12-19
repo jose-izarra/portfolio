@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import projects from '../json/projects.json';
-import styles from './styles/projects.module.css';
+import styles from '@/styles/projects.module.css';
 import { usePathname } from 'next/navigation';
 
 export default function ProjectDisplay({ }) {

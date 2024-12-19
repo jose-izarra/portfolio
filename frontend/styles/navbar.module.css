@@ -31,7 +31,6 @@
 
 .li {
     position: relative;
-    color: var(--nav-links);
     padding: 0.5rem 1rem;
     margin: 0 0.5rem;
     text-transform: uppercase;
@@ -49,7 +48,6 @@
     width: 0;
     bottom: 0;
     left: 0;
-    background: var(--nav-links);
     transition: 0.4s ease;
 }
 
@@ -65,7 +63,6 @@
     width: 100%;
     bottom: 0;
     left: 0;
-    background: var(--nav-links);
     transition: 0.5s ease;
 }
 
@@ -91,7 +88,6 @@
 .toggleButton svg {
     width: 1.5rem;
     height: 1.5rem;
-    color: var(--nav-links);
     position: absolute;
     top: 0.75rem;
     left: 0.5rem;
@@ -102,7 +98,7 @@
 }
 
 .closeIcon {
-    display: none; 
+    display: none;
 }
 
 .toggleButton.open .openIcon {

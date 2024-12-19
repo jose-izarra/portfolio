@@ -20,7 +20,7 @@
 
 
 .horizontalProjectCard {
-    display: flex;    
+    display: flex;
 }
 
 
@@ -43,5 +43,5 @@
 
 .projectCard div > img {
     border: 1px solid hsla(162, 10%, 70%, 0.5);
-    
+
 }
