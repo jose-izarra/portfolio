@@ -13,13 +13,6 @@
 
     --primary-text-color: 0, 0%, 100%;  /* hsl */
     --secondary-text-color: 0, 0%, 65%; /* hsl */
-
-    /*
-    --select-bg-color: hsla(240, 100%, 96%, 0.8);
-    --select-text-color:rgb(13, 12, 12);
-
-    --lightbg-p: hsla(240, 0%, 50%, 1);
-    */
 }
 
 
@@ -61,6 +54,9 @@ body {
   scroll-behavior: smooth; min-width: 0;
 }
 
+a {
+    text-decoration: none;
+}
 
 h3 {
   font-size: 2.5rem;

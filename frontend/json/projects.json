@@ -1,48 +1,48 @@
 [
     {
-        "name": "IE Robotics Club Website",
+        "title": "Club Website",
+        "description": "Website for the IE Robotics & AI Club. Displays information about the club, its members, and its projects.",
         "techIcons": ["/images/astro.svg", "/images/tailwindcss.svg", "/images/express.svg","/images/mongodb.svg","/images/docker.svg"],
-        "paragraph": "Website for the IE Robotics & AI Club. Displays information about the club, its members, and its projects.",
         "photo": "/images/ierobotics.png",
         "github": "https://github.com/IERoboticsClub/club-website",
         "link": "https://ieroboticsclub.com"
     },
     {
-        "name": "C Whale",
+        "title": "C Whale",
         "techIcons": ["/images/c.svg"],
-        "paragraph": "Programming language based on C to facilitate the process of managing Docker containers and images.",
+        "description": "Programming language based on C to facilitate the process of managing Docker containers and images.",
         "photo": "/images/c_whale.png",
         "github": "https://github.com/rorosaga/C_whale/",
         "link": ""
     },
     {
-        "name": "Qwicker",
+        "title": "Qwicker",
         "techIcons": ["/images/vite.svg", "/images/react.svg", "/images/tailwindcss.svg","/images/azure.svg","/images/mysql.svg"],
-        "paragraph": "Attendance system for university lectures to facilitate the attendance-taking process.",
+        "description": "Attendance system for university lectures to facilitate the attendance-taking process.",
         "photo": "/images/qwicker.png",
         "github": "https://github.com/jose-izarra/attendance_system",
         "link": ""
     },
     {
-        "name": "Personal Portfolio Website",
+        "title": "Portfolio Website",
         "techIcons": ["/images/nextjs.svg", "/images/tailwindcss.svg", "/images/typescript.svg", "/images/html.svg", "/images/css.svg"],
-        "paragraph": "This website! This project was built to showcase my work and skills as a professional.",
+        "description": "This website lol",
         "photo": "/images/portfolio.png",
         "github": "https://github.com/jose-izarra/portfolio",
         "link": ""
     },
     {
-        "name": "AI Hackathon - PDF Data Extractor",
+        "title": "AI Hackathon",
         "techIcons": ["/images/python.svg"],
-        "paragraph": "An intelligent PDF extraction tool that utilizes Retrieval Augmented Generation (RAG) and LLM's to extract data from PDFs",
+        "description": "RAG to extract information from banking PDFs",
         "photo": "/images/hackathon.png",
         "github": "https://github.com/velocitatem/ai-hackathon-ie-2023",
         "link": ""
     },
     {
-        "name": "Jenga Tower Game",
+        "title": "Jenga  Game",
         "techIcons": ["/images/python.svg"],
-        "paragraph": "Game of Jenga implemented in Python using the Pygame library.",
+        "description": "Game of Jenga implemented in Python using the Pygame library.",
         "photo": "/images/jenga.png",
         "github": "https://github.com/jose-izarra/jenga-game",
         "link": ""

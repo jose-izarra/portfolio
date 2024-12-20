@@ -62,7 +62,7 @@ export default function Page() {
 
         <article id="stats" className={`opacity-0 ${visibleSections.includes("stats")? 'visible' : ''} `}>
             <section className="flex flex-col items-center min-h-[40vh] gap-y-6 mt-12">
-                <StatsCard />
+                <StatsCard md/>
             </section>
         </article>
     </main>

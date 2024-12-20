@@ -1,0 +1,22 @@
+
+
+.project {
+    --border-color: #00332F;
+    --highlight-color: 175, 100%, 35%;
+
+    z-index: attr(data-index);
+    background-color: hsl(var(--darker-primary-color));
+    border-color: var(--border-color);
+
+    transition: transform 1s ease, z-index 1.5s ease, background-color 1s ease;
+}
+.project:hover {
+    z-index: 11;
+    transform: translateY(-10px);
+    background-color: hsla(var(--highlight-color));
+    transition: transform 0.5s, z-index 1.5s ease, background-color 0.5s cubic-bezier(0.1, -0.6, 0.2, 0);;
+}
+
+.project:hover p {
+    filter:brightness(1.8);
+}
