@@ -9,15 +9,7 @@ export default function Header() {
     const [speeds, setSpeeds] = useState<number[]>([]);
     const [picsShuffled, setPicsShuffled] = useState<any[]>([]);
 
-    // const shuffle = (array: any[]) => {
-    //     for (let i = array.length - 1; i > 0; i--) {
-    //         const j = Math.floor(Math.random() * (i + 1));
-    //         [array[i], array[j]] = [array[j], array[i]];
-    //     }
-    //     return array;
-    // };
-
-    useEffect(() => {
+       useEffect(() => {
         // Only generate random values on the client
         const newLeftValues = [
             Math.floor(Math.random() * 4) + 2,

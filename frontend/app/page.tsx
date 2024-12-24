@@ -11,7 +11,7 @@ import ProjectsCompact from '@/components/sections/ProjectsCompact';
 import StatsCard from '@/components/StatsCard';
 
 export default function Page() {
-  const [ visibleSections, setVisibleSections] = useState<string[]>([]);
+  const [ visibleSections, setVisibleSections] = useState<string[]>(['']);
 
   useEffect(() => {
     const handleScroll = () => {

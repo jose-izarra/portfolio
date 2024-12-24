@@ -1,4 +1,4 @@
-import socials from '../json/socials.json';
+
 
 export default function Intro() {
 
@@ -37,24 +37,9 @@ export default function Intro() {
 
 
                 </div>
-                {/* <div className="grid grid-rows-4 grid-cols-1 gap-y-16 align-baseline h-full">
-                    <div className='w-[356px] self-center hidden md:block row-span-2'>
-                        <p className=" font-medium">I&apos;m Jose Izarra, a software developer passionate about creating projects no one has ever done before</p>
-                    </div>
-                    <div className='w-[356px] justify-center hidden md:flex row-span-2'>
-                        <p className=''>Currently pursuing a Computer Science degree and working at a startup</p>
-                    </div>
-                </div>
-
-                <div className='grid grid-rows-4 grid-cols-1 gap-y-16 justify-items-center items-end h-full lg:pt-16'>
-                    <div className='w-[356px] hidden md:block row-span-2'>
-                        <p className='font-light'>I do full stack, random projects I find interesting and study for uni at the moment</p>
-                    </div>
-
-                    <div className='w-[356px] justify-center hidden md:flex row-span-2'>
-                        <p className=''>Developing software for over 4 years now</p>
-                    </div>
-                </div> */}
+            <div className="fixed right-12 bottom-12">
+                <p className="text-sm">... and play football</p>
+            </div>
             </div>
         </section>
 

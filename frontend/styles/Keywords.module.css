@@ -1,10 +1,5 @@
 
 
-.keywords ul {
-    will-change: transform; /* We should be nice to the browser - let it know what we're going to animate. */
-    animation: scroll 15s linear infinite;
-}
-
 .keywords::after {
     content: "";
     position: absolute;
@@ -28,6 +23,20 @@
     background-image: linear-gradient(to left,hsla(210, 7%, 22%, 0.9), hsla(210, 7%, 22%, 0.1) 90%);
     width: 10%;
     height: 100%;
+}
+
+
+.left ul {
+    --delay: attr(data-delay);
+    will-change: transform; /* We should be nice to the browser - let it know what we're going to animate. */
+
+    animation-delay: calc(var(--delay) * 5s + 2);
+    animation: scroll 24s linear infinite reverse ;
+}
+
+.right ul {
+    will-change: transform; /* We should be nice to the browser - let it know what we're going to animate. */
+    animation: scroll 30s linear infinite;
 }
 
 @keyframes scroll {

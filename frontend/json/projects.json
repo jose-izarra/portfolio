@@ -44,6 +44,7 @@
         "techIcons": ["/images/python.svg"],
         "description": "Game of Jenga implemented in Python using the Pygame library.",
         "photo": "/images/jenga.png",
+        "project_url": "https://github.com/jose-izarra/jenga-game",
         "github": "https://github.com/jose-izarra/jenga-game",
         "link": ""
     }

@@ -13,6 +13,7 @@
 
     --primary-text-color: 0, 0%, 100%;  /* hsl */
     --secondary-text-color: 0, 0%, 65%; /* hsl */
+    --secondary-text-color-light: 0, 0%, 90%; /* hsl */
 }
 
 

@@ -9,7 +9,7 @@ export default function Skills({  }) {
     const containerRef = useRef<HTMLDivElement>(null);
 
     return (
-        <div ref={containerRef} id='skills-container' className='flex items-center justify-center mx-2 sm:mx-0 overflow-hidden'>
+        <div ref={containerRef} id='skills-container' className='flex items-center justify-center mx-2 sm:mx-0 '>
             <div className='skill-div'>
                 {
                     skills.slice(0, 5).map((skill) => {

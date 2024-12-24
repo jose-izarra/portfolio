@@ -31,6 +31,7 @@ module.exports = {
 
         "primary-text-color": "hsl(var(--primary-text-color))",
         "secondary-text-color": "hsl(var(--secondary-text-color))",
+        "secondary-text-color-light": "hsl(var(--secondary-text-color-light))",
 
         "light-background-color": "var(--light-background-color)",
         "dark-background-color": "var(--dark-background-color)",
@@ -77,11 +78,6 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
-    //   borderRadius: {
-    //     lg: "var(--radius)",
-    //     md: "calc(var(--radius) - 2px)",
-    //     sm: "calc(var(--radius) - 4px)",
-    //   },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
