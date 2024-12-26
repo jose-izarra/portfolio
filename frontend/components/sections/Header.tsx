@@ -24,7 +24,7 @@ export default function Header() {
         setLeftValues(newLeftValues);
         setSpeeds(newSpeeds);
         setPicsShuffled(newPicsShuffled);
-    }, []); // Empty dependency array ensures this runs only once, after the first render
+    }, []);
 
     if (leftValues.length === 0 || speeds.length === 0 || picsShuffled.length === 0) {
         return null; // Render nothing until the random values are set

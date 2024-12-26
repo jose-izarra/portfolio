@@ -18,13 +18,20 @@ export default function Page() {
       const sections = document.querySelectorAll("article");
       const newVisibleSections : string[] = [];
 
-      sections.forEach( (section) => {
-        const rect = section.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
-        if (isVisible) {
-          newVisibleSections.push(section.id);
-        }
-      });
+      if (sections[0].getBoundingClientRect().top < window.innerHeight && sections[0].getBoundingClientRect().bottom >= 0) {
+        newVisibleSections.push(sections[0].id);
+      }
+      for (let i = 1; i < sections.length; i++) {
+        const rect = sections[i].getBoundingClientRect();
+        const isVisible = rect.top > sections[i-1].getBoundingClientRect().y && rect.bottom >= 0;
+        if (isVisible) newVisibleSections.push(sections[i].id);
+      }
+    //   sections.forEach( (section) => {
+    //     const rect = section.getBoundingClientRect();
+    //     console.log('section', section.id, rect.top)
+    //     const isVisible = rect.top - 200 < window.innerHeight && rect.bottom >= 0;
+    //     if (isVisible) newVisibleSections.push(section.id);
+    //   });
       setVisibleSections(newVisibleSections);
     };
 

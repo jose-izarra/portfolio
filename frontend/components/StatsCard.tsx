@@ -85,7 +85,7 @@ export default function StatsCard({ sm, md, lg }: Props) {
                     <p className="text-base">{stats.favLang}</p>
                 </div>
                 <div className="flex justify-between">
-                    <p className="text-base text-darker-primary-color font-semibold">Recently Working On:</p>
+                    <p className="text-base text-darker-primary-color font-semibold">Most Recent Commit To:</p>
                     <p className="text-base "><a href={stats.recent.url} target="_blank" >{stats.recent.name}</a></p>
                 </div>
                 <div className="flex justify-between">

@@ -1,51 +1,115 @@
 [
     {
-        "title": "Club Website",
-        "description": "Website for the IE Robotics & AI Club. Displays information about the club, its members, and its projects.",
-        "techIcons": ["/images/astro.svg", "/images/tailwindcss.svg", "/images/express.svg","/images/mongodb.svg","/images/docker.svg"],
-        "photo": "/images/ierobotics.png",
-        "github": "https://github.com/IERoboticsClub/club-website",
-        "link": "https://ieroboticsclub.com"
-    },
-    {
-        "title": "C Whale",
-        "techIcons": ["/images/c.svg"],
-        "description": "Programming language based on C to facilitate the process of managing Docker containers and images.",
-        "photo": "/images/c_whale.png",
-        "github": "https://github.com/rorosaga/C_whale/",
-        "link": ""
+        "title": "Jenga Game",
+        "description": "Jenga adaptation using probabilistic programming to play on the terminal",
+        "purpose": "Implement sorting and search algorithms for ADS university course",
+        "techStack": ["Python", "Pygame"],
+        "duration": "2 months",
+        "status": {
+            "finished": true,
+            "message": "2023"
+        },
+        "contributors": "4 people",
+        "project_url": "https://github.com/jose-izarra/jenga-game",
+        "image_url": ""
     },
     {
         "title": "Qwicker",
-        "techIcons": ["/images/vite.svg", "/images/react.svg", "/images/tailwindcss.svg","/images/azure.svg","/images/mysql.svg"],
-        "description": "Attendance system for university lectures to facilitate the attendance-taking process.",
-        "photo": "/images/qwicker.png",
-        "github": "https://github.com/jose-izarra/attendance_system",
-        "link": ""
-    },
-    {
-        "title": "Portfolio Website",
-        "techIcons": ["/images/nextjs.svg", "/images/tailwindcss.svg", "/images/typescript.svg", "/images/html.svg", "/images/css.svg"],
-        "description": "This website lol",
-        "photo": "/images/portfolio.png",
-        "github": "https://github.com/jose-izarra/portfolio",
-        "link": ""
+        "description": "Automated attendance-taking system for IE University classes",
+        "purpose": "Design relational databases and interact with serverless computing",
+        "techStack": ["Vite", "React", "Python", "MySQL", "Azure Serverless Functions"],
+        "duration": "2 months",
+        "status": {
+            "finished": true,
+            "message": "2023"
+        },
+        "contributors": "6 people",
+        "project_url": "https://github.com/jose-izarra/attendance_system",
+        "image_url": ""
     },
     {
         "title": "AI Hackathon",
-        "techIcons": ["/images/python.svg"],
         "description": "RAG to extract information from banking PDFs",
-        "photo": "/images/hackathon.png",
-        "github": "https://github.com/velocitatem/ai-hackathon-ie-2023",
-        "link": ""
+        "purpose": "Create and improve model accuracy to win a prize",
+        "techStack": ["Python", "Pydantic", "OpenAI API"],
+        "status": {
+            "finished": true,
+            "message": "2023"
+        },
+        "duration": "2 weeks",
+        "contributors": "3 people",
+        "project_url": "https://github.com/velocitatem/ai-hackathon-ie-2023",
+        "image_url": "/images/hackathon.png"
+    },
+
+    {
+        "title": "C Whale",
+        "description": "C-based domain-specific language for Dockerfile creation and image management",
+        "purpose": "Learn about C and its compiler",
+        "techStack": ["C", "CMake", "GNU Parser", "FLEX lexer"],
+        "status": {
+            "finished": true,
+            "message": "2023"
+        },
+        "duration": "2 months",
+        "contributors": "4 people",
+        "project_url": "https://github.com/rorosaga/C_whale",
+        "image_url": "/images/c_whale.png"
     },
     {
-        "title": "Jenga  Game",
-        "techIcons": ["/images/python.svg"],
-        "description": "Game of Jenga implemented in Python using the Pygame library.",
-        "photo": "/images/jenga.png",
-        "project_url": "https://github.com/jose-izarra/jenga-game",
-        "github": "https://github.com/jose-izarra/jenga-game",
-        "link": ""
+        "title": "QuadRobot Sim",
+        "description": "Trajectory planning simulation for quadruped robots using parallelization and inter-process communication",
+        "purpose": "Apply parallelization to speed up simulation processes",
+        "techStack": ["Python", "Pybullet", "Multiprocessing Library"],
+        "status": {
+            "finished": true,
+            "message": "2024"
+        },
+        "duration": "3 months",
+        "contributors": "3 people",
+        "project_url": "https://github.com/rorosaga/QuadRobotParallelSim",
+        "image_url": ""
+    },
+    {
+        "title": "Best Bank",
+        "description": "IaaS Banking platform heavily automated with Github workflows",
+        "purpose": "Design end-to-end DevOps pipeline using SCRUM",
+        "techStack": ["Flask", "Vue", "Bicep", "Azure Resources"],
+        "status": {
+            "finished": true,
+            "message": "2024"
+        },
+        "duration": "4 months",
+        "contributors": "8 people",
+        "project_url": "https://github.com/IE-BestBank/",
+        "image_url": ""
+    },
+    {
+        "title": "Portfolio Website",
+        "description": "This website lol",
+        "purpose": "Showcase my work and skills",
+        "techStack": ["TypeScript", "Next.js", "TailwindCSS", "Vercel"],
+        "status": {
+            "finished": false,
+            "message": "Mostly finished"
+        },
+        "duration": "2 Weeks, for this latest version",
+        "contributors": "Just me",
+        "project_url": "https://joseizarra.com",
+        "image_url": ""
+    },
+    {
+        "title": "Algo-visualizer",
+        "description": "Visualizer for popular sorting algorithms",
+        "purpose": "Learn C++ and experiment with UI libraries",
+        "techStack": ["C++", "CMake", "SFML", "GTest"],
+        "status": {
+            "finished": true,
+            "message": "2024"
+        },
+        "duration": "1 month",
+        "contributors": "4 people",
+        "project_url": "https://github.com/jose-izarra/algo-visualizer",
+        "image_url": ""
     }
 ]

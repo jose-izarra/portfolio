@@ -37,9 +37,9 @@ export default function Intro() {
 
 
                 </div>
-            <div className="fixed right-12 bottom-12">
+            {/* <div className="fixed right-12 bottom-12">
                 <p className="text-sm">... and play football</p>
-            </div>
+            </div> */}
             </div>
         </section>
 

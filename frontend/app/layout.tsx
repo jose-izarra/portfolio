@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 // Component imports
 import NavBar from "@/components/navbar";
-import Footer from "@/components/footer";
+import Footer from "@/components/Footer";
 
 export default async function RootLayout({
   children,

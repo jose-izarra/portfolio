@@ -7,8 +7,12 @@ interface ProjectCardProps {
     description: string
     purpose: string
     techStack: string[]
-    status: string
+    status: {
+        finished: boolean
+        message: string
+    }
     duration: string
+    contributors: string
     project_url: string
     image_url: string
 }
@@ -48,22 +52,27 @@ export default function ProjectCard({
                         <div className="flex items-center justify-between gap-x-2 h-full w-full">
                             <div className="flex flex-col gap-y-3 items-start w-full pl-1">
                                 <span className="flex items-center gap-x-2">
-                                    <Blocks size={14} className="text-secondary-text-color-light"/>
+                                    <Blocks size={14} className="text-secondary-text-color-light shrink-0"/>
                                     <p className="font-bold text-xs text-secondary-text-color-light text-left ">
                                         {techStack.map((t, i) => i+1 == techStack.length ? `${t}.` : `${t}, `)}
                                     </p>
                                 </span>
                                 <span className="flex items-center gap-x-2">
-                                    <CircleDot size={14} className="text-secondary-text-color-light"/>
+                                    <CircleDot size={14} className="text-secondary-text-color-light shrink-0"/>
                                     <p className="font-medium  text-xs text-secondary-text-color-light text-left ">{purpose}</p>
                                 </span>
                                 <span className="flex items-center gap-x-2">
-                                    <Timer size={14} className="text-secondary-text-color-light"/>
+                                    <Timer size={14} className="text-secondary-text-color-light shrink-0"/>
                                     <p className="font-medium text-xs text-secondary-text-color-light text-left">{duration}</p>
                                 </span>
                                 <span className="flex items-center gap-x-2">
-                                    <Loader size={14} className="text-secondary-text-color-light"/>
-                                    <p className="font-medium text-xs text-secondary-text-color-light text-left ">{status}</p>
+                                    {status.finished ?
+                                        <Check size={14} className="text-secondary-text-color-light shrink-0"/>
+                                        :
+                                        <Loader size={14} className="text-secondary-text-color-light shrink-0"/>
+                                    }
+
+                                    <p className="font-medium text-xs text-secondary-text-color-light text-left ">{status.message}</p>
                                 </span>
                             </div>
                             <div className="flex justify-center items-center h-full">
@@ -103,8 +112,12 @@ export default function ProjectCard({
                                 <p className="font-medium text-xs text-secondary-text-color-light text-left">{duration}</p>
                             </span>
                             <span className="flex items-center gap-x-2">
-                                <Loader size={14} className="text-secondary-text-color-light"/>
-                                <p className="font-medium text-xs text-secondary-text-color-light text-left ">{status}</p>
+                                {status.finished ?
+                                        <Check size={14} className="text-secondary-text-color-light shrink-0"/>
+                                        :
+                                        <Loader size={14} className="text-secondary-text-color-light shrink-0"/>
+                                }
+                                <p className="font-medium text-xs text-secondary-text-color-light text-left ">{status.message}</p>
                             </span>
                         </div>
                         <div className="flex justify-center items-center h-full">

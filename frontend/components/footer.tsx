@@ -2,10 +2,9 @@ import socials from '../json/socials.json';
 
 
 export default function Footer() {
-
+    // linkedin, github, email, phone
     return (
         <footer className="flex items-center justify-center text-center my-5">
-            {/* <SpotifySongs /> */}
             <div className="flex items-center ">
                 <h2 className="text-3xl">Socials</h2>
             </div>
