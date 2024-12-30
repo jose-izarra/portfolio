@@ -11,7 +11,7 @@
         },
         "contributors": "4 people",
         "project_url": "https://github.com/jose-izarra/jenga-game",
-        "image_url": ""
+        "image_url": "/images/jenga.png"
     },
     {
         "title": "Qwicker",
@@ -25,7 +25,7 @@
         },
         "contributors": "6 people",
         "project_url": "https://github.com/jose-izarra/attendance_system",
-        "image_url": ""
+        "image_url": "/images/qwicker.png"
     },
     {
         "title": "AI Hackathon",
@@ -68,7 +68,7 @@
         "duration": "3 months",
         "contributors": "3 people",
         "project_url": "https://github.com/rorosaga/QuadRobotParallelSim",
-        "image_url": ""
+        "image_url": "/images/quadsim.gif"
     },
     {
         "title": "Best Bank",
@@ -82,7 +82,7 @@
         "duration": "4 months",
         "contributors": "8 people",
         "project_url": "https://github.com/IE-BestBank/",
-        "image_url": ""
+        "image_url": "/images/best-bank.png"
     },
     {
         "title": "Portfolio Website",
@@ -96,7 +96,7 @@
         "duration": "2 Weeks, for this latest version",
         "contributors": "Just me",
         "project_url": "https://joseizarra.com",
-        "image_url": ""
+        "image_url": "/images/portfolio_latest.jpeg"
     },
     {
         "title": "Algo-visualizer",
@@ -110,6 +110,6 @@
         "duration": "1 month",
         "contributors": "4 people",
         "project_url": "https://github.com/jose-izarra/algo-visualizer",
-        "image_url": ""
+        "image_url": "/images/algo-visualizer.png"
     }
 ]

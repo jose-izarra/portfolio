@@ -33,7 +33,7 @@ export default function ProjectCard({
 
     return (
         <>
-            <a href={project_url} className="shrink-0">
+            <a href={project_url} target="_blank" className="shrink-0">
                 <div
                     className={`${styles.project} w-[500px] h-[300px] border rounded-lg shadow-sm shadow-[#00332F] absolute flex-col gap-y-1 p-4 hidden md:flex`}
                     style={{ marginLeft: `${index * 60}px`, top: `${index * 60 + 90}px` }}

@@ -1,7 +1,7 @@
-
+'use client';
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
-import axios from "axios";
+
 
 interface Props {
     sm?: boolean;
@@ -30,31 +30,21 @@ export default function StatsCard({ sm, md, lg }: Props) {
         "": lg
     })
 
-    useEffect(() => {
-        axios.get("https://api.github.com/search/commits?q=author:jose-izarra", {
-            headers: {
-                "Accept": "application/vnd.github.cloak-preview+json",
-                "Authorization": `token ${process.env.PAT_1}`,
-                "X-GitHub-Api-Version": "2022-11-28"
-            }
-        })
-        .then((res) => {
-            const totalCommits = res.data.total_count;
-            const recent = { name: res.data.items[0].repository.name, url: res.data.items[0].html_url };
 
+    useEffect(() => {
+        fetch("/api/github")
+        .then(res => res.json())
+        .then(data => {
+            console.log('data', data);
             setStats({
                 ...stats,
-                commits: totalCommits,
-                recent: recent
+                commits: data.commits,
+                recent: data.recent
             })
-
         })
-        .catch((err) => {
-            console.log(err);
-        })
+        .catch(err => console.log('err', err));
 
     }, [])
-
 
     return (
         <div className={classname}>
@@ -85,7 +75,7 @@ export default function StatsCard({ sm, md, lg }: Props) {
                     <p className="text-base">{stats.favLang}</p>
                 </div>
                 <div className="flex justify-between">
-                    <p className="text-base text-darker-primary-color font-semibold">Most Recent Commit To:</p>
+                    <p className="text-base text-darker-primary-color font-semibold">Most Recent Commit:</p>
                     <p className="text-base "><a href={stats.recent.url} target="_blank" >{stats.recent.name}</a></p>
                 </div>
                 <div className="flex justify-between">

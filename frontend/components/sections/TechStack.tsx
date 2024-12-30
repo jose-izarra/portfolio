@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react"
 
-import Skills from "../skills"
+import Skills from "../Skills"
 
 export default function TechStack() {
 

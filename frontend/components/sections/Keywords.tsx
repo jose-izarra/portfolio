@@ -25,8 +25,7 @@ export default function Keywords() {
         <section className="w-full min-h-32 flex flex-col items-center ">
             <div className="w-[90%]  lg:w-2/3 flex flex-col h-full ">
                 {/* <h2 className="text-xl font-bold text-primary-text-color text-left">Keywords</h2> */}
-                <div className="flex flex-col gap-y-5 justify-center items-center overflow-x-hidden w-full">
-                    {/* {[0, 1, 2].map(i => <MovingWords key={i} props={keywords} i={i}/> )} */}
+                <div className="flex flex-col gap-y-10 justify-center items-center overflow-x-hidden w-full">
                     {keywordChunks.map((chunk, i)=> <MovingWords key={i} props={chunk} i={i}/> )}
                 </div>
             </div>

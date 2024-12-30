@@ -2,7 +2,6 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import styles from '@/styles/header.module.css';
 
 
 interface Picture {
@@ -45,7 +44,6 @@ export default function MovingContainer({ col, left, picsShuffled, speeds }
 
 
 function MovingPicture({ path, row, col } : { path: string, row: number, col: number }) {
-
     useEffect(() => {
         const el = document.getElementById(`moving-pic-${col}-${row}`);
         const intervalId = setInterval(() => {

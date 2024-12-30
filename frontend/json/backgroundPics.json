@@ -4,10 +4,6 @@
         "category": "space"
     },
     {
-        "path": "/current.png",
-        "category": "space"
-    },
-    {
         "path": "/images/c_whale.png",
         "category": "space"
     },
@@ -60,7 +56,7 @@
         "path": "/images/madrid.jpg",
         "category": "space"
     },
-    
+
     {
         "path": "/images/qwicker.png",
         "category": "space"
@@ -73,7 +69,7 @@
         "path": "/images/space2.jpg",
         "category": "space"
     },
-    
+
     {
         "path": "/images/space3.jpg",
         "category": "space"

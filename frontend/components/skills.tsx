@@ -1,15 +1,11 @@
-"use client";
-
-import { useRef } from 'react';
 import skills from '../json/skills.json';
-import SkillIcon from './skillIcon';
+import SkillIcon from './SkillIcon';
 
 
-export default function Skills({  }) {
-    const containerRef = useRef<HTMLDivElement>(null);
+export default function Skills() {
 
     return (
-        <div ref={containerRef} id='skills-container' className='flex items-center justify-center mx-2 sm:mx-0 '>
+        <div id='skills-container' className='flex items-center justify-center mx-2 sm:mx-0 '>
             <div className='skill-div'>
                 {
                     skills.slice(0, 5).map((skill) => {
@@ -28,7 +24,6 @@ export default function Skills({  }) {
                     })
                 }
             </div>
-            {/* <h2 className="text-2xl sm:text-4xl lg:text-5xl leading-[1.125em] max-w-[40%] mx-5">My<br/>Frameworks<br/>&<br/>Languages</h2> */}
             <div className='skill-div'>
                 {
                     skills.slice(10, 15).map((skill) => {

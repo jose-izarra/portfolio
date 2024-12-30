@@ -2,7 +2,7 @@ import socials from '../json/socials.json';
 
 
 export default function Footer() {
-    // linkedin, github, email, phone
+    // linkedin, github, email, CV
     return (
         <footer className="flex items-center justify-center text-center my-5">
             <div className="flex items-center ">
