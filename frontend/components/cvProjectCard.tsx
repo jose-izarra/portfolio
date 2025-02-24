@@ -6,14 +6,14 @@ import {
     CardTitle,
   } from "./ui/card";
   import { Badge } from "./ui/badge";
-  
+
   interface Props {
     title: string;
     description: string;
     tags: readonly string[];
     link?: string;
   }
-  
+
   export function ProjectCard({ title, description, tags, link }: Props) {
     return (
       <Card className="flex flex-col overflow-hidden border border-project-border-color p-3">
@@ -45,7 +45,7 @@ import {
           <div className="mt-2 flex flex-wrap gap-1">
             {tags.map((tag) => (
               <Badge
-                className="px-1 py-0 text-[10px] border-project-border-color text-black-color"
+                className="px-1 py-0 text-[10px] border-project-border-color text-secondary-text-color"
                 variant="secondary"
                 key={tag}
               >

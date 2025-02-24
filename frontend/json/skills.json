@@ -1,102 +1,77 @@
 [
     {
         "name": "python",
-        "path": "/images/python.svg",
+        "path": "/icons/python.svg",
         "link": "https://www.python.org/"
     },
     {
         "name": "react",
-        "path": "/images/react.svg",
+        "path": "/icons/react.svg",
         "link": "https://react.dev/"
     },
     {
-        "name": "html",
-        "path": "/images/html.svg",
-        "link": "https://developer.mozilla.org/en-US/docs/Web/HTML"
-    },
-    {
-        "name": "css",
-        "path": "/images/css.svg",
-        "link": "https://developer.mozilla.org/en-US/docs/Web/CSS"
-    },
-    {
-        "name": "javascript",
-        "path": "/images/javascript.svg",
-        "link": "https://www.javascript.com/"
-    },
-    {
         "name": "tailwindcss",
-        "path": "/images/tailwindcss.svg",
+        "path": "/icons/tailwindcss.svg",
         "link": "https://tailwindcss.com/"
     },
     {
-        "name": "astro",
-        "path" : "/images/astro.svg",
-        "link": "https://astro.build/"
-    },
-    {
-        "name": "next",
-        "path" : "/images/nextjs.svg",
-        "link": "https://nextjs.org/"
-    },
-    {
         "name": "mysql",
-        "path" : "/images/mysql.svg",
+        "path" : "/icons/mysql.svg",
         "link": "https://www.mysql.com/"
     },
     {
-        "name": "express",
-        "path" : "/images/express.svg",
-        "link": "https://expressjs.com/"
-    },
-    {
         "name": "mongodb",
-        "path" : "/images/mongodb.svg",
+        "path" : "/icons/mongodb.svg",
         "link": "https://www.mongodb.com/"
     },
     {
         "name": "docker",
-        "path" : "/images/docker.svg",
+        "path" : "/icons/docker.svg",
         "link": "https://www.docker.com/    "
     },
     {
         "name": "linux",
-        "path" : "/images/linux.svg",
+        "path" : "/icons/linux.svg",
         "link": "https://www.linux.org/"
     },
     {
         "name": "azure",
-        "path" : "/images/azure.svg",
+        "path" : "/icons/azure.svg",
         "link": "https://azure.microsoft.com/"
     },
     {
-        "name": "arduino",
-        "path" : "/images/arduino.svg",
-        "link": "https://www.arduino.cc/"
-    },
-    {
         "name": "typescript",
-        "path" : "/images/typescript.svg",
+        "path" : "/icons/typescript.svg",
         "link": "https://www.typescriptlang.org/"
     },
     {
         "name": "firebase",
-        "path" : "/images/firebase.svg",
+        "path" : "/icons/firebase.svg",
         "link": "https://firebase.google.com/?hl=es-419"
     },
     {
         "name": "aws",
-        "path" : "/images/aws.svg",
+        "path" : "/icons/aws.svg",
         "link": "https://aws.amazon.com/"
     },
     {
-        "name": "vite",
-        "path" : "/images/vite.svg",
-        "link": "https://vitejs.dev/"
+        "name": "c",
+        "path" : "/icons/c.svg",
+        "link": "https://www.w3schools.com/c/c_intro.php"
     },
     {
-        "name": "c",
-        "path" : "/images/c.svg",
-        "link": "https://www.w3schools.com/c/c_intro.php"
+        "name": "postgresql",
+        "path" : "/icons/postgresql.svg",
+        "link": "https://www.postgresql.org/"
+    },
+    {
+        "name": "github",
+        "path" : "/icons/github.svg",
+        "link": "https://www.github.com"
+    },
+    {
+        "name": "fastapi",
+        "path" : "/icons/fastapi.png",
+        "link": "https://fastapi.tiangolo.com/"
     }
 ]

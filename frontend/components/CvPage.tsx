@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 
 
-export default function CvPage() {
+export default function vPage() {
     return (
         <main>
             <header className='flex justify-center items-end min-h-[30vh] pb-16 '>

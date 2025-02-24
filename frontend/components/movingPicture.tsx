@@ -2,7 +2,6 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import styles from './styles/header.module.css';
 
 
 interface Picture {
@@ -45,7 +44,6 @@ export default function MovingContainer({ col, left, picsShuffled, speeds }
 
 
 function MovingPicture({ path, row, col } : { path: string, row: number, col: number }) {
-
     useEffect(() => {
         const el = document.getElementById(`moving-pic-${col}-${row}`);
         const intervalId = setInterval(() => {
@@ -71,7 +69,7 @@ function MovingPicture({ path, row, col } : { path: string, row: number, col: nu
                 width={150}
                 height={150}
                 style={{ opacity: 0, width: 'auto' }}
-                className={`${styles.image} my-10`}
+                className={`transition-transform duration-500 hover:scale-105 my-10`}
                 alt={`Moving Picture ${row} ${col}`}
                 // largest contentful
                 priority={path === '/images/fut.jpg'? true : false}

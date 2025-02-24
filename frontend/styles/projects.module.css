@@ -1,0 +1,47 @@
+
+
+.projectCard {
+    background-color: hsla(162, 10%, 70%, 0.7);
+    border-radius: 1rem;
+    border: 1px solid hsla(162, 10%, 70%, 0.7);
+    overflow: hidden;
+    transition: box-shadow 0.4s ease, transform 0.4s ease, background-color 0.4s ease;
+    margin: 1rem 0;
+    z-index: 100;
+    justify-content: center;
+}
+
+.projectCard:hover {
+    background-color: hsla(162, 12%, 69%, 0.7);
+    box-shadow: 0 0 15px hsla(162, 12%, 70%, 0.7);
+    transform: scale3d(1.025, 1.025, 1.025);
+
+}
+
+
+.horizontalProjectCard {
+    display: flex;
+}
+
+
+.verticalProjectCard {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.projectCard h4, .projectCard  p {
+    color: #566964;
+    text-align: center;
+    text-rendering: optimizeSpeed;
+}
+
+
+.projectCard div:nth-child(2) {
+    margin: 0.5rem;
+}
+
+.projectCard div > img {
+    border: 1px solid hsla(162, 10%, 70%, 0.5);
+
+}
