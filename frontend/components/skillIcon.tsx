@@ -72,7 +72,7 @@ export default function SkillIcon({ skill }: { skill: Skill }) {
 
 
     return (
-        <div ref={containerRef} className='skills-icon-container'>
+        <div ref={containerRef} className=''>
             <Image
                 ref={imgRef}
                 src={skill.path}

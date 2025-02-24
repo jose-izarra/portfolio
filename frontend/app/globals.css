@@ -150,13 +150,13 @@ article {
 }
 
 
-#skills-container div div:nth-child(odd) {
+/* #skills-container div div:nth-child(odd) {
   @apply ml-[5vw] sm:ml-[4vw];
 }
 
 #skills-container div div:nth-child(2n) {
   @apply mr-[5vw] sm:mr-[4vw];
-}
+} */
 
 #skills-container div img {
   position: absolute;

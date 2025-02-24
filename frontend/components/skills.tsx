@@ -2,6 +2,10 @@ import skills from '../json/skills.json';
 import SkillIcon from './SkillIcon';
 
 
+
+
+
+
 export default function Skills() {
 
     return (
