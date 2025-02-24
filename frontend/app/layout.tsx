@@ -4,7 +4,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 // Component imports
-import Footer from "@/components/temp_footer";
+import Footer from "@/components/Footer";
 
 export default async function RootLayout({
   children,

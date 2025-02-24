@@ -1,5 +1,5 @@
 
-import Skills from "../temp_skills"
+import Skills from "../Skills"
 
 export default function TechStack() {
     return (

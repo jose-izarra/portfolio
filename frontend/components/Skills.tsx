@@ -1,5 +1,5 @@
 import skills from '../json/skills.json';
-import SkillIcon from './temp_skillicon'
+import SkillIcon from './SkillIcon'
 import styles from "@/styles/Skills.module.css"
 
 
