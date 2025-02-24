@@ -1,5 +1,5 @@
 
-
+//
 export default function Footer() {
     // linkedin, github, email, CV
 

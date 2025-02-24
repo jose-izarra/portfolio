@@ -4,7 +4,6 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 // Component imports
-import NavBar from "@/components/navbar";
 import Footer from "@/components/Footer";
 
 export default async function RootLayout({
@@ -16,7 +15,6 @@ export default async function RootLayout({
     return (
         <html lang="en" className="">
             <body className={`${inter.className} `}>
-
                 {children}
                 <Footer />
             </body>
