@@ -1,16 +1,7 @@
 
-import { useEffect, useState } from "react"
-
-import Skills from "../skills"
+import Skills from "../Skills"
 
 export default function TechStack() {
-
-    const [ isScrolled, setIsScrolled ] = useState(false);
-
-    useEffect(() => {
-
-    }, [])
-
     return (
         <section className="flex flex-col items-center min-h-[40vh] gap-y-12 mt-12 ">
 
