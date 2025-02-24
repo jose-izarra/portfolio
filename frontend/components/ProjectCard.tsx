@@ -1,6 +1,8 @@
 import styles from "@/styles/ProjectCard.module.css"
 import { useState } from "react"
 import { Timer, Blocks, Loader, CircleDot, Check } from "lucide-react"
+import Image from "next/image"
+
 interface ProjectCardProps {
     index: number
     title: string
@@ -76,10 +78,11 @@ export default function ProjectCard({
                                 </span>
                             </div>
                             <div className="flex justify-center items-center h-full">
-                                <img
+                                <Image
                                     src={image_url}
                                     alt="Project Image"
-                                    className="md:w-[225px] lg:w-[250px] h-fit rounded-lg"
+                                    width={250} height={250}
+                                    className="rounded-lg"
                                     />
                             </div>
                         </div>
@@ -120,11 +123,13 @@ export default function ProjectCard({
                                 <p className="font-medium text-xs text-secondary-text-color-light text-left ">{status.message}</p>
                             </span>
                         </div>
-                        <div className="flex justify-center items-center h-full">
-                            <img
+                        <div className="flex justify-center items-center ">
+                            <Image
                                 src={image_url}
+                                width={200} height={200}
                                 alt="Project Image"
-                                className="w-[140px] sm:w-[200px] h-fit rounded-lg"
+                                // className="w-[140px] sm:w-[200px]  rounded-lg"
+                                className="rounded-lg"
                                 />
                         </div>
                     </div>
