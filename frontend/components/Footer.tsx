@@ -5,7 +5,7 @@ export default function Footer() {
 
     const socials = [
         { text: "LinkedIn", link: "https://www.linkedin.com/in/jose-izarra/" },
-        { text: "Github", link: "https://www.github.com/joseizarra" },
+        { text: "Github", link: "https://www.github.com/jose-izarra" },
     ]
 
     return (
@@ -24,7 +24,6 @@ export default function Footer() {
                         {socials.map((social, i) => (
                             <a href={social.link} key={i} className="text-secondary-text-color text-sm font-normal">{social.text}</a>
                         ))}
-
                     </div>
                 </div>
                 <div className="flex flex-col gap-y-2 ">
