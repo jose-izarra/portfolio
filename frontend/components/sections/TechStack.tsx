@@ -11,7 +11,6 @@ export default function TechStack() {
 
     }, [])
 
-    console.log('ok')
     return (
         <section className="flex flex-col items-center min-h-[40vh] gap-y-6 mt-12 ">
 

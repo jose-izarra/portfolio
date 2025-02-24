@@ -1,5 +1,6 @@
 'use client';
 import { cn } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 
 
@@ -11,20 +12,18 @@ interface Props {
 
 interface Stats {
     commits: number;
-    favLang: string;
-    recent: { name: string, url: string };
-    editor: string;
+    recent: { name: string, url: string, isPrivate: boolean };
 }
 
 export default function StatsCard({ sm, md, lg }: Props) {
     const [ stats, setStats  ] = useState<Stats>({
         commits: 0,
-        favLang: "TypeScript",
-        recent: { name: "", url: "" },
-        editor: "VSCode"
+        recent: { name: "", url: "" , isPrivate: false },
     });
+    const router = useRouter();
+    const [ visible, setVisible ] = useState(false);
 
-    const classname = cn("w-[350px] rounded-lg border border-darker-primary-color flex flex-col p-3 ", {
+    const classname = cn("w-[350px] rounded-lg border border-darker-primary-color flex flex-col p-3 relative", {
         "sm:w-[300px] h-[200px]": sm,
         "md:w-[350px] h-[300px]": md,
         "": lg
@@ -46,9 +45,18 @@ export default function StatsCard({ sm, md, lg }: Props) {
 
     }, [])
 
+    const handleClick = () => {
+        if (stats.recent.isPrivate) {
+            setVisible(true);
+            setTimeout(() => setVisible(false), 3000);
+        } else {
+            router.push(stats.recent.url);
+        }
+    }
+
     return (
         <div className={classname}>
-            <div className="grid grid-cols-3 gap-x-3 items-center px-5 pt-3 shrink-0">
+            <div className="grid grid-cols-3 gap-x-3 items-center px-5 pt-3 shrink-0 ">
                 <div className="">
                     <a target="_blank" href="https://github.com/jose-izarra">
                         <img
@@ -72,16 +80,22 @@ export default function StatsCard({ sm, md, lg }: Props) {
                 </div>
                 <div className="flex justify-between">
                     <p className="text-base text-darker-primary-color font-semibold">Most Used Language:</p>
-                    <p className="text-base">{stats.favLang}</p>
+                    <p className="text-base">TypeScript</p>
                 </div>
                 <div className="flex justify-between">
                     <p className="text-base text-darker-primary-color font-semibold">Most Recent Commit:</p>
-                    <p className="text-base "><a href={stats.recent.url} target="_blank" >{stats.recent.name}</a></p>
+                    <p onClick={handleClick} className="text-base cursor-pointer">{stats.recent.name}</p>
                 </div>
                 <div className="flex justify-between">
                     <p className="text-base text-darker-primary-color font-semibold">Code Editor:</p>
-                    <p className="text-base">{stats.editor}</p>
+                    <p className="text-base">VSCode</p>
                 </div>
+                {stats.recent.isPrivate &&
+                    visible && (
+                        <span className="bg-neutral-200 border shadown-md absolute -top-12 right-0 py-1 px-2 rounded-2xl">
+                            <p className=" text-neutral-600 text-nowrap text-xs">This repo is private</p>
+                        </span>
+                )}
             </div>
         </div>
     )

@@ -26,12 +26,6 @@ export default function Page() {
         const isVisible = rect.top > sections[i-1].getBoundingClientRect().y && rect.bottom >= 0;
         if (isVisible) newVisibleSections.push(sections[i].id);
       }
-    //   sections.forEach( (section) => {
-    //     const rect = section.getBoundingClientRect();
-    //     console.log('section', section.id, rect.top)
-    //     const isVisible = rect.top - 200 < window.innerHeight && rect.bottom >= 0;
-    //     if (isVisible) newVisibleSections.push(section.id);
-    //   });
       setVisibleSections(newVisibleSections);
     };
 
