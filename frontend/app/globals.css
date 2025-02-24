@@ -127,55 +127,7 @@ article {
 }
 
 
-#skills-container > * {
-  @apply sm:mx-2 md:mx-3 lg:mx-5;
-  max-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
 
-#skills-container div div  {
-  @apply my-5 w-[8vw] lg:w-[55px];
-  max-width: 90px;
-  min-width: 30px;
-
-  min-height: 50px;
-
-  position: relative;
-  cursor: grab;
-  /* display:flex; */
-
-  z-index: 1001;
-
-}
-
-
-/* #skills-container div div:nth-child(odd) {
-  @apply ml-[5vw] sm:ml-[4vw];
-}
-
-#skills-container div div:nth-child(2n) {
-  @apply mr-[5vw] sm:mr-[4vw];
-} */
-
-#skills-container div img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10002;
-  translate: none;
-  rotate: none;
-  scale: none;
-  touch-action: none;
-  cursor: grab;
-  user-select: none;
-}
-
-#skills-container div img:active {
-  cursor: grabbing;
-  cursor: -moz-grabbing;
-  cursor: -webkit-grabbing;
-}
 
 
 

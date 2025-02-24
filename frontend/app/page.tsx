@@ -61,7 +61,7 @@ export default function Page() {
             <ProjectsCompact />
         </article>
 
-        <article id="stats" className={`opacity-0 ${visibleSections.includes("stats")? 'visible' : ''} `}>
+        <article id="stats" className={`opacity-0 ${visibleSections.includes("stats")? 'visible' : ''} !mb-0 !pb-0`}>
             <section className="flex flex-col items-center min-h-[40vh] gap-y-6 mt-12">
                 <StatsCard md/>
             </section>

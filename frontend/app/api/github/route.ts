@@ -18,7 +18,6 @@ export async function GET() {
         const commits = res.data.items;
 
         const sorted_data = commits.sort((a: any, b: any) => {
-            // console.log(a.commit.author.date);
             const dateA = new Date(a.commit.author.date);
             const dateB = new Date(b.commit.author.date);
             return dateA.getTime() - dateB.getTime();

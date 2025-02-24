@@ -58,5 +58,20 @@
         "name": "c",
         "path" : "/icons/c.svg",
         "link": "https://www.w3schools.com/c/c_intro.php"
+    },
+    {
+        "name": "postgresql",
+        "path" : "/icons/postgresql.svg",
+        "link": "https://www.postgresql.org/"
+    },
+    {
+        "name": "github",
+        "path" : "/icons/github.svg",
+        "link": "https://www.github.com"
+    },
+    {
+        "name": "fastapi",
+        "path" : "/icons/fastapi.png",
+        "link": "https://fastapi.tiangolo.com/"
     }
 ]

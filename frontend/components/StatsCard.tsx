@@ -34,7 +34,6 @@ export default function StatsCard({ sm, md, lg }: Props) {
         fetch("/api/github")
         .then(res => res.json())
         .then(data => {
-            console.log('data', data);
             setStats({
                 ...stats,
                 commits: data.commits,
@@ -75,7 +74,7 @@ export default function StatsCard({ sm, md, lg }: Props) {
             </div>
             <div className="flex flex-col justify-center gap-y-3 px-4 h-full">
                 <div className="flex justify-between">
-                    <p className="text-base text-darker-primary-color font-semibold">Commits (2024):</p>
+                    <p className="text-base text-darker-primary-color font-semibold">Commits (past year):</p>
                     <p className="text-lg font-semibold">{stats.commits}</p>
                 </div>
                 <div className="flex justify-between">
