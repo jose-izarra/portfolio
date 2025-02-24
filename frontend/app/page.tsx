@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 
 // component imports
-import Header from '@/components/sections/Header';
+import Hero from '@/components/sections/Hero';
 import Intro from '@/components/sections/Intro';
 import Keywords from '@/components/sections/Keywords';
 import TechStack from '@/components/sections/TechStack';
@@ -41,7 +41,7 @@ export default function Page() {
   return (
     <main>
         <article id="header" className={`m-0 p-0 overflow-hidden relative opacity-0 ${visibleSections.includes("header")? 'visible' : ''} `}>
-            <Header />
+            <Hero />
         </article>
 
 
