@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
-
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
     title: "Jose Izarra",
@@ -34,6 +34,7 @@ export default async function RootLayout({
             <body className={`${inter.className} `}>
                 {children}
                 <Footer />
+                <Analytics />
             </body>
         </html>
     )
