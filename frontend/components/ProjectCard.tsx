@@ -1,6 +1,6 @@
 import styles from "@/styles/ProjectCard.module.css"
 import { useState } from "react"
-import { Timer, Blocks, Loader, CircleDot, Check } from "lucide-react"
+import { Timer, Blocks, Loader, CircleDot, Check, Users, User } from "lucide-react"
 import Image from "next/image"
 
 interface ProjectCardProps {
@@ -27,6 +27,7 @@ export default function ProjectCard({
     techStack,
     status,
     duration,
+    contributors,
     project_url,
     image_url
 }: ProjectCardProps) {
@@ -76,6 +77,10 @@ export default function ProjectCard({
 
                                     <p className="font-medium text-xs text-secondary-text-color-light text-left ">{status.message}</p>
                                 </span>
+                                <span className="flex items-center gap-x-2">
+                                    <Users size={14} className="text-secondary-text-color-light shrink-0"/>
+                                    <p className="font-medium text-xs text-secondary-text-color-light text-left">{contributors}</p>
+                                </span>
                             </div>
                             <div className="flex justify-center items-center h-full">
                                 <Image
@@ -121,6 +126,10 @@ export default function ProjectCard({
                                         <Loader size={14} className="text-secondary-text-color-light shrink-0"/>
                                 }
                                 <p className="font-medium text-xs text-secondary-text-color-light text-left ">{status.message}</p>
+                            </span>
+                            <span className="flex items-center gap-x-2">
+                                <Users size={14} className="text-secondary-text-color-light shrink-0"/>
+                                <p className="font-medium text-xs text-secondary-text-color-light text-left">{contributors}</p>
                             </span>
                         </div>
                         <div className="flex justify-center items-center ">
