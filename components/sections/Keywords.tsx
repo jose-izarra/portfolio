@@ -49,7 +49,7 @@ function MovingWords({ props, i }: Keywords) {
   return (
     <div
       className={cn(
-        "keywords w-full relative transform",
+        "w-full",
         i % 2 == 0 ? "animate-move-left" : "animate-move-right"
       )}
       data-delay={i}
@@ -58,9 +58,7 @@ function MovingWords({ props, i }: Keywords) {
         className={`flex gap-x-8 text-light/65 whitespace-nowrap relative  w-full`}
       >
         {props.map((keyword, index) => (
-          <li key={index} className="">
-            {keyword}
-          </li>
+          <li key={index}>{keyword}</li>
         ))}
         {props.map((keyword, index) => (
           <li key={index} className="aria-hidden">

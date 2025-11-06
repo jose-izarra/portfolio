@@ -31,14 +31,12 @@
   --animate-move-right: scroll 24s linear infinite;
 }
 
-
 @layer base {
   h1,
   h2,
   h3,
   p {
     font-family: "Lora", serif;
-    text-align: center;
   }
 
   h1 {
@@ -49,11 +47,11 @@
   h3 {
     @apply text-light/65;
   }
-  p {
-    color: var(--color-light)
+
+  a {
+    text-decoration: none;
   }
 }
-
 
 html {
   font-family: var(--font-lora);
@@ -62,68 +60,18 @@ html {
   box-sizing: border-box;
   scroll-behavior: smooth;
   min-width: 0;
-}
-
-a {
-  text-decoration: none;
+  color: var(--color-light);
 }
 
 h3 {
   font-size: 2.5rem;
 }
 
-p {
-  font-size: 1.125rem;
-}
-
 article {
   margin: 1em 0 6em 0;
   padding: 1.5em 0;
-  transition: opacity 0.5s ease-in-out;
   z-index: 0;
 }
-
-footer svg {
-  transition: box-shadow 0.3s ease;
-}
-
-footer svg:hover {
-  box-shadow: 0 0 15px hsl(var(--primary-color));
-}
-
-.keywords::after {
-  content: "";
-  position: absolute;
-  z-index: 100;
-  bottom: 0;
-  left: 0;
-  pointer-events: none;
-  background-image: linear-gradient(
-    to right,
-    hsla(210, 7%, 22%, 0.9),
-    hsla(210, 7%, 22%, 0.1) 90%
-  );
-  width: 10%;
-  height: 100%;
-}
-
-.keywords::before {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  bottom: 0;
-  right: 0;
-  pointer-events: none;
-  background-image: linear-gradient(
-    to left,
-    hsla(210, 7%, 22%, 0.9),
-    hsla(210, 7%, 22%, 0.1) 90%
-  );
-  width: 10%;
-  height: 100%;
-}
-
-
 
 .project p {
   font-family: "Inter", sans-serif;
@@ -140,49 +88,47 @@ footer svg:hover {
 }
 
 skills > * {
-    @apply sm:mx-2 md:mx-3 lg:mx-5;
-    max-height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
+  @apply sm:mx-2 md:mx-3 lg:mx-5;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
-  .skills div  {
-    @apply my-5 w-[8vw] lg:w-[55px];
-    max-width: 90px;
-    min-width: 30px;
+.skills div {
+  @apply my-5 w-[8vw] lg:w-[55px];
+  max-width: 90px;
+  min-width: 30px;
 
-    min-height: 50px;
-    position: relative;
-    cursor: grab;
+  min-height: 50px;
+  position: relative;
+  cursor: grab;
 
-    z-index: 1001;
+  z-index: 1001;
+}
 
-  }
+.skills div div:nth-child(odd) {
+  @apply ml-[5vw] sm:ml-[4vw];
+}
 
+.skills div div:nth-child(2n) {
+  @apply mr-[5vw] sm:mr-[4vw];
+}
 
-  .skills div div:nth-child(odd) {
-    @apply ml-[5vw] sm:ml-[4vw];
-  }
+.skills div img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10002;
+  translate: none;
+  rotate: none;
+  scale: none;
+  touch-action: none;
+  cursor: grab;
+  user-select: none;
+}
 
-  .skills div div:nth-child(2n) {
-    @apply mr-[5vw] sm:mr-[4vw];
-  }
-
-  .skills div img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10002;
-    translate: none;
-    rotate: none;
-    scale: none;
-    touch-action: none;
-    cursor: grab;
-    user-select: none;
-  }
-
-  .skills div img:active {
-    cursor: grabbing;
-    cursor: -moz-grabbing;
-    cursor: -webkit-grabbing;
-  }
+.skills div img:active {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}

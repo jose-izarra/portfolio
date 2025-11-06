@@ -23,6 +23,8 @@ interface ProjectCardProps {
 const BASE_CARD_STYLES =
   "bg-primary-500 border-border shadow-project-card border rounded-lg transition-transform hover:bg-primary-600 left-1/2 right-1/2 -translate-x-4/5 hover:-translate-y-2.5";
 
+const BASE_TEXT_STYLES = "text-xs text-light/90 text-left";
+
 export default function ProjectCard({
   index,
   title,
@@ -53,17 +55,14 @@ export default function ProjectCard({
           <div className="flex items-center gap-x-3 min-h-1/4">
             <h2
               className={cn(
-                "text-xl font-bold shrink-0 self-start font-inter",
+                "text-xl font-bold shrink-0 font-inter",
                 isTextHovered ? "text-light/90" : "text-light"
               )}
             >
               {title.toUpperCase()}
             </h2>
             <p
-              className={cn(
-                "pb-1 font-normal",
-                isTextHovered ? "text-light text-sm" : "text-xs text-light/90"
-              )}
+              className={cn(BASE_TEXT_STYLES)}
               onMouseEnter={() => setIsTextHovered(true)}
               onMouseLeave={() => setIsTextHovered(false)}
             >
@@ -131,10 +130,8 @@ export default function ProjectCard({
         style={{ top: `${index * 60 + 90}px` }}
       >
         <div className="flex flex-col gap-y-4 ">
-          <h2 className="text-xl text-primary-text-color font-bold shrink-0 self-start">
-            {title}
-          </h2>
-          <p className="text-xs pb-1 font-normal text-secondary-text-color-light text-left ">
+          <h2 className="text-xl  font-bold shrink-0 self-start">{title}</h2>
+          <p className="text-xs pb-1 text-secondary-text-color-light text-left ">
             {description}
           </p>
         </div>
@@ -142,7 +139,7 @@ export default function ProjectCard({
           <div className="flex flex-col gap-y-3 items-start w-full ">
             <span className="flex items-center gap-x-2">
               <Blocks size={14} className="text-secondary-text-color-light" />
-              <p className="font-bold text-xs text-secondary-text-color-light text-left ">
+              <p className="font-bold text-xs text-light/90 text-left ">
                 {techStack.map((t, i) =>
                   i + 1 == techStack.length ? `${t}.` : `${t}, `
                 )}
@@ -153,13 +150,13 @@ export default function ProjectCard({
                 size={14}
                 className="text-secondary-text-color-light"
               />
-              <p className="font-medium  text-xs text-secondary-text-color-light text-left ">
+              <p className="font-medium  text-xs text-light/90 text-left ">
                 {purpose}
               </p>
             </span>
             <span className="flex items-center gap-x-2">
               <Timer size={14} className="text-secondary-text-color-light" />
-              <p className="font-medium text-xs text-secondary-text-color-light text-left">
+              <p className="font-medium text-xs text-light/90 text-left">
                 {duration}
               </p>
             </span>
@@ -175,7 +172,7 @@ export default function ProjectCard({
                   className="text-secondary-text-color-light shrink-0"
                 />
               )}
-              <p className="font-medium text-xs text-secondary-text-color-light text-left ">
+              <p className="font-medium text-xs text-light/90 text-left ">
                 {status.message}
               </p>
             </span>
@@ -184,7 +181,7 @@ export default function ProjectCard({
                 size={14}
                 className="text-secondary-text-color-light shrink-0"
               />
-              <p className="font-medium text-xs text-secondary-text-color-light text-left">
+              <p className="font-medium text-xs text-light/90 text-left">
                 {contributors}
               </p>
             </span>
