@@ -6,7 +6,7 @@ export default function ProjectsCompact({}) {
   return (
     <section className="mt-12 flex min-h-[90vh] flex-col items-center gap-y-6 sm:min-h-[80vh]">
       <Headline level={1}>What I&apos;ve Done</Headline>
-      <div className="relative w-[90%]">
+      <div className="relative flex w-full flex-col items-center gap-4 px-4 lg:block lg:h-[600px] lg:w-[90%]">
         {projects.slice(Math.max(projects.length - 6, 0), projects.length).map((project, index) => (
           <ProjectCard
             index={index}

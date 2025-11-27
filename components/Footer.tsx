@@ -31,7 +31,7 @@ export default function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-light/90 text-sm font-semibold tracking-wide uppercase">Connect</h4>
+            <h4 className="text-light/90 text-sm font-semibold uppercase">Connect</h4>
             <ul className="space-y-3">
               {socials.map((social, i) => (
                 <li key={i}>
@@ -50,7 +50,7 @@ export default function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-light/90 text-sm font-semibold tracking-wide uppercase">Contact</h4>
+            <h4 className="text-light/90 text-sm font-semibold uppercase">Contact</h4>
             <ul className="space-y-3">
               <li>
                 <a
