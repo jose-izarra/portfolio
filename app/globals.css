@@ -19,6 +19,8 @@
   --text-7xl: 5rem;
 
   --shadow-project-card: 0 0 15px 1px var(--color-border);
+  --shadow-project-card-hover: 0 8px 32px 0 rgba(0, 204, 187, 0.2);
+  --shadow-ok: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
 
   @keyframes scroll {
     0% {

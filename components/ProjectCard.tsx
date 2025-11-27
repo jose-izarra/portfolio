@@ -21,9 +21,10 @@ interface ProjectCardProps {
 }
 
 const BASE_CARD_STYLES =
-  "bg-primary-500 border-border shadow-project-card border rounded-lg transition-transform hover:bg-primary-600 md:left-1/2 md:right-1/2 md:-translate-x-4/5 hover:-translate-y-2.5 hover:z-20";
+  "backdrop-blur-xl bg-gradient-to-br from-primary-500/30 to-primary-600/10 border border-light/30 shadow-ok rounded-2xl transition-all duration-300 hover:bg-primary-500/40 hover:shadow-project-card-hover hover:border-primary-400/30 md:left-1/2 md:right-1/2 md:-translate-x-4/5 hover:-translate-y-2.5 hover:z-20";
 
 const BASE_TEXT_STYLES = "text-xs text-light/90 text-left";
+const BASE_IMAGE_STYLES = "rounded-xl shadow-md filter brightness-80";
 
 export default function ProjectCard({
   index,
@@ -105,7 +106,7 @@ export default function ProjectCard({
                 alt="Project Image"
                 width={250}
                 height={250}
-                className="rounded-lg"
+                className={BASE_IMAGE_STYLES}
               />
             </div>
           </div>
@@ -184,7 +185,7 @@ export default function ProjectCard({
               width={200}
               height={200}
               alt="Project Image"
-              className="rounded-lg"
+              className={BASE_IMAGE_STYLES}
             />
           </div>
         </div>
