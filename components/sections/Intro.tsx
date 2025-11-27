@@ -2,7 +2,7 @@ import Headline from "../Headline";
 
 export default function Intro() {
   return (
-    <section className="flex flex-col items-center min-h-[40vh] gap-y-6 mt-12">
+    <section className="flex flex-col items-center min-h-[40vh] gap-y-6 max-w-7xl mx-auto">
       <Headline level={1} className="lg:mb-6">
         What I Do
       </Headline>

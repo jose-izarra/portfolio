@@ -1,5 +1,5 @@
+import { CommitResponse } from "@/lib/types";
 import axios from "axios";
-import { CommitResponse } from "./types";
 
 if (!process.env.PAT_1) {
   throw new Error("No GitHub PAT found");

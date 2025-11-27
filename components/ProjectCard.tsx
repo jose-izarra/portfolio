@@ -21,7 +21,7 @@ interface ProjectCardProps {
 }
 
 const BASE_CARD_STYLES =
-  "backdrop-blur-xl bg-gradient-to-br from-primary-500/30 to-primary-600/10 border border-light/30 shadow-ok rounded-2xl transition-all duration-300 hover:bg-primary-500/40 hover:shadow-project-card-hover hover:border-primary-400/30 md:left-1/2 md:right-1/2 md:-translate-x-4/5 hover:-translate-y-2.5 hover:z-20";
+  "backdrop-blur-xl bg-gradient-to-br from-primary-500/30 to-primary-600/10 border border-light/30 shadow-card rounded-2xl transition-all duration-300 hover:bg-primary-500/40 hover:shadow-project-card-hover hover:border-primary-400/30 md:left-1/2 md:right-1/2 md:-translate-x-4/5 hover:-translate-y-2.5 hover:z-20";
 
 const BASE_TEXT_STYLES = "text-xs text-light/90 text-left";
 const BASE_IMAGE_STYLES = "rounded-xl shadow-md filter brightness-80";

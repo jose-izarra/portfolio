@@ -7,32 +7,22 @@ import StatsCard from "@/components/StatsCard";
 
 export default function Page() {
   return (
-    <main>
-      <article className="m-0 p-0 overflow-hidden relative">
+    <main className="space-y-32">
+      <article className="overflow-hidden relative">
         <Hero />
       </article>
 
-      <article className="z-100">
+      <StatsCard />
+
         <Intro />
-      </article>
 
-      <article className="my-12 relative">
         <Keywords />
-      </article>
 
-      <article>
         <TechStack />
-      </article>
 
-      <article>
         <ProjectsCompact />
-      </article>
 
-      <article className="mb-0! pb-0!">
-        <section className="flex flex-col items-center min-h-[40vh] gap-y-6 mt-12">
-          <StatsCard md />
-        </section>
-      </article>
+
     </main>
   );
 }

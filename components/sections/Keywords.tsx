@@ -33,12 +33,12 @@ export default function Keywords() {
 
   const keywordChunks = splitKeywords(keywords);
   return (
-    <section className="w-full min-h-32 flex flex-col items-center ">
+    <section className="w-full min-h-32 flex flex-col items-center max-w-7xl mx-auto">
       <div className="w-[90%]  lg:w-2/3 flex flex-col h-full ">
         <div className="flex flex-col gap-y-10 justify-center items-center overflow-x-hidden w-full">
           {keywordChunks.map((chunk, i) => (
-            <MovingWords key={i} props={chunk} i={i} />
-          ))}
+              <MovingWords key={i} props={chunk} i={i} />
+            ))}
         </div>
       </div>
     </section>
