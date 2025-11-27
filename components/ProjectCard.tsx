@@ -2,7 +2,7 @@
 import { cn } from "@/lib/utils";
 import { Blocks, Check, CircleDot, Loader, Timer, Users } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+import Headline from "./Headline";
 
 interface ProjectCardProps {
   index: number;
@@ -21,7 +21,7 @@ interface ProjectCardProps {
 }
 
 const BASE_CARD_STYLES =
-  "bg-primary-500 border-border shadow-project-card border rounded-lg transition-transform hover:bg-primary-600 left-1/2 right-1/2 -translate-x-4/5 hover:-translate-y-2.5";
+  "bg-primary-500 border-border shadow-project-card border rounded-lg transition-transform hover:bg-primary-600 md:left-1/2 md:right-1/2 md:-translate-x-4/5 hover:-translate-y-2.5 hover:z-20";
 
 const BASE_TEXT_STYLES = "text-xs text-light/90 text-left";
 
@@ -37,8 +37,6 @@ export default function ProjectCard({
   project_url,
   image_url,
 }: ProjectCardProps) {
-  const [isTextHovered, setIsTextHovered] = useState(false);
-
   return (
     <>
       <a href={project_url} target="_blank" className="shrink-0">
@@ -53,23 +51,15 @@ export default function ProjectCard({
           }}
         >
           <div className="flex items-center gap-x-3 min-h-1/4">
-            <h2
-              className={cn(
-                "text-xl font-bold shrink-0 font-inter",
-                isTextHovered ? "text-light/90" : "text-light"
-              )}
+            <Headline
+              level={2}
+              className="text-xl font-bold shrink-0  font-inter"
             >
               {title.toUpperCase()}
-            </h2>
-            <p
-              className={cn(BASE_TEXT_STYLES)}
-              onMouseEnter={() => setIsTextHovered(true)}
-              onMouseLeave={() => setIsTextHovered(false)}
-            >
-              {description}
-            </p>
+            </Headline>
+            <p className={BASE_TEXT_STYLES}>{description}</p>
           </div>
-          <div className="flex items-center justify-between gap-x-2 h-full w-full">
+          <div className="flex items-center justify-between gap-x-2 h-full w-full ">
             <div className="flex flex-col gap-y-3 items-start w-full pl-1">
               <span className="flex items-center gap-x-2">
                 <Blocks size={14} className="text-light/90 shrink-0" />
@@ -130,7 +120,9 @@ export default function ProjectCard({
         style={{ top: `${index * 60 + 90}px` }}
       >
         <div className="flex flex-col gap-y-4 ">
-          <h2 className="text-xl  font-bold shrink-0 self-start">{title}</h2>
+          <Headline level={2} className="text-xl font-bold shrink-0 self-start font-inter text-light">
+            {title}
+          </Headline>
           <p className="text-xs pb-1 text-secondary-text-color-light text-left ">
             {description}
           </p>
@@ -192,7 +184,6 @@ export default function ProjectCard({
               width={200}
               height={200}
               alt="Project Image"
-              // className="w-[140px] sm:w-[200px]  rounded-lg"
               className="rounded-lg"
             />
           </div>

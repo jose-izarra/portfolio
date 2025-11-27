@@ -16,6 +16,8 @@
 
   --color-border: #00332f;
 
+  --text-7xl: 5rem;
+
   --shadow-project-card: 0 0 15px 1px var(--color-border);
 
   @keyframes scroll {
@@ -31,21 +33,16 @@
   --animate-move-right: scroll 24s linear infinite;
 }
 
-@layer base {
-  h1,
-  h2,
-  h3,
-  p {
-    font-family: "Lora", serif;
-  }
-
-  h1 {
-    color: var(--color-primary-400);
+@layer utilities {
+  .shadow-headline {
     text-shadow: 2px 2px 2px rgb(0, 0, 0, 0.2);
   }
-  h2,
-  h3 {
-    @apply text-light/65;
+}
+
+@layer base {
+  p {
+    font-family: var(--font-lora);
+    font-size: 1.125rem;
   }
 
   a {
@@ -54,17 +51,12 @@
 }
 
 html {
-  font-family: var(--font-lora);
   background-color: var(--color-background);
   text-rendering: optimizeLegibility;
   box-sizing: border-box;
   scroll-behavior: smooth;
   min-width: 0;
   color: var(--color-light);
-}
-
-h3 {
-  font-size: 2.5rem;
 }
 
 article {
@@ -74,18 +66,9 @@ article {
 }
 
 .project p {
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-inter);
 }
 
-@media (max-width: 768px) {
-  .project {
-    transform: translateX(-50%) rotate3d(1, 0, 0, 15deg);
-  }
-
-  .project:hover {
-    transform: translateY(-10px) translateX(-50%) rotate3d(1, 0, 0, 0);
-  }
-}
 
 skills > * {
   @apply sm:mx-2 md:mx-3 lg:mx-5;

@@ -1,6 +1,6 @@
 import { HeadlineLevel } from "@/lib/types";
 import { cn, tw } from "@/lib/utils";
-import { ReactNode, Ref } from "react";
+import { ReactNode, Ref, createElement } from "react";
 
 export interface Props {
   children?: ReactNode;
@@ -12,22 +12,13 @@ export interface Props {
 function getSize(level: HeadlineLevel) {
   switch (level) {
     case 1:
-      return tw("text-3xl lg:text-4xl");
+      return tw("text-4xl text-primary-400 shadow-headline font-lora");
 
     case 2:
-      return tw("text-2xl lg:text-3xl");
+      return tw("text-light/65 font-lora ");
 
     case 3:
-      return tw("text-xl lg:text-2xl");
-
-    case 4:
-      return tw("text-lg lg:text-xl");
-
-    case 5:
-      return tw("text-lg");
-
-    case 6:
-      return tw("text-base");
+      return tw("text-xl text-primary-500 font-bold font-lora");
   }
 }
 
@@ -54,24 +45,21 @@ function getHeadingTag(level: HeadlineLevel) {
   }
 }
 
+
 export default function Headline({
   children,
   className,
   ref,
   level,
 }: Readonly<Props>) {
-  const Element = getHeadingTag(level);
+  const tag = getHeadingTag(level);
 
-  return (
-    <Element
-      className={cn(
-        "font-semibold whitespace-pre-line",
-        getSize(level),
-        className
-      )}
-      ref={ref}
-    >
-      {children}
-    </Element>
+  return createElement(
+    tag,
+    {
+      className: cn(getSize(level), className),
+      ref,
+    },
+    children
   );
 }

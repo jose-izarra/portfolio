@@ -1,3 +1,5 @@
+import Headline from "./Headline";
+
 export default function Footer() {
   const socials = [
     { text: "LinkedIn", link: "https://www.linkedin.com/in/jose-izarra/" },
@@ -7,13 +9,13 @@ export default function Footer() {
   return (
     <footer className="flex items-center justify-evenly text-center gap-x-3 min-h-[250px] px-2 sm:px-10 lg:px-[5rem]">
       <div className="flex items-center w-1/2 justify-evenly">
-        <h3 className="text-lg">© 2024, Jose Izarra</h3>
-
-        <div className="">{/* spotify */}</div>
+        <p className="text-light/65">
+          © {new Date().getFullYear()}, Jose Izarra
+        </p>
       </div>
       <div className="flex flex-col sm:flex-row gap-x-12 w-1/3 justify-between gap-y-8">
         <div className="flex flex-col gap-y-2">
-          <h3 className="text-xl text-primary-500 font-bold">Socials</h3>
+          <Headline level={3}>Socials</Headline>
           <div className="flex flex-col gap-y-3">
             {socials.map((social, i) => (
               <a
@@ -27,7 +29,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="flex flex-col gap-y-2 ">
-          <h3 className="text-lg text-primary-500 font-bold">Contact</h3>
+          <Headline level={3}>Contact</Headline>
           <div className="flex flex-col gap-y-3">
             <a href="mailto:jaiza0912@gmail.com" className="">
               <p className="text-light/65 text-sm font-inter font-normal">

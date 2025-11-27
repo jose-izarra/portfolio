@@ -1,4 +1,5 @@
 import axios from "axios";
+import { CommitResponse } from "./types";
 
 if (!process.env.PAT_1) {
   throw new Error("No GitHub PAT found");
@@ -6,7 +7,7 @@ if (!process.env.PAT_1) {
 
 export async function GET() {
   return axios
-    .get("https://api.github.com/search/commits?q=author:jose-izarra", {
+    .get("https://api.github.com/search/commits?q=author:jose-izarra&sort=author-date&order=desc", {
       headers: {
         Accept: "application/vnd.github.cloak-preview+json",
         Authorization: `token ${process.env.PAT_1}`,
@@ -14,16 +15,11 @@ export async function GET() {
       },
     })
     .then((res) => {
-      const totalCommits = res.data.total_count;
-      const commits = res.data.items;
+      const data: CommitResponse = res.data;
+      const totalCommits = data.total_count;
+      const commits = data.items;
 
-      const sorted_data = commits.sort((a: any, b: any) => {
-        const dateA = new Date(a.commit.author.date);
-        const dateB = new Date(b.commit.author.date);
-        return dateA.getTime() - dateB.getTime();
-      });
-
-      const latest = sorted_data[0];
+      const latest = commits[0];
       const recent = {
         name: latest.repository.name,
         url: latest.html_url,

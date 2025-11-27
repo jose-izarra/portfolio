@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import Headline from "./Headline";
 
 interface Props {
   sm?: boolean;
@@ -70,29 +71,29 @@ export default function StatsCard({ sm, md, lg }: Props) {
         </div>
 
         <div className="flex gap-x-4 items-center col-span-2 w-full">
-          <h2 className="text-2xl font-semibold shrink-0">
+          <Headline level={3} className="text-2xl font-semibold shrink-0 text-light/65">
             <a target="_blank" href="https://github.com/jose-izarra">
               jose-izarra
             </a>
-          </h2>
+          </Headline>
           <p className="text-2xl">🎯</p>
         </div>
       </div>
       <div className="flex flex-col justify-center gap-y-3 px-4 h-full">
         <div className="flex justify-between">
-          <p className="text-base text-primary-500 font-semibold">
+          <p className=" text-primary-500 font-semibold text-base">
             Commits (past year):
           </p>
-          <p className="text-lg font-semibold">{stats.commits}</p>
+          <p className="text-base font-bold">{stats.commits}</p>
         </div>
         <div className="flex justify-between">
-          <p className="text-base text-primary-500 font-semibold">
+          <p className=" text-primary-500 font-semibold text-base">
             Most Used Language:
           </p>
           <p className="text-base">TypeScript</p>
         </div>
         <div className="flex justify-between">
-          <p className="text-base text-primary-500 font-semibold">
+          <p className=" text-primary-500 font-semibold text-base">
             Most Recent Commit:
           </p>
           <p onClick={handleClick} className="text-base cursor-pointer">
@@ -100,10 +101,10 @@ export default function StatsCard({ sm, md, lg }: Props) {
           </p>
         </div>
         <div className="flex justify-between">
-          <p className="text-base text-primary-500 font-semibold">
+          <p className="text-primary-500 font-semibold text-base">
             Code Editor:
           </p>
-          <p className="text-base">VSCode</p>
+          <p className="text-base">Cursor</p>
         </div>
         {stats.recent.isPrivate && visible && (
           <span className="bg-neutral-200 border shadown-md absolute -top-12 right-0 py-1 px-2 rounded-2xl">

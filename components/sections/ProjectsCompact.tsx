@@ -1,10 +1,11 @@
 import ProjectCard from "@/components/ProjectCard";
 import projects from "@/data/projects.json";
+import Headline from "../Headline";
 
 export default function ProjectsCompact({}) {
   return (
     <section className="flex flex-col items-center min-h-[90vh] sm:min-h-[80vh]  gap-y-6 mt-12">
-      <h1 className="text-4xl">What I&apos;ve Done</h1>
+      <Headline level={1}>What I&apos;ve Done</Headline>
       <div className="w-[90%] relative ">
         {projects
           .slice(Math.max(projects.length - 6, 0), projects.length)
