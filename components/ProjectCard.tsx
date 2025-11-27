@@ -21,7 +21,7 @@ interface ProjectCardProps {
 }
 
 const BASE_CARD_STYLES =
-  "backdrop-blur-xl bg-gradient-to-br from-primary-500/30 to-primary-600/10 border border-light/30 shadow-card rounded-2xl transition-all duration-300 hover:bg-primary-500/40 hover:shadow-project-card-hover hover:border-primary-400/30 md:left-1/2 md:right-1/2 md:-translate-x-4/5 hover:-translate-y-2.5 hover:z-20";
+  "backdrop-blur-xl bg-gradient-to-br from-primary-500/30 to-primary-600/10 border border-light/30 shadow-card rounded-2xl transition-all duration-300 hover:bg-primary-500/40 hover:shadow-project-card-hover hover:border-primary-400/30 lg:left-1/2 lg:right-1/2 lg:-translate-x-4/5 hover:-translate-y-2.5 hover:z-20";
 
 const BASE_TEXT_STYLES = "text-xs text-light/90 text-left";
 const BASE_IMAGE_STYLES = "rounded-xl shadow-md filter brightness-80";
@@ -44,7 +44,7 @@ export default function ProjectCard({
         <div
           className={cn(
             BASE_CARD_STYLES,
-            "project w-[500px] h-[300px] absolute flex-col gap-y-1 p-4 hidden md:flex hover:z-10 "
+            "project w-[500px] h-[300px] absolute flex-col gap-y-1 p-4 hidden lg:flex hover:z-10 "
           )}
           style={{
             marginLeft: `${index * 60}px`,
@@ -116,7 +116,7 @@ export default function ProjectCard({
       <div
         className={cn(
           BASE_CARD_STYLES,
-          "project w-full sm:w-11/12 h-[300px] absolute flex-col p-4 flex md:hidden shrink-0"
+          "project w-full  h-[300px] absolute flex-col p-4 flex lg:hidden shrink-0"
         )}
         style={{ top: `${index * 60 + 90}px` }}
       >

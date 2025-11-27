@@ -7,7 +7,7 @@ import StatsCard from "@/components/StatsCard";
 
 export default function Page() {
   return (
-    <main className="space-y-32">
+    <main className="mb-16 space-y-32">
       <Hero />
       <StatsCard />
       <Intro />

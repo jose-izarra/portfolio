@@ -33,10 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-54D6PWBZ8R"
-        ></Script>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-54D6PWBZ8R"></Script>
         <Script id="google-analytics">
           {`
                     window.dataLayer = window.dataLayer || [];

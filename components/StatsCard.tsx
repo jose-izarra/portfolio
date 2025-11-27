@@ -102,7 +102,7 @@ export default function StatsCard() {
         className={cn(
           baseClasses,
           isSticky && isDesktop
-            ? "fixed -bottom-4 -left-4 z-110 origin-bottom-right cursor-grab"
+            ? "fixed -top-4 -right-4 z-110 origin-bottom-right cursor-grab"
             : "relative cursor-default",
         )}
         animate={{

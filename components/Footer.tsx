@@ -1,37 +1,83 @@
+import { FileText, Github, Linkedin, Mail } from "lucide-react";
 import Headline from "./Headline";
 
 export default function Footer() {
   const socials = [
-    { text: "LinkedIn", link: "https://www.linkedin.com/in/jose-izarra/" },
-    { text: "Github", link: "https://www.github.com/jose-izarra" },
+    {
+      text: "LinkedIn",
+      link: "https://www.linkedin.com/in/jose-izarra/",
+      icon: <Linkedin className="h-4 w-4" />,
+    },
+    {
+      text: "Github",
+      link: "https://www.github.com/jose-izarra",
+      icon: <Github className="h-4 w-4" />,
+    },
   ];
 
   return (
-    <footer className="flex min-h-[250px] items-center justify-evenly gap-x-3 px-2 text-center sm:px-10 lg:px-20">
-      <div className="flex w-1/2 items-center justify-evenly">
-        <p className="text-light/65">© {new Date().getFullYear()}, Jose Izarra</p>
-      </div>
-      <div className="flex w-1/3 flex-col justify-between gap-x-12 gap-y-8 sm:flex-row">
-        <div className="flex flex-col gap-y-2">
-          <Headline level={3}>Socials</Headline>
-          <div className="flex flex-col gap-y-3">
-            {socials.map((social, i) => (
-              <a href={social.link} key={i} className="text-light/65 text-sm font-normal">
-                {social.text}
-              </a>
-            ))}
+    <footer className="from-background to-primary-900/10 overflow relative mt-20 border-t border-white/10 bg-linear-to-b">
+      <div className="mx-auto max-w-7xl px-6 py-12">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-4 lg:gap-8">
+          <div className="col-span-1 space-y-4 md:col-span-2">
+            <Headline level={1} className="text-primary-400 text-3xl">
+              Jose Izarra
+            </Headline>
+            <p className="text-light/60 max-w-xs text-sm leading-relaxed">
+              Finding balance in life through passion.
+              <br />
+              Software Developer and Creator.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <h4 className="text-light/90 text-sm font-semibold tracking-wide uppercase">Connect</h4>
+            <ul className="space-y-3">
+              {socials.map((social, i) => (
+                <li key={i}>
+                  <a
+                    href={social.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group text-light/60 hover:text-primary-400 flex items-center gap-2 text-sm transition-colors"
+                  >
+                    {social.icon}
+                    <span>{social.text}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="space-y-4">
+            <h4 className="text-light/90 text-sm font-semibold tracking-wide uppercase">Contact</h4>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="mailto:jaiza0912@gmail.com"
+                  className="group text-light/60 hover:text-primary-400 flex items-center gap-2 text-sm transition-colors"
+                >
+                  <Mail className="h-4 w-4 shrink-0" />
+                  <span>jaiza0912@gmail.com</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/mycv"
+                  className="group text-light/60 hover:text-primary-400 flex items-center gap-2 text-sm transition-colors"
+                >
+                  <FileText className="h-4 w-4 shrink-0" />
+                  <span>View CV</span>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-        <div className="flex flex-col gap-y-2">
-          <Headline level={3}>Contact</Headline>
-          <div className="flex flex-col gap-y-3">
-            <a href="mailto:jaiza0912@gmail.com" className="">
-              <p className="text-light/65 font-inter text-sm font-normal">jaiza0912@gmail.com</p>
-            </a>
-            <a href="/mycv" className="">
-              <p className="text-light/65 font-inter text-sm font-normal">CV</p>
-            </a>
-          </div>
+
+        <div className="mt-12 flex flex-col items-center justify-between border-t border-white/5 pt-8 md:flex-row">
+          <p className="text-light/40 text-xs">
+            © {new Date().getFullYear()} Jose Izarra. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
