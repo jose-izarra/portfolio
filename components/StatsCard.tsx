@@ -14,9 +14,9 @@ interface Stats {
 }
 
 const baseClasses =
-  "backdrop-blur-xl bg-gradient-to-br from-primary-500/30 to-primary-600/10 border border-white/10 shadow-card rounded-2xl flex flex-col p-3 overflow-visible md:w-[350px] h-[300px]";
+  "backdrop-blur-xl bg-gradient-to-br from-primary-500/30 to-primary-600/20 border border-light/30 shadow-card rounded-2xl flex flex-col p-3 overflow-visible md:w-[350px] h-[300px]";
 
-const threshold = 1000;
+const threshold = 1050;
 
 export default function StatsCard() {
   const screenSize = useScreenSize();
@@ -28,6 +28,8 @@ export default function StatsCard() {
   const router = useRouter();
   const [visible, setVisible] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isHidden, setIsHidden] = useState(false);
   const { scrollY } = useScroll();
   const [dragConstraints, setDragConstraints] = useState({
     top: 0,
@@ -52,6 +54,12 @@ export default function StatsCard() {
   }, []);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest < threshold) {
+      setIsHidden(false);
+    }
+
+    if (isHidden) return;
+
     if (latest > threshold && !isSticky) {
       setIsSticky(true);
     } else if (latest <= threshold && isSticky) {
@@ -68,6 +76,7 @@ export default function StatsCard() {
           commits: data.commits,
           recent: data.recent,
         }));
+        setIsLoading(false);
       })
       .catch((err) => console.log("err", err));
   }, []);
@@ -82,18 +91,19 @@ export default function StatsCard() {
   };
 
   return (
-    <div className="relative flex flex-col items-center gap-y-6 min-h-72">
+    <div className="relative flex min-h-72 flex-col items-center gap-y-6">
       <motion.div
         layout
         drag={isSticky && isDesktop}
         dragConstraints={dragConstraints}
+        dragMomentum={false}
         dragElastic={0.2}
         whileDrag={{ cursor: "grabbing", scale: 0.65 }}
         className={cn(
           baseClasses,
           isSticky && isDesktop
-            ? "fixed -bottom-4 -right-4 z-110 origin-bottom-right cursor-grab"
-            : "relative cursor-default"
+            ? "fixed -bottom-4 -left-4 z-110 origin-bottom-right cursor-grab"
+            : "relative cursor-default",
         )}
         animate={{
           scale: isSticky && isDesktop ? 0.6 : 1,
@@ -106,22 +116,22 @@ export default function StatsCard() {
           damping: 50,
         }}
       >
-
         {isSticky && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="absolute -top-3 -right-3 z-50 p-1 bg-neutral-800/50 hover:bg-neutral-800/70 rounded-full backdrop-blur-sm border border-white/10 cursor-pointer"
+            className="absolute -top-3 -right-3 z-50 cursor-pointer rounded-full border border-white/10 bg-neutral-800/50 p-1 backdrop-blur-sm hover:bg-neutral-800/70"
             onClick={(e) => {
               e.stopPropagation();
               setIsSticky(false);
+              setIsHidden(true);
             }}
           >
-            <XIcon className="w-4 h-4 text-white/80" />
+            <XIcon className="h-5 w-5 text-white/80" />
           </motion.div>
         )}
-        <div className="grid grid-cols-3 gap-x-3 items-center px-5 pt-3 shrink-0 ">
+        <div className="grid shrink-0 grid-cols-3 items-center gap-x-3 px-5 pt-3">
           <div className="">
             <a target="_blank" href="https://github.com/jose-izarra">
               <Image
@@ -134,52 +144,39 @@ export default function StatsCard() {
             </a>
           </div>
 
-          <div className="flex gap-x-4 items-center col-span-2 w-full">
-            <Headline
-              level={3}
-              className="text-2xl font-semibold shrink-0 text-light/65"
-            >
-                jose-izarra
+          <div className="col-span-2 flex w-full items-center gap-x-4">
+            <Headline level={3} className="text-light/65 shrink-0 text-2xl font-semibold">
+              jose-izarra
             </Headline>
             <p className="text-2xl">🎯</p>
           </div>
         </div>
-        <div className="flex flex-col justify-center gap-y-3 px-4 h-full">
+        <div className="flex h-full flex-col justify-center gap-y-3 px-4">
           <div className="flex justify-between">
-            <p className=" text-primary-500 font-semibold text-base">
-              Commits (past year):
-            </p>
-            <p className="text-base font-bold">{stats.commits}</p>
+            <p className="text-primary-500 text-base font-semibold">Commits (past year):</p>
+            <p className="text-base font-bold">{isLoading ? "-" : stats.commits}</p>
           </div>
           <div className="flex justify-between">
-            <p className=" text-primary-500 font-semibold text-base">
-              Most Used Language:
-            </p>
-            <p className="text-base">TypeScript</p>
+            <p className="text-primary-500 text-base font-semibold">Most Used Language:</p>
+            <p className="text-base">{isLoading ? "-" : "TypeScript"}</p>
           </div>
           <div className="flex justify-between">
-            <p className=" text-primary-500 font-semibold text-base">
-              Most Recent Commit:
-            </p>
-            <p onClick={handleClick} className="text-base cursor-pointer">
-              {stats.recent.name}
+            <p className="text-primary-500 text-base font-semibold">Most Recent Commit:</p>
+            <p onClick={handleClick} className="cursor-pointer text-base">
+              {isLoading ? "-" : stats.recent.name}
             </p>
           </div>
           <div className="flex justify-between">
-            <p className="text-primary-500 font-semibold text-base">
-              Code Editor:
-            </p>
-            <p className="text-base">Cursor</p>
+            <p className="text-primary-500 text-base font-semibold">Code Editor:</p>
+            <p className="text-base">{isLoading ? "-" : "Cursor"}</p>
           </div>
           {stats.recent.isPrivate && visible && (
-            <span className="bg-neutral-200 border shadown-md absolute -top-12 right-0 py-1 px-2 rounded-2xl">
-              <p className=" text-neutral-600 text-nowrap text-xs">
-                This repo is private
-              </p>
+            <span className="shadown-md absolute -top-12 right-0 rounded-2xl border bg-neutral-200 px-2 py-1">
+              <p className="text-xs text-nowrap text-neutral-600">This repo is private</p>
             </span>
           )}
         </div>
-        <p className="text-sm text-light/65 text-center">My unofficial business card</p>
+        <p className="text-light/65 text-center text-sm">My unofficial business card</p>
       </motion.div>
     </div>
   );

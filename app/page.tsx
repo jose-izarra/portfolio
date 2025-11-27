@@ -8,21 +8,12 @@ import StatsCard from "@/components/StatsCard";
 export default function Page() {
   return (
     <main className="space-y-32">
-      <article className="overflow-hidden relative">
-        <Hero />
-      </article>
-
+      <Hero />
       <StatsCard />
-
-        <Intro />
-
-        <Keywords />
-
-        <TechStack />
-
-        <ProjectsCompact />
-
-
+      <Intro />
+      <Keywords />
+      <TechStack />
+      <ProjectsCompact />
     </main>
   );
 }
