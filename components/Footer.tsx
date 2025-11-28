@@ -39,7 +39,7 @@ export default function Footer() {
                     href={social.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group text-light/60 hover:text-primary-400 flex items-center gap-2 text-sm transition-colors"
+                    className="group text-light/60 hover:text-primary-400 hover:fill-primary-400 flex items-center gap-2 text-sm transition-colors"
                   >
                     {social.icon}
                     <span>{social.text}</span>
