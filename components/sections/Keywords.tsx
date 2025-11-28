@@ -36,7 +36,7 @@ export default function Keywords() {
         <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-linear-to-r from-background to-transparent" />
         <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-linear-to-l from-background to-transparent" />
 
-        <div className="flex w-full flex-col items-center justify-center gap-y-10 overflow-x-hidden">
+        <div className="flex w-full flex-col items-center justify-center gap-y-8 overflow-x-hidden">
           {wordsArray.map((words, i) => (
             <MovingWords
               key={i}
