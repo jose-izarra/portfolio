@@ -1,5 +1,10 @@
 export type HeadlineLevel = 1 | 2 | 3 | 4 | 5 | 6;
 
+export interface Skill {
+    name: string;
+    path: string;
+}
+
 export const SCREEN_SIZES = {
     SM: 640,
     MD: 768,

@@ -1,14 +1,13 @@
 "use client";
+import { Skill } from "@/lib/types";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 
-interface Skill {
-  name: string;
-  path: string;
-  link: string;
+interface Props {
+    skill: Skill;
 }
 
-export default function SkillIcon({ skill }: { skill: Skill }) {
+export default function SkillIcon({ skill }: Props) {
   const imgRef = useRef<HTMLImageElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -25,6 +24,8 @@ export default function SkillIcon({ skill }: { skill: Skill }) {
       const startLeft = img.offsetLeft;
       const startTop = img.offsetTop;
 
+      img.style.cursor = "grabbing";
+
       const onMouseMove = (moveEvent: MouseEvent) => {
         const nextX = moveEvent.clientX - startX + startLeft;
         const nextY = moveEvent.clientY - startY + startTop;
@@ -39,6 +40,7 @@ export default function SkillIcon({ skill }: { skill: Skill }) {
         "mouseup",
         () => {
           document.removeEventListener("mousemove", onMouseMove);
+          img.style.cursor = "grab";
 
           const containerHeight = container.clientHeight;
           const containerWidth = container.clientWidth;
@@ -63,14 +65,19 @@ export default function SkillIcon({ skill }: { skill: Skill }) {
   }, []);
 
   return (
-    <div ref={containerRef} className="">
+    <div
+      ref={containerRef}
+      className="relative w-[60px] h-[60px] sm:w-[70px] sm:h-[70px] shrink-0 cursor-grab select-none z-10"
+      title={skill.name}
+    >
       <Image
         ref={imgRef}
         src={skill.path}
         width={60}
         height={60}
-        className=""
+        className="absolute top-0 left-0 w-full h-full object-contain select-none"
         alt={skill.name}
+        draggable={false}
       />
     </div>
   );
