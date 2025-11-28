@@ -1,15 +1,13 @@
 "use client";
+import { Skill } from "@/lib/types";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-//
 
-interface Skill {
-  name: string;
-  path: string;
-  link: string;
+interface Props {
+    skill: Skill;
 }
 
-export default function SkillIcon({ skill }: { skill: Skill }) {
+export default function SkillIcon({ skill }: Props) {
   const imgRef = useRef<HTMLImageElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -21,15 +19,14 @@ export default function SkillIcon({ skill }: { skill: Skill }) {
 
     const onMouseDown = (e: MouseEvent) => {
       e.preventDefault();
-      // Record the initial mouse position and the image's starting position
       const startX = e.clientX;
       const startY = e.clientY;
       const startLeft = img.offsetLeft;
       const startTop = img.offsetTop;
 
-      // Define the mousemove handler dynamically inside mousedown
+      img.style.cursor = "grabbing";
+
       const onMouseMove = (moveEvent: MouseEvent) => {
-        // Calculate new position of the image
         const nextX = moveEvent.clientX - startX + startLeft;
         const nextY = moveEvent.clientY - startY + startTop;
 
@@ -38,15 +35,13 @@ export default function SkillIcon({ skill }: { skill: Skill }) {
         img.style.transition = "none";
       };
 
-      // Attach the mousemove and mouseup listeners to document to ensure wide coverage
       document.addEventListener("mousemove", onMouseMove);
       document.addEventListener(
         "mouseup",
         () => {
-          // Remove listeners when mouse is released
           document.removeEventListener("mousemove", onMouseMove);
+          img.style.cursor = "grab";
 
-          // Calculate the "floor" position based on the container's height
           const containerHeight = container.clientHeight;
           const containerWidth = container.clientWidth;
           const imgHeight = img.clientHeight;
@@ -54,33 +49,35 @@ export default function SkillIcon({ skill }: { skill: Skill }) {
           const floorPosition = containerHeight - imgHeight;
           const rightPosition = containerWidth - imgWidth;
 
-          // Animate the fall
           img.style.top = `${floorPosition}px`;
           img.style.left = `${rightPosition}px`;
           img.style.transition = "top 1s ease-out, left 1s ease-out";
         },
         { once: true }
-      ); // Use the `{ once: true }` option to auto-remove the listener
+      );
     };
 
-    // Attach the mousedown listener to the image
     img.addEventListener("mousedown", onMouseDown);
 
-    // Cleanup function to remove event listeners when the component unmounts
     return () => {
       img.removeEventListener("mousedown", onMouseDown);
     };
   }, []);
 
   return (
-    <div ref={containerRef} className="">
+    <div
+      ref={containerRef}
+      className="relative w-[60px] h-[60px] sm:w-[70px] sm:h-[70px] shrink-0 cursor-grab select-none z-10"
+      title={skill.name}
+    >
       <Image
         ref={imgRef}
         src={skill.path}
         width={60}
         height={60}
-        className=""
+        className="absolute top-0 left-0 w-full h-full object-contain select-none"
         alt={skill.name}
+        draggable={false}
       />
     </div>
   );

@@ -1,71 +1,52 @@
-import { cn } from "@/lib/utils";
+import MovingWords from "../MovingWords";
 
-interface Keywords {
-  i: number;
-  props: string[];
-}
+const keywords = [
+  "growth",
+  "mindset",
+  "football",
+  "dedication",
+  "passion",
+  "hardwork",
+  "teamwork",
+  "leadership",
+  "innovation",
+  "creativity",
+  "problem-solving",
+  "resilience",
+  "adaptability",
+  "curiosity",
+  "persistence",
+];
+
+const splitKeywords = (keywords: string[]) => {
+  const chunkSize = Math.ceil(keywords.length / 3);
+  const chunks = [];
+  for (let i = 0; i < keywords.length; i += chunkSize) {
+    const chunk = keywords.slice(i, i + chunkSize);
+    chunks.push(chunk);
+  }
+  return chunks;
+};
 
 export default function Keywords() {
-  const keywords = [
-    "growth",
-    "mindset",
-    "football",
-    "dedication",
-    "passion",
-    "hardwork",
-    "teamwork",
-    "leadership",
-    "innovation",
-    "creativity",
-    "problem-solving",
-    "resilience",
-  ];
-
-  const splitKeywords = (keywords: string[]) => {
-    const chunkSize = Math.ceil(keywords.length / 3);
-    const chunks = [];
-    for (let i = 0; i < keywords.length; i += chunkSize) {
-      const chunk = keywords.slice(i, i + chunkSize);
-      chunks.push(chunk.concat(chunk).concat(chunk));
-    }
-    return chunks;
-  };
-
-  const keywordChunks = splitKeywords(keywords);
+  const wordsArray = splitKeywords(keywords);
   return (
-    <section className="w-full min-h-32 flex flex-col items-center max-w-7xl mx-auto">
-      <div className="w-[90%]  lg:w-2/3 flex flex-col h-full ">
-        <div className="flex flex-col gap-y-10 justify-center items-center overflow-x-hidden w-full">
-          {keywordChunks.map((chunk, i) => (
-              <MovingWords key={i} props={chunk} i={i} />
-            ))}
+    <section className="mx-auto flex min-h-32 w-full max-w-7xl flex-col items-center">
+      <div className="relative flex h-full w-9/10 flex-col lg:w-2/3">
+        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-linear-to-r from-background to-transparent" />
+        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-linear-to-l from-background to-transparent" />
+
+        <div className="flex w-full flex-col items-center justify-center gap-y-8 overflow-x-hidden">
+          {wordsArray.map((words, i) => (
+            <MovingWords
+              key={i}
+              words={words}
+              direction={i % 2 === 0 ? -1 : 1}
+              speed={10 + i * 5}
+            />
+          ))}
         </div>
       </div>
     </section>
-  );
-}
-
-function MovingWords({ props, i }: Keywords) {
-  return (
-    <div
-      className={cn(
-        "w-full",
-        i % 2 == 0 ? "animate-move-left" : "animate-move-right"
-      )}
-      data-delay={i}
-    >
-      <ul
-        className={`flex gap-x-8 text-light/65 whitespace-nowrap relative  w-full`}
-      >
-        {props.map((keyword, index) => (
-          <li key={index}>{keyword}</li>
-        ))}
-        {props.map((keyword, index) => (
-          <li key={index} className="aria-hidden">
-            {keyword}
-          </li>
-        ))}
-      </ul>
-    </div>
   );
 }

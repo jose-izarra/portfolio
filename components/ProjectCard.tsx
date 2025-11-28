@@ -1,24 +1,10 @@
 "use client";
+import { Project } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { Blocks, Check, CircleDot, Loader, Timer, Users } from "lucide-react";
 import Image from "next/image";
 import Headline from "./Headline";
 
-interface ProjectCardProps {
-  index: number;
-  title: string;
-  description: string;
-  purpose: string;
-  techStack: string[];
-  status: {
-    finished: boolean;
-    message: string;
-  };
-  duration: string;
-  contributors: string;
-  project_url: string;
-  image_url: string;
-}
 
 const BASE_CARD_STYLES =
   "backdrop-blur-xl bg-gradient-to-br from-primary-500/30 to-primary-600/10 border border-light/30 shadow-card rounded-2xl transition-all duration-300 hover:bg-primary-500/40 hover:shadow-project-card-hover hover:border-primary-400/30 lg:left-1/2 lg:right-1/2 lg:-translate-x-4/5 hover:-translate-y-2.5 hover:z-20";
@@ -26,18 +12,13 @@ const BASE_CARD_STYLES =
 const BASE_TEXT_STYLES = "text-xs text-light/90 text-left";
 const BASE_IMAGE_STYLES = "rounded-xl shadow-md filter brightness-80";
 
-export default function ProjectCard({
-  index,
-  title,
-  description,
-  purpose,
-  techStack,
-  status,
-  duration,
-  contributors,
-  project_url,
-  image_url,
-}: ProjectCardProps) {
+interface Props {
+    index: number;
+    project: Project;
+}
+
+export default function ProjectCard({ index, project }: Props) {
+    const { title, description, purpose, techStack, status, duration, contributors, project_url, image_url } = project;
   return (
     <>
       <a href={project_url} target="_blank" className="shrink-0 hidden lg:block">
@@ -54,7 +35,7 @@ export default function ProjectCard({
           <div className="flex items-center gap-x-3 min-h-1/4">
             <Headline
               level={2}
-              className="text-xl font-bold shrink-0  font-inter"
+              className="text-xl font-bold shrink-0 font-inter"
             >
               {title.toUpperCase()}
             </Headline>

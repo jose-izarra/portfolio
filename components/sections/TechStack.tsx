@@ -1,38 +1,44 @@
+import Image from "next/image";
 import Headline from "../Headline";
 import Skills from "../Skills";
 
+const STATS_URL = "https://github-readme-stats-git-master-jose-izarras-projects.vercel.app/api/top-langs/?username=jose-izarra&theme=dracula&hide_border=true&include_all_commits=true&count_private=true&layout=compact";
 export default function TechStack() {
   return (
-    <section className="flex flex-col items-center min-h-[40vh] gap-y-12 max-w-7xl mx-auto">
-      <Headline level={1} className="lg:mb-6">
-        How I Do
-      </Headline>
-      <div className="w-full sm:w-[90%] lg:w-11/12 flex flex-col items-center lg:flex-row lg:items-start justify-evenly gap-x-12 gap-y-12 ">
-        <div className="lg:h-full w-full lg:w-[50%] flex flex-col sm:flex-row justify-evenly items-center lg:justify-center lg:flex-col h-full">
-          <div className="flex flex-col items-center sm:w-1/3 lg:w-full">
+    <section className="flex flex-col items-center gap-y-24 max-w-7xl mx-auto px-4 ">
+      <div className="text-center space-y-6">
+        <Headline level={1}>
+           Technologies
+        </Headline>
+        <p className="text-lg text-light/65 max-w-2xl font-lora italic mx-auto">
+           A collection of languages, tools, and frameworks I have worked with more than twice and feel comfortable using.
+        </p>
+      </div>
 
-          <Headline level={2} className="mb-2 ">
-            *According to GitHub
-          </Headline>
+      <div className="w-full flex flex-col items-center">
+         <Skills className="w-full max-w-5xl px-4" />
+      </div>
+
+      <div className="w-full flex flex-col items-center gap-8 mt-4 pt-12 border-t border-light/5">
+          <div className="flex flex-col items-center">
+            <Headline level={2} className="mb-2 text-light/60 text-xl">
+                According to GitHub
+            </Headline>
           </div>
-          <div className="w-2/3  lg:w-[356px] flex justify-center">
-            <img
-              src="https://github-readme-stats-git-master-jose-izarras-projects.vercel.app/api/top-langs/?username=jose-izarra&theme=dracula&hide_border=true&include_all_commits=true&count_private=true&layout=compact&exclude_repo=C_whale"
-              alt="Top Languages"
-              className="w-[356px] lg:w-full h-fit "
-              width={356}
-              height={356}
-            />
+
+          <div className="relative group rounded-xl">
+            <div className="absolute -inset-2 bg-linear-to-r from-primary-500 to-purple-600 rounded-xl blur-lg opacity-20 group-hover:opacity-40 transition duration-700"></div>
+            <div className="relative bg-background p-1 rounded-xl overflow-hidden">
+                <Image
+                  src={STATS_URL}
+                  alt="Top Languages"
+                  className="w-full max-w-100 h-auto object-contain"
+                  width={400}
+                  height={400}
+                  unoptimized
+                />
+            </div>
           </div>
-        </div>
-        <div className="w-full lg:w-2/3 flex flex-col items-center sm:flex-row sm:items-center sm:justify-evenly lg:flex-col ">
-          <div className="flex flex-col items-center sm:w-1/3 lg:w-full">
-          <Headline level={2} className="mb-2 text-light/65">
-            *According to me
-          </Headline>
-          </div>
-          <Skills />
-        </div>
       </div>
     </section>
   );
