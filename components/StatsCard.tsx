@@ -153,21 +153,21 @@ export default function StatsCard() {
         </div>
         <div className="flex h-full flex-col justify-center gap-y-3 px-4">
           <div className="flex justify-between">
-            <p className="text-primary-500 text-base font-semibold">Commits (past year):</p>
+            <p className="text-light/65 text-base font-semibold">Commits (past year):</p>
             <p className="text-base font-bold">{isLoading ? "-" : stats.commits}</p>
           </div>
           <div className="flex justify-between">
-            <p className="text-primary-500 text-base font-semibold">Most Used Language:</p>
+            <p className="text-light/65 text-base font-semibold">Most Used Language:</p>
             <p className="text-base">{isLoading ? "-" : "TypeScript"}</p>
           </div>
           <div className="flex justify-between">
-            <p className="text-primary-500 text-base font-semibold">Most Recent Commit:</p>
+            <p className="text-light/65 text-base font-semibold">Most Recent Commit:</p>
             <p onClick={handleClick} className="cursor-pointer text-base">
               {isLoading ? "-" : stats.recent.name}
             </p>
           </div>
           <div className="flex justify-between">
-            <p className="text-primary-500 text-base font-semibold">Code Editor:</p>
+            <p className="text-light/65 text-base font-semibold">Code Editor:</p>
             <p className="text-base">{isLoading ? "-" : "Cursor"}</p>
           </div>
           {stats.recent.isPrivate && visible && (

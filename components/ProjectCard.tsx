@@ -54,7 +54,7 @@ export default function ProjectCard({
           <div className="flex items-center gap-x-3 min-h-1/4">
             <Headline
               level={2}
-              className="text-xl font-bold shrink-0  font-inter"
+              className="text-xl font-bold shrink-0 font-inter"
             >
               {title.toUpperCase()}
             </Headline>

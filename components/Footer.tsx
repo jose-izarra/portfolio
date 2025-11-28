@@ -1,5 +1,6 @@
 import { FileText, Github, Linkedin, Mail } from "lucide-react";
 import Headline from "./Headline";
+import SpotifyCard from "./SpotifyCard";
 
 export default function Footer() {
   const socials = [
@@ -18,8 +19,8 @@ export default function Footer() {
   return (
     <footer className="from-background to-primary-900/10 overflow relative mt-20 border-t border-white/10 bg-linear-to-b">
       <div className="mx-auto max-w-7xl px-6 py-12">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-4 lg:gap-8">
-          <div className="col-span-1 space-y-4 md:col-span-2">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-8 ">
+          <div className="col-span-1 space-y-4 md:col-span-2 lg:col-span-3 order-1">
             <Headline level={1} className="text-primary-400 text-3xl">
               Jose Izarra
             </Headline>
@@ -30,7 +31,13 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="space-y-4">
+          <div className="col-span-1 md:col-span-2 lg:col-span-5 flex items-center justify-start lg:justify-center order-last md:order-last">
+            <div className="w-full max-w-[350px]">
+              <SpotifyCard />
+            </div>
+          </div>
+
+          <div className="space-y-4 lg:col-span-2 order-3">
             <h4 className="text-light/90 text-sm font-semibold uppercase">Connect</h4>
             <ul className="space-y-3">
               {socials.map((social, i) => (
@@ -49,7 +56,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-4 lg:col-span-2 gap-4 order-4">
             <h4 className="text-light/90 text-sm font-semibold uppercase">Contact</h4>
             <ul className="space-y-3">
               <li>
@@ -73,6 +80,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
+
 
         <div className="mt-12 flex flex-col items-center justify-between border-t border-white/5 pt-8 md:flex-row">
           <p className="text-light/40 text-xs">
