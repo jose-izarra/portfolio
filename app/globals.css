@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap");
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+@theme {
+  --font-inter: "Inter", sans-serif;
+  --font-lora: "Lora", serif;
+
+  --color-light: #ffffff;
+
+  --color-primary-400: #00ccbb;
+  --color-primary-500: #00998c;
+  --color-primary-600: #00a89a;
+
+  --color-background: #34383c;
+
+  --color-border: #00332f;
+
+  --text-7xl: 5rem;
+
+  --shadow-card: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+  --shadow-project-card-hover: 0 8px 32px 0 rgba(0, 204, 187, 0.2);
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  --animate-move-left: scroll 24s linear infinite reverse;
+  --animate-move-right: scroll 24s linear infinite;
+}
+
+@layer utilities {
+  .shadow-headline {
+    text-shadow: 2px 2px 2px rgb(0, 0, 0, 0.2);
+  }
+}
+
+@layer base {
+  p {
+    font-family: var(--font-lora);
+    font-size: 1.125rem;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+html {
+  background-color: var(--color-background);
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  min-width: 0;
+  color: var(--color-light);
+}
+
+
+.project p {
+  font-family: var(--font-inter);
+}
+
+
+skills > * {
+  @apply sm:mx-2 md:mx-3 lg:mx-5;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.skills div {
+  @apply my-5 w-[8vw] lg:w-[55px];
+  max-width: 90px;
+  min-width: 30px;
+
+  min-height: 50px;
+  position: relative;
+  cursor: grab;
+
+  z-index: 100;
+}
+
+.skills div div:nth-child(odd) {
+  @apply ml-[5vw] sm:ml-[4vw];
+}
+
+.skills div div:nth-child(2n) {
+  @apply mr-[5vw] sm:mr-[4vw];
+}
+
+.skills div img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10002;
+  translate: none;
+  rotate: none;
+  scale: none;
+  touch-action: none;
+  cursor: grab;
+  user-select: none;
+}
+
+.skills div img:active {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
