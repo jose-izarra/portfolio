@@ -5,9 +5,7 @@ export interface Skill {
     path: string;
 }
 
-export interface BackgroundPic {
-    path: string;
-}
+export type BackgroundPic = string;
 
 export interface Project {
     title: string;

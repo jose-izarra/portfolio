@@ -1,5 +1,5 @@
 "use client";
-import MovingContainer from "@/components/MovingPicture";
+import MovingContainer from "@/components/MovingContainer";
 import { backgroundPics } from "@/data/background-pics";
 import { BackgroundPic } from "@/lib/types";
 import { shuffle } from "@/lib/utils";
@@ -41,7 +41,7 @@ export default function HeroAnimation({}) {
         <MovingContainer
           col={col}
           left={leftValues[col]}
-          picsShuffled={picsShuffled}
+          pics={picsShuffled}
           speeds={speeds}
           key={`MovingContainer-${col}`}
         />
