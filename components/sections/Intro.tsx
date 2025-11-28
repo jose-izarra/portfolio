@@ -2,12 +2,12 @@ import Headline from "../Headline";
 
 export default function Intro() {
   return (
-    <section className="mx-auto flex min-h-[40vh] max-w-7xl flex-col items-center gap-y-6">
+    <section className="mx-auto flex max-w-7xl flex-col items-center gap-y-6">
       <Headline level={1} className="lg:mb-6">
         What I Do
       </Headline>
       <div className="flex w-full justify-center gap-y-2 sm:w-[90%] lg:w-9/12 lg:gap-y-12">
-        <div className="mx-5 md:hidden">
+        <div className="mx-5 md:hidden text-center">
           <p>
             I&apos;m Jose Izarra, a software developer passionate about creating projects no one has
             ever done before. I do full stack, random projects I find interesting and study for uni
