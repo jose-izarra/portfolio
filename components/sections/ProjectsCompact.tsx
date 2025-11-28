@@ -1,5 +1,5 @@
 import ProjectCard from "@/components/ProjectCard";
-import projects from "@/data/projects.json";
+import { projects } from "@/data/projects";
 import Headline from "../Headline";
 
 export default function ProjectsCompact({}) {
@@ -10,15 +10,7 @@ export default function ProjectsCompact({}) {
         {projects.slice(Math.max(projects.length - 6, 0), projects.length).map((project, index) => (
           <ProjectCard
             index={index}
-            title={project.title}
-            description={project.description}
-            purpose={project.purpose}
-            techStack={project.techStack}
-            status={project.status}
-            duration={project.duration}
-            contributors={project.contributors}
-            project_url={project.project_url}
-            image_url={project.image_url}
+            project={project}
             key={index}
           />
         ))}

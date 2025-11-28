@@ -1,12 +1,8 @@
 "use client";
+import { BackgroundPic } from "@/lib/types";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect } from "react";
-
-interface Picture {
-  path: string;
-  category: string;
-}
 
 export default function MovingContainer({
   col,
@@ -16,7 +12,7 @@ export default function MovingContainer({
 }: {
   col: number;
   left: number;
-  picsShuffled: Picture[];
+  picsShuffled: BackgroundPic[];
   speeds: number[];
 }) {
   const pics = picsShuffled.slice(col * 5, col * 5 + 5);

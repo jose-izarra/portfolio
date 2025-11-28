@@ -1,17 +1,14 @@
 "use client";
 import MovingContainer from "@/components/MovingPicture";
-import pictures from "@/data/background-pics.json";
+import { backgroundPics } from "@/data/background-pics";
+import { BackgroundPic } from "@/lib/types";
 import { shuffle } from "@/lib/utils";
 import { useEffect, useState } from "react";
 
-interface Picture {
-  path: string;
-  category: string;
-}
 export default function HeroAnimation({}) {
   const [leftValues, setLeftValues] = useState<number[]>([]);
   const [speeds, setSpeeds] = useState<number[]>([]);
-  const [picsShuffled, setPicsShuffled] = useState<Picture[]>([]);
+  const [picsShuffled, setPicsShuffled] = useState<BackgroundPic[]>([]);
 
   useEffect(() => {
     const newLeftValues = [
@@ -22,7 +19,7 @@ export default function HeroAnimation({}) {
     ];
 
     const newSpeeds = shuffle([20, 24, 28, 32]);
-    const newPicsShuffled = shuffle([...pictures]);
+    const newPicsShuffled = shuffle([...backgroundPics]);
 
     setTimeout(() => {
       setLeftValues(newLeftValues);

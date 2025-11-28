@@ -5,13 +5,13 @@ import Skills from "../Skills";
 const STATS_URL = "https://github-readme-stats-git-master-jose-izarras-projects.vercel.app/api/top-langs/?username=jose-izarra&theme=dracula&hide_border=true&include_all_commits=true&count_private=true&layout=compact";
 export default function TechStack() {
   return (
-    <section className="flex flex-col items-center  gap-y-24 max-w-7xl mx-auto px-4 py-20">
+    <section className="flex flex-col items-center gap-y-24 max-w-7xl mx-auto px-4 ">
       <div className="text-center space-y-6">
         <Headline level={1}>
            Technologies
         </Headline>
         <p className="text-lg text-light/65 max-w-2xl font-lora italic mx-auto">
-           A collection of languages, tools, and frameworks I have worked with and feel comfortable using.
+           A collection of languages, tools, and frameworks I have worked with more than twice and feel comfortable using.
         </p>
       </div>
 

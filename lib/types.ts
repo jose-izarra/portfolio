@@ -5,6 +5,26 @@ export interface Skill {
     path: string;
 }
 
+export interface BackgroundPic {
+    path: string;
+}
+
+export interface Project {
+    title: string;
+    description: string;
+    purpose: string;
+    techStack: string[];
+    duration: string;
+    status: {
+        finished: boolean;
+        message: string;
+    };
+    contributors: string;
+    project_url: string;
+    image_url: string;
+}
+
+
 export const SCREEN_SIZES = {
     SM: 640,
     MD: 768,
