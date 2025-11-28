@@ -43,8 +43,8 @@ export default function StatsCard() {
       setDragConstraints({
         left: -window.innerWidth + 350,
         right: 0,
-        top: -window.innerHeight + 300,
-        bottom: 0,
+        top: 0,
+        bottom: window.innerHeight - 300,
       });
     };
 
@@ -102,7 +102,7 @@ export default function StatsCard() {
         className={cn(
           baseClasses,
           isSticky && isDesktop
-            ? "fixed -top-4 -right-4 z-110 origin-bottom-right cursor-grab"
+            ? "fixed -top-6 -right-6 z-110 origin-top-right cursor-grab"
             : "relative cursor-default",
         )}
         animate={{
