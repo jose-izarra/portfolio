@@ -16,6 +16,20 @@ export const projects: Project[] = [
     image_url: "/images/jenga.webp"
   },
   {
+    title: "Portfolio Website",
+    description: "This website lol",
+    purpose: "Showcase my work and skills",
+    techStack: ["TypeScript", "Next.js", "TailwindCSS", "Vercel"],
+    status: {
+      finished: false,
+      message: "Mostly finished"
+    },
+    duration: "2 Weeks, for this latest version",
+    contributors: "Just me",
+    project_url: "https://joseizarra.com",
+    image_url: "/images/portfolio_latest.webp"
+  },
+  {
     title: "Qwicker",
     description: "Automated attendance-taking system for IE University classes",
     purpose: "Design relational databases and interact with serverless computing",
@@ -85,20 +99,7 @@ export const projects: Project[] = [
     project_url: "https://github.com/IE-BestBank/",
     image_url: "/images/best-bank.webp"
   },
-  {
-    title: "Portfolio Website",
-    description: "This website lol",
-    purpose: "Showcase my work and skills",
-    techStack: ["TypeScript", "Next.js", "TailwindCSS", "Vercel"],
-    status: {
-      finished: false,
-      message: "Mostly finished"
-    },
-    duration: "2 Weeks, for this latest version",
-    contributors: "Just me",
-    project_url: "https://joseizarra.com",
-    image_url: "/images/portfolio_latest.webp"
-  },
+
   {
     title: "Algo-visualizer",
     description: "Visualizer for popular sorting algorithms",
@@ -112,5 +113,33 @@ export const projects: Project[] = [
     contributors: "4 people",
     project_url: "https://github.com/jose-izarra/algo-visualizer",
     image_url: "/images/algo-visualizer.webp"
-  }
+  },
+  {
+    title: "Liesl",
+    description: "Dog sitting app for connecting dog owners with dog sitters",
+    purpose: "MVST",
+    techStack: ["NextJS", "React Native", "NestJS"],
+    status: {
+      finished: true,
+      message: "2025"
+    },
+    duration: "3 months",
+    contributors: "6 people",
+    project_url: "/",
+    image_url: "/images/smartphone.png"
+  },
+  {
+    title: "Keyoniq",
+    description: "Medical dashboard for doctors and patients and automated PDF generation service",
+    purpose: "MVST",
+    techStack: ["React", "NestJS", "Azure"],
+    status: {
+      finished: true,
+      message: "2025"
+    },
+    duration: "3 months",
+    contributors: "5 people",
+    project_url: "/",
+    image_url: "/images/dashboard.png"
+  },
 ] as const;

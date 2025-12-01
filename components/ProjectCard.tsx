@@ -10,7 +10,7 @@ const BASE_CARD_STYLES =
   "backdrop-blur-xl bg-gradient-to-br from-primary-500/30 to-primary-600/10 border border-light/30 shadow-card rounded-2xl transition-all duration-300 hover:bg-primary-500/40 hover:shadow-project-card-hover hover:border-primary-400/30 lg:left-1/2 lg:right-1/2 lg:-translate-x-4/5 hover:-translate-y-2.5 hover:z-20";
 
 const BASE_TEXT_STYLES = "text-xs text-light/90 text-left";
-const BASE_IMAGE_STYLES = "rounded-xl shadow-md filter brightness-80";
+const BASE_IMAGE_STYLES = "rounded-xl filter brightness-80";
 
 interface Props {
     index: number;
@@ -21,7 +21,7 @@ export default function ProjectCard({ index, project }: Props) {
     const { title, description, purpose, techStack, status, duration, contributors, project_url, image_url } = project;
   return (
     <>
-      <a href={project_url} target="_blank" className="shrink-0 hidden lg:block">
+      <a href={project_url ?? undefined} target={ project_url ? "_blank" : undefined} className="shrink-0 hidden lg:block">
         <div
           className={cn(
             BASE_CARD_STYLES,

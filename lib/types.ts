@@ -18,7 +18,7 @@ export interface Project {
         message: string;
     };
     contributors: string;
-    project_url: string;
+    project_url: string | null;
     image_url: string;
 }
 
