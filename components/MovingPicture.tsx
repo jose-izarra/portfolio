@@ -36,7 +36,7 @@ export function MovingPicture({ pic, row, col }: Props) {
       className={`my-10 transition-transform duration-500 hover:scale-105`}
       alt={`Moving Picture ${row} ${col}`}
       // largest contentful
-      priority={pic === "/images/fut.jpg" ? true : false}
+      priority={pic === "/images/fut.webp" ? true : false}
     />
   );
 }
