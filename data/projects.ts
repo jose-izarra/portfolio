@@ -2,20 +2,6 @@ import { Project } from "@/lib/types";
 
 export const projects: Project[] = [
   {
-    title: "Jenga Game",
-    description: "Jenga adaptation using probabilistic programming to play on the terminal",
-    purpose: "Implement sorting and search algorithms for ADS university course",
-    techStack: ["Python", "Pygame"],
-    duration: "2 months",
-    status: {
-      finished: true,
-      message: "2023"
-    },
-    contributors: "4 people",
-    project_url: "https://github.com/jose-izarra/jenga-game",
-    image_url: "/images/jenga.webp"
-  },
-  {
     title: "Portfolio Website",
     description: "This website lol",
     purpose: "Showcase my work and skills",
@@ -28,6 +14,20 @@ export const projects: Project[] = [
     contributors: "Just me",
     project_url: "https://joseizarra.com",
     image_url: "/images/portfolio_latest.webp"
+  },
+  {
+    title: "Jenga Game",
+    description: "Jenga adaptation using probabilistic programming to play on the terminal",
+    purpose: "Implement sorting and search algorithms for ADS university course",
+    techStack: ["Python", "Pygame"],
+    duration: "2 months",
+    status: {
+      finished: true,
+      message: "2023"
+    },
+    contributors: "4 people",
+    project_url: "https://github.com/jose-izarra/jenga-game",
+    image_url: "/images/jenga.webp"
   },
   {
     title: "Qwicker",
@@ -125,7 +125,7 @@ export const projects: Project[] = [
     },
     duration: "3 months",
     contributors: "6 people",
-    project_url: "/",
+    project_url: null,
     image_url: "/images/smartphone.png"
   },
   {
@@ -139,7 +139,7 @@ export const projects: Project[] = [
     },
     duration: "3 months",
     contributors: "5 people",
-    project_url: "/",
+    project_url: null,
     image_url: "/images/dashboard.png"
   },
 ] as const;

@@ -19,9 +19,15 @@ interface Props {
 
 export default function ProjectCard({ index, project }: Props) {
     const { title, description, purpose, techStack, status, duration, contributors, project_url, image_url } = project;
+
+    const Wrapper = project_url ? "a" : "div";
+    const wrapperProps = project_url
+        ? { href: project_url, target: "_blank", className: "shrink-0 hidden lg:block" }
+        : { className: "shrink-0 hidden lg:block" };
+
   return (
     <>
-      <a href={project_url ?? undefined} target={ project_url ? "_blank" : undefined} className="shrink-0 hidden lg:block">
+      <Wrapper {...wrapperProps}>
         <div
           className={cn(
             BASE_CARD_STYLES,
@@ -92,7 +98,7 @@ export default function ProjectCard({ index, project }: Props) {
             </div>
           </div>
         </div>
-      </a>
+      </Wrapper>
       {/* mobile adaptation */}
         <div
           className={cn(
