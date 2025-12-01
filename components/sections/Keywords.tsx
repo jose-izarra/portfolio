@@ -33,8 +33,8 @@ export default function Keywords() {
   return (
     <section className="mx-auto flex min-h-32 w-full max-w-7xl flex-col items-center">
       <div className="relative flex h-full w-9/10 flex-col lg:w-2/3">
-        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-linear-to-r from-background to-transparent" />
-        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-linear-to-l from-background to-transparent" />
+        <div className="from-background pointer-events-none absolute top-0 left-0 z-10 h-full w-24 bg-linear-to-r to-transparent" />
+        <div className="from-background pointer-events-none absolute top-0 right-0 z-10 h-full w-24 bg-linear-to-l to-transparent" />
 
         <div className="flex w-full flex-col items-center justify-center gap-y-8 overflow-x-hidden">
           {wordsArray.map((words, i) => (

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 interface Props {
-    skill: Skill;
+  skill: Skill;
 }
 
 export default function SkillIcon({ skill }: Props) {
@@ -53,7 +53,7 @@ export default function SkillIcon({ skill }: Props) {
           img.style.left = `${rightPosition}px`;
           img.style.transition = "top 1s ease-out, left 1s ease-out";
         },
-        { once: true }
+        { once: true },
       );
     };
 
@@ -67,7 +67,7 @@ export default function SkillIcon({ skill }: Props) {
   return (
     <div
       ref={containerRef}
-      className="relative w-[60px] h-[60px] sm:w-[70px] sm:h-[70px] shrink-0 cursor-grab select-none z-10"
+      className="relative z-10 h-[60px] w-[60px] shrink-0 cursor-grab select-none sm:h-[70px] sm:w-[70px]"
       title={skill.name}
     >
       <Image
@@ -75,7 +75,7 @@ export default function SkillIcon({ skill }: Props) {
         src={skill.path}
         width={60}
         height={60}
-        className="absolute top-0 left-0 w-full h-full object-contain select-none"
+        className="absolute top-0 left-0 h-full w-full object-contain select-none"
         alt={skill.name}
         draggable={false}
       />

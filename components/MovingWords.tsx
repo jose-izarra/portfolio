@@ -16,16 +16,14 @@ export default function MovingWords({
   speed = 40,
 }: MovingWordsProps) {
   return (
-    <div
-      className={cn("relative flex w-full overflow-hidden py-2", className)}
-    >
-      <Ticker duration={speed} direction={direction} >
+    <div className={cn("relative flex w-full overflow-hidden py-2", className)}>
+      <Ticker duration={speed} direction={direction}>
         {words.map((word, i) => (
-            <span key={`word-${i}`} className="text-light/60 text-base mx-5">
-                {word}
+          <span key={`word-${i}`} className="text-light/60 mx-5 text-base">
+            {word}
           </span>
         ))}
-        </Ticker>
+      </Ticker>
     </div>
   );
 }

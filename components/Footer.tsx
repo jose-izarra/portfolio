@@ -19,9 +19,9 @@ export default function Footer() {
   return (
     <footer className="from-background to-primary-900/10 overflow relative mt-20 border-t border-white/10 bg-linear-to-b">
       <div className="mx-auto max-w-7xl px-6 py-12">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-8 justify-between">
+        <div className="flex flex-col justify-between gap-12 lg:flex-row lg:gap-8">
           {/* Main Content Grid */}
-          <div className="grid grid-cols-1 gap-10 md:grid-cols-3 flex-1">
+          <div className="grid flex-1 grid-cols-1 gap-10 md:grid-cols-3">
             {/* Bio Section */}
             <div className="space-y-4">
               <Headline level={1} className="text-primary-400 text-3xl">
@@ -81,7 +81,7 @@ export default function Footer() {
           </div>
 
           {/* Spotify Card Section */}
-          <div className="w-full lg:w-auto flex justify-center lg:justify-end lg:items-start">
+          <div className="flex w-full justify-center lg:w-auto lg:items-start lg:justify-end">
             <div className="w-full max-w-[350px]">
               <SpotifyCard />
             </div>

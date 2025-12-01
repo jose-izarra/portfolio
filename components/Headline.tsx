@@ -12,13 +12,13 @@ export interface Props {
 function getSize(level: HeadlineLevel) {
   switch (level) {
     case 1:
-      return tw("text-4xl text-primary-400 shadow-headline font-lora");
+      return tw("text-primary-400 shadow-headline font-lora text-4xl");
 
     case 2:
-      return tw("text-light/65 font-lora ");
+      return tw("text-light/65 font-lora");
 
     case 3:
-      return tw("text-xl text-primary-500 font-bold font-lora");
+      return tw("text-primary-500 font-lora text-xl font-bold");
   }
 }
 
@@ -45,13 +45,7 @@ function getHeadingTag(level: HeadlineLevel) {
   }
 }
 
-
-export default function Headline({
-  children,
-  className,
-  ref,
-  level,
-}: Readonly<Props>) {
+export default function Headline({ children, className, ref, level }: Readonly<Props>) {
   const tag = getHeadingTag(level);
 
   return createElement(
@@ -60,6 +54,6 @@ export default function Headline({
       className: cn(getSize(level), className),
       ref,
     },
-    children
+    children,
   );
 }

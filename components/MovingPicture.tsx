@@ -8,11 +8,7 @@ interface Props {
   col: number;
 }
 
-export function MovingPicture({
-  pic,
-  row,
-  col,
-}: Props) {
+export function MovingPicture({ pic, row, col }: Props) {
   useEffect(() => {
     const el = document.getElementById(`moving-pic-${col}-${row}`);
     const intervalId = setInterval(() => {
@@ -31,16 +27,16 @@ export function MovingPicture({
   }, [col, row]);
 
   return (
-      <Image
-        id={`moving-pic-${col}-${row}`}
-        src={pic}
-        width={150}
-        height={150}
-        style={{ opacity: 0, width: "auto" }}
-        className={`transition-transform duration-500 hover:scale-105 my-10`}
-        alt={`Moving Picture ${row} ${col}`}
-        // largest contentful
-        priority={pic === "/images/fut.jpg" ? true : false}
-      />
+    <Image
+      id={`moving-pic-${col}-${row}`}
+      src={pic}
+      width={150}
+      height={150}
+      style={{ opacity: 0, width: "auto" }}
+      className={`my-10 transition-transform duration-500 hover:scale-105`}
+      alt={`Moving Picture ${row} ${col}`}
+      // largest contentful
+      priority={pic === "/images/fut.webp" ? true : false}
+    />
   );
 }
