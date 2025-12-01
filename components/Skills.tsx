@@ -11,7 +11,7 @@ export default function Skills({ className }: SkillsProps) {
     <div
       className={cn(
         className,
-        "grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-8 justify-items-center",
+        "grid grid-cols-4 justify-items-center gap-8 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8",
       )}
     >
       {skills.map((skill) => {

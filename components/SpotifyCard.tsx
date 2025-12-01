@@ -56,7 +56,7 @@ export default function SpotifyCard() {
   const formatTime = (ms: number) => {
     const minutes = Math.floor(ms / 60000);
     const seconds = Math.floor((ms % 60000) / 1000);
-    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+    return `${minutes}:${seconds.toString().padStart(2, "0")}`;
   };
 
   const getProgress = () => {
@@ -70,9 +70,9 @@ export default function SpotifyCard() {
 
   return (
     <div className="flex justify-center">
-      <div className="backdrop-blur-xl bg-linear-to-br from-primary-500/30 to-primary-500/20 border border-light/30 shadow-card rounded-2xl flex flex-col p-4 w-full max-w-md">
-        <div className="flex items-center gap-3 mb-3">
-          <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
+      <div className="from-primary-500/30 to-primary-500/20 border-light/30 shadow-card flex w-full max-w-md flex-col rounded-2xl border bg-linear-to-br p-4 backdrop-blur-xl">
+        <div className="mb-3 flex items-center gap-3">
+          <div className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
           <Headline level={4} className="text-light/80 text-lg font-semibold">
             Now Playing on Spotify
           </Headline>
@@ -80,20 +80,20 @@ export default function SpotifyCard() {
 
         {isLoading ? (
           <div className="flex items-center gap-3 p-2">
-            <div className="w-16 h-16 bg-light/10 rounded-lg animate-pulse" />
+            <div className="bg-light/10 h-16 w-16 animate-pulse rounded-lg" />
             <div className="flex-1">
-              <div className="h-4 bg-light/10 rounded mb-2 animate-pulse" />
-              <div className="h-3 bg-light/10 rounded w-3/4 animate-pulse" />
+              <div className="bg-light/10 mb-2 h-4 animate-pulse rounded" />
+              <div className="bg-light/10 h-3 w-3/4 animate-pulse rounded" />
             </div>
           </div>
         ) : !spotifyData.isPlaying || !spotifyData.track ? (
-          <div className="flex items-center gap-3 p-2 text-light/60">
-            <div className="w-16 h-16 bg-light/5 rounded-lg flex items-center justify-center">
-              <PauseIcon className="w-6 h-6" />
+          <div className="text-light/60 flex items-center gap-3 p-2">
+            <div className="bg-light/5 flex h-16 w-16 items-center justify-center rounded-lg">
+              <PauseIcon className="h-6 w-6" />
             </div>
             <div className="flex-1">
               <p className="text-sm">Nothing playing right now</p>
-              <p className="text-xs text-light/40">Check back later!</p>
+              <p className="text-light/40 text-xs">Check back later!</p>
             </div>
           </div>
         ) : (
@@ -108,35 +108,29 @@ export default function SpotifyCard() {
                   className="rounded-lg"
                 />
               </div>
-              <div className="flex-1 min-w-0">
+              <div className="min-w-0 flex-1">
                 <a
                   href={spotifyData.track.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block hover:text-primary-400 transition-colors"
+                  className="hover:text-primary-400 block transition-colors"
                 >
-                  <p className="font-semibold text-sm truncate">
-                    {spotifyData.track.name}
-                  </p>
-                  <p className="text-xs text-light/70 truncate">
-                    {spotifyData.track.artist}
-                  </p>
-                  <p className="text-xs text-light/50 truncate">
-                    {spotifyData.track.album}
-                  </p>
+                  <p className="truncate text-sm font-semibold">{spotifyData.track.name}</p>
+                  <p className="text-light/70 truncate text-xs">{spotifyData.track.artist}</p>
+                  <p className="text-light/50 truncate text-xs">{spotifyData.track.album}</p>
                 </a>
               </div>
             </div>
 
             {/* Progress bar */}
             <div className="space-y-1">
-              <div className="w-full bg-light/10 rounded-full h-1">
+              <div className="bg-light/10 h-1 w-full rounded-full">
                 <div
                   className="bg-primary-500 h-1 rounded-full transition-all duration-1000"
                   style={{ width: `${getProgress()}%` }}
                 />
               </div>
-              <div className="flex justify-between text-xs text-light/60">
+              <div className="text-light/60 flex justify-between text-xs">
                 <span>{formatTime(spotifyData.track.progressMs)}</span>
                 <span>{formatTime(spotifyData.track.durationMs)}</span>
               </div>

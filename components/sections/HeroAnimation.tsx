@@ -28,11 +28,7 @@ export default function HeroAnimation({}) {
     }, 0);
   }, []);
 
-  if (
-    leftValues.length === 0 ||
-    speeds.length === 0 ||
-    picsShuffled.length === 0
-  ) {
+  if (leftValues.length === 0 || speeds.length === 0 || picsShuffled.length === 0) {
     return null;
   }
   return (

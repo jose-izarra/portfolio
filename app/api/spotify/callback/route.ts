@@ -1,16 +1,16 @@
-import { NextRequest } from 'next/server';
+import { NextRequest } from "next/server";
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
-  const code = searchParams.get('code');
-  const error = searchParams.get('error');
+  const code = searchParams.get("code");
+  const error = searchParams.get("error");
 
   if (error) {
     return Response.json({ error: `Spotify auth error: ${error}` }, { status: 400 });
   }
 
   if (!code) {
-    return Response.json({ error: 'No authorization code received' }, { status: 400 });
+    return Response.json({ error: "No authorization code received" }, { status: 400 });
   }
 
   const client_id = process.env.SPOTIFY_CLIENT_ID;
@@ -22,23 +22,23 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    const tokenResponse = await fetch('https://accounts.spotify.com/api/token', {
-      method: 'POST',
+    const tokenResponse = await fetch("https://accounts.spotify.com/api/token", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Authorization': `Basic ${Buffer.from(`${client_id}:${client_secret}`).toString('base64')}`
+        "Content-Type": "application/x-www-form-urlencoded",
+        Authorization: `Basic ${Buffer.from(`${client_id}:${client_secret}`).toString("base64")}`,
       },
       body: new URLSearchParams({
-        grant_type: 'authorization_code',
+        grant_type: "authorization_code",
         code: code,
-        redirect_uri: redirect_uri
-      })
+        redirect_uri: redirect_uri,
+      }),
     });
 
     const tokenData = await tokenResponse.json();
 
     if (!tokenResponse.ok) {
-      throw new Error(tokenData.error || 'Failed to exchange code for token');
+      throw new Error(tokenData.error || "Failed to exchange code for token");
     }
 
     return Response.json({
@@ -46,9 +46,8 @@ export async function GET(request: NextRequest) {
       refresh_token: tokenData.refresh_token,
       expires_in: tokenData.expires_in,
     });
-
   } catch (error) {
-    console.error('Token exchange error:', error);
+    console.error("Token exchange error:", error);
     return Response.json({ error: "Failed to exchange authorization code" }, { status: 500 });
   }
 }

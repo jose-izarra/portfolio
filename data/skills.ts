@@ -66,5 +66,5 @@ export const skills: Skill[] = [
   {
     name: "Kubernetes",
     path: "/icons/kubernetes.svg",
-  }
+  },
 ] as const;
