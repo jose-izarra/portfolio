@@ -1,63 +1,70 @@
 import { Skill } from "@/lib/types";
 export const skills: Skill[] = [
+  // Programming Languages
   {
-    name: "python",
+    name: "Python",
     path: "/icons/python.svg",
   },
   {
-    name: "react",
-    path: "/icons/react.svg",
-  },
-  {
-    name: "tailwindcss",
-    path: "/icons/tailwindcss.svg",
-  },
-  {
-    name: "mysql",
-    path: "/icons/mysql.svg",
-  },
-  {
-    name: "mongodb",
-    path: "/icons/mongodb.svg",
-  },
-  {
-    name: "docker",
-    path: "/icons/docker.svg",
-  },
-  {
-    name: "linux",
-    path: "/icons/linux.svg",
-  },
-  {
-    name: "azure",
-    path: "/icons/azure.svg",
-  },
-  {
-    name: "typescript",
+    name: "TypeScript",
     path: "/icons/typescript.svg",
   },
   {
-    name: "firebase",
+    name: "C++",
+    path: "/icons/cpp.svg",
+  },
+  // Frameworks
+  {
+    name: "React",
+    path: "/icons/react.svg",
+  },
+  {
+    name: "FastAPI",
+    path: "/icons/fastapi.png",
+  },
+  {
+    name: "NestJS",
+    path: "/icons/nestjs.svg",
+  },
+  // Rest
+  {
+    name: "MongoDB",
+    path: "/icons/mongodb.svg",
+  },
+  {
+    name: "Docker",
+    path: "/icons/docker.svg",
+  },
+  {
+    name: "Linux",
+    path: "/icons/linux.svg",
+  },
+  {
+    name: "Azure",
+    path: "/icons/azure.svg",
+  },
+  {
+    name: "Firebase",
     path: "/icons/firebase.svg",
   },
   {
-    name: "aws",
+    name: "AWS",
     path: "/icons/aws.svg",
   },
   {
-    name: "c",
-    path: "/icons/c.svg",
-  },
-  {
-    name: "postgresql",
+    name: "PostgreSQL",
     path: "/icons/postgresql.svg",
   },
   {
-    name: "github",
+    name: "GitHub",
     path: "/icons/github.svg",
   },
   {
-    name: "fastapi",
-    path: "/icons/fastapi.png",
+    name: "GitHub Actions",
+    path: "/icons/github-actions.svg",
   },
+  {
+    name: "Kubernetes",
+    path: "/icons/kubernetes.svg",
+  }
 ] as const;
