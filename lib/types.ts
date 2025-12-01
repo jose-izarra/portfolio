@@ -22,7 +22,6 @@ export interface Project {
     image_url: string;
 }
 
-
 export const SCREEN_SIZES = {
     SM: 640,
     MD: 768,

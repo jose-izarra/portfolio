@@ -13,7 +13,7 @@ export const projects: Project[] = [
     },
     contributors: "4 people",
     project_url: "https://github.com/jose-izarra/jenga-game",
-    image_url: "/images/jenga.png"
+    image_url: "/images/jenga.webp"
   },
   {
     title: "Qwicker",
@@ -27,7 +27,7 @@ export const projects: Project[] = [
     },
     contributors: "6 people",
     project_url: "https://github.com/jose-izarra/attendance_system",
-    image_url: "/images/qwicker.png"
+    image_url: "/images/qwicker.webp"
   },
   {
     title: "AI Hackathon",
@@ -41,7 +41,7 @@ export const projects: Project[] = [
     duration: "2 weeks",
     contributors: "3 people",
     project_url: "https://github.com/velocitatem/ai-hackathon-ie-2023",
-    image_url: "/images/hackathon.png"
+    image_url: "/images/hackathon.webp"
   },
   {
     title: "C Whale",
@@ -55,7 +55,7 @@ export const projects: Project[] = [
     duration: "2 months",
     contributors: "4 people",
     project_url: "https://github.com/rorosaga/C_whale",
-    image_url: "/images/c_whale.png"
+    image_url: "/images/c_whale.webp"
   },
   {
     title: "QuadRobot Sim",
@@ -83,7 +83,7 @@ export const projects: Project[] = [
     duration: "4 months",
     contributors: "8 people",
     project_url: "https://github.com/IE-BestBank/",
-    image_url: "/images/best-bank.png"
+    image_url: "/images/best-bank.webp"
   },
   {
     title: "Portfolio Website",
@@ -97,7 +97,7 @@ export const projects: Project[] = [
     duration: "2 Weeks, for this latest version",
     contributors: "Just me",
     project_url: "https://joseizarra.com",
-    image_url: "/images/portfolio_latest.jpeg"
+    image_url: "/images/portfolio_latest.webp"
   },
   {
     title: "Algo-visualizer",
@@ -111,6 +111,6 @@ export const projects: Project[] = [
     duration: "1 month",
     contributors: "4 people",
     project_url: "https://github.com/jose-izarra/algo-visualizer",
-    image_url: "/images/algo-visualizer.png"
+    image_url: "/images/algo-visualizer.webp"
   }
 ] as const;

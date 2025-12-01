@@ -97,7 +97,7 @@ export default function ProjectCard({ index, project }: Props) {
         <div
           className={cn(
             BASE_CARD_STYLES,
-            "project w-full flex-col p-4 flex shrink-0 relative hover:translate-y-0 hover:z-0 max-w-lg lg:hidden w-full"
+            "project flex-col p-4 flex shrink-0 relative hover:translate-y-0 hover:z-0 max-w-lg lg:hidden w-full"
           )}
         >
           <div className="flex flex-col gap-y-4 ">
