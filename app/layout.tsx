@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
@@ -33,20 +34,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-54D6PWBZ8R"></Script>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-RCRTV0NMCG"></Script>
         <Script id="google-analytics">
           {`
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
-                    gtag('config', 'G-54D6PWBZ8R');
-                    `}
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-RCRTV0NMCG');
+            `}
         </Script>
       </head>
       <body className={`${inter.className} antialiased`}>
         {children}
         <Analytics />
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
