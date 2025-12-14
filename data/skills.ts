@@ -13,6 +13,10 @@ export const skills: Skill[] = [
     name: "C++",
     path: "/icons/cpp.svg",
   },
+  {
+    name: "C",
+    path: "/icons/c.svg",
+  },
   // Frameworks
   {
     name: "React",
@@ -62,9 +66,5 @@ export const skills: Skill[] = [
   {
     name: "GitHub Actions",
     path: "/icons/github-actions.svg",
-  },
-  {
-    name: "Kubernetes",
-    path: "/icons/kubernetes.svg",
   },
 ] as const;
