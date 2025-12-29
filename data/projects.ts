@@ -58,20 +58,6 @@ export const projects: Project[] = [
     image_url: "/images/hackathon.webp",
   },
   {
-    title: "C Whale",
-    description: "C-based domain-specific language for Dockerfile creation and image management",
-    purpose: "Learn about C and its compiler",
-    techStack: ["C", "CMake", "GNU Parser", "FLEX lexer"],
-    status: {
-      finished: true,
-      message: "2023",
-    },
-    duration: "2 months",
-    contributors: "4 people",
-    project_url: "https://github.com/rorosaga/C_whale",
-    image_url: "/images/c_whale.webp",
-  },
-  {
     title: "QuadRobot Sim",
     description:
       "Trajectory planning simulation for quadruped robots using parallelization and inter-process communication",
@@ -100,7 +86,20 @@ export const projects: Project[] = [
     project_url: "https://github.com/IE-BestBank/",
     image_url: "/images/best-bank.webp",
   },
-
+  {
+    title: "C Whale",
+    description: "C-based domain-specific language for Dockerfile creation and image management",
+    purpose: "Learn about C and its compiler",
+    techStack: ["C", "CMake", "GNU Parser", "FLEX lexer"],
+    status: {
+      finished: true,
+      message: "2023",
+    },
+    duration: "2 months",
+    contributors: "4 people",
+    project_url: "https://github.com/rorosaga/C_whale",
+    image_url: "/images/c_whale.webp",
+  },
   {
     title: "Algo-visualizer",
     description: "Visualizer for popular sorting algorithms",
