@@ -90,6 +90,7 @@ export default function ProjectCard({ index, project }: Props) {
                 width={250}
                 height={250}
                 className={BASE_IMAGE_STYLES}
+                unoptimized={image_url.includes(".gif")}
               />
             </div>
           </div>
@@ -147,6 +148,7 @@ export default function ProjectCard({ index, project }: Props) {
               height={120}
               alt="Project Image"
               className={BASE_IMAGE_STYLES}
+              unoptimized={image_url.includes(".gif")}
             />
           </div>
         </div>
