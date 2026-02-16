@@ -21,25 +21,25 @@ export default function Intro() {
       </Headline>
       <div className="flex w-full justify-center gap-y-2 sm:w-[90%] lg:w-9/12 lg:gap-y-12">
         <div className="mx-5 text-center md:hidden">
-          <p>{introContent.mobile}</p>
+          <p className="font-inter">{introContent.mobile}</p>
         </div>
 
-        <div className="hidden w-full justify-evenly gap-y-6 md:flex">
+        <div className="[&_p]:font-inter hidden w-full justify-evenly gap-y-6 md:flex [&_p]:text-gray-200">
           <div className="flex flex-col gap-y-28">
             <div className="hidden w-[356px] self-center md:block">
-              <p className="text-center font-medium">{introContent.desktop.leftTop}</p>
+              <p className="text-center text-base">{introContent.desktop.leftTop}</p>
             </div>
             <div className="hidden w-[356px] justify-center md:flex">
-              <p className="text-center">{introContent.desktop.leftBottom}</p>
+              <p className="text-center text-base">{introContent.desktop.leftBottom}</p>
             </div>
           </div>
           <div className="flex flex-col gap-y-28 lg:mt-28">
             <div className="hidden w-[356px] md:block">
-              <p className="text-center font-light">{introContent.desktop.rightTop}</p>
+              <p className="text-center text-base">{introContent.desktop.rightTop}</p>
             </div>
 
             <div className="hidden w-[356px] md:flex">
-              <p className="text-center">{introContent.desktop.rightBottom}</p>
+              <p className="text-center text-base">{introContent.desktop.rightBottom}</p>
             </div>
           </div>
         </div>
