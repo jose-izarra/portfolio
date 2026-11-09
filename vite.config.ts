@@ -11,8 +11,4 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-  define: {
-    // Vercel sets VERCEL=1 during its builds; only then is the /_vercel/image optimizer available
-    __VERCEL_IMAGE_OPTIMIZATION__: JSON.stringify(process.env.VERCEL === "1"),
-  },
 });

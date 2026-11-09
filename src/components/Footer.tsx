@@ -69,7 +69,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="/mycv"
+                    href="/cv"
                     className="group text-light/60 hover:text-primary-400 flex items-center gap-2 text-sm transition-colors"
                   >
                     <FileText className="h-4 w-4 shrink-0" />

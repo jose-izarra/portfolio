@@ -35,7 +35,6 @@ export default function TechStack() {
               className="h-auto w-full max-w-100 object-contain"
               width={400}
               height={400}
-              unoptimized
             />
           </div>
         </div>

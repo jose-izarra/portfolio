@@ -1,17 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "vite",
-  "rewrites": [{ "source": "/((?!api/).*)", "destination": "/index.html" }],
-  "images": {
-    "sizes": [16, 32, 48, 64, 96, 128, 256, 384, 640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    "formats": ["image/webp"],
-    "minimumCacheTTL": 14400,
-    "localPatterns": [{ "pathname": "^/images/.*$" }, { "pathname": "^/icons/.*$" }],
-    "remotePatterns": [
-      { "protocol": "https", "hostname": "github-readme-stats-git-master-jose-izarras-projects.vercel.app" },
-      { "protocol": "https", "hostname": "github.com" },
-      { "protocol": "https", "hostname": "avatars.githubusercontent.com" },
-      { "protocol": "https", "hostname": "i.scdn.co" }
-    ]
-  }
+  "rewrites": [{ "source": "/((?!api/).*)", "destination": "/index.html" }]
 }

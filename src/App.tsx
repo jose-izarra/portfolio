@@ -11,7 +11,7 @@ export default function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/mycv" element={<MyCV />} />
+        <Route path="/cv" element={<MyCV />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Analytics />

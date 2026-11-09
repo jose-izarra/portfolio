@@ -28,7 +28,7 @@ Two separate environments, each with its own tsconfig, and ESLint forbids import
 ### Pages
 - `index.html` — the HTML shell. It holds all SEO/OpenGraph meta tags, the favicon link and Google Analytics (`G-RCRTV0NMCG`).
 - `src/main.tsx` — entry: Inter font (`@fontsource-variable/inter`, latin subset preloaded), `globals.css`, `BrowserRouter`.
-- `src/App.tsx` — routes (`/` → `pages/Home.tsx`, `/mycv` → `pages/MyCV.tsx` embedding the PDF from `/public`, `*` → `pages/NotFound.tsx`), Vercel Analytics + Speed Insights, and the global `Footer` (which contains `SpotifyCard`).
+- `src/App.tsx` — routes (`/` → `pages/Home.tsx`, `/cv` → `pages/MyCV.tsx` embedding the PDF from `/public`, `*` → `pages/NotFound.tsx`), Vercel Analytics + Speed Insights, and the global `Footer` (which contains `SpotifyCard`).
 - `vercel.json` rewrites every non-`/api` path to `index.html` (SPA fallback).
 
 ### Content data
@@ -37,7 +37,7 @@ Content lives in typed TypeScript modules in `src/data/` (`projects.ts`, `skills
 - Animated project previews are MP4s, not GIFs (`ProjectCard` plays any `.mp4` `image_url` as a muted looping video). Source GIFs are kept in `assets-src/images/`. Convert with `ffmpeg -i in.gif -an -vf "scale=500:-2:flags=lanczos" -c:v libx264 -pix_fmt yuv420p -crf 26 -movflags +faststart out.mp4`.
 
 ### Images
-Use `src/components/Image.tsx` (the `next/image` replacement) rather than a bare `<img>`. It takes required `width`/`height`, lazy-loads by default, and `priority` preloads the image with high fetch priority. On Vercel builds (`VERCEL=1`, exposed as `__VERCEL_IMAGE_OPTIMIZATION__`) it serves a 1x/2x `srcset` through Vercel's `/_vercel/image` optimizer. SVGs, GIFs and `unoptimized` images are passed through. Locally, images are always served unoptimized. Remote hosts (GitHub, Spotify album art `i.scdn.co`, github-readme-stats) and the allowed `sizes` must be listed under `images` in `vercel.json`. Keep `sizes` in sync with `SIZES` in `Image.tsx`.
+Use `src/components/Image.tsx` rather than a bare `<img>`. It's a thin wrapper that requires `width`/`height` (no layout shift), lazy-loads with async decoding by default, and `priority` preloads the image with high fetch priority (used for the LCP hero picture). There is no runtime optimizer: files in `public/` are served as-is, so shrink large images before adding them (see `scripts/hero-thumbnails.sh`).
 
 ### API (server-side proxies so secrets stay off the client)
 Vercel Functions using Web-standard handlers (`export async function GET(request: Request): Response`). Files and folders prefixed with `_` (e.g. `api/_lib/types.ts`) are helpers, not routes. Locally, `vite-plugins/api-dev-server.ts` mounts the same handlers on `/api` in `vite` and `vite preview`, loading all `.env` vars into `process.env`. Unknown `/api/*` paths return 404.
