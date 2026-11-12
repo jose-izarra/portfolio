@@ -11,7 +11,7 @@ Jose Izarra's personal portfolio site (joseizarra.com), built with Vite 8, React
 - `npm run dev` — Vite dev server; also serves `api/` handlers locally (see below)
 - `npm run build` — `tsc -b` (type-checks the app, API and Vite config projects) then `vite build` to `dist/`
 - `npm run preview` — serves the production build, also with `api/` handlers
-- `npm run lint` / `npm run lint:fix` — ESLint (typescript-eslint, react-hooks, react-refresh, the jsx-a11y subset Next used to enable). Prettier runs *through* ESLint via `eslint-plugin-prettier`, so formatting violations are lint errors.
+- `npm run lint` / `npm run lint:fix` — ESLint (typescript-eslint, react-hooks, react-refresh, a curated jsx-a11y subset). Prettier runs *through* ESLint via `eslint-plugin-prettier`, so formatting violations are lint errors.
 
 There is no test suite. CI (`.github/workflows/pr.yml`) only runs `npm run lint` on PRs to `main`, using the Node version from `.nvmrc` (v24). TypeScript is pinned to 6.0.x because typescript-eslint doesn't support TS 7 yet.
 
@@ -33,11 +33,11 @@ Two separate environments, each with its own tsconfig, and ESLint forbids import
 
 ### Content data
 Content lives in typed TypeScript modules in `src/data/` (`projects.ts`, `skills.ts`, `background-pics.ts`), typed by interfaces in `src/lib/types.ts`. Editing site content usually means editing these arrays; project images go in `public/images/`, skill icons in `public/icons/`. `assets-src/` holds full-size originals that are not deployed.
-- Hero background pictures (`background-pics.ts`) point at 300px-tall thumbnails in `public/images/hero/`. To add one, put the original in `assets-src/images/` and run `scripts/hero-thumbnails.sh assets-src/images/<name>.webp` (needs `cwebp`).
+- Hero background pictures (`background-pics.ts`) point at 300px-tall thumbnails in `public/images/hero/`. Keep the full-size original in `assets-src/images/`.
 - Animated project previews are MP4s, not GIFs (`ProjectCard` plays any `.mp4` `image_url` as a muted looping video). Source GIFs are kept in `assets-src/images/`. Convert with `ffmpeg -i in.gif -an -vf "scale=500:-2:flags=lanczos" -c:v libx264 -pix_fmt yuv420p -crf 26 -movflags +faststart out.mp4`.
 
 ### Images
-Use `src/components/Image.tsx` rather than a bare `<img>`. It's a thin wrapper that requires `width`/`height` (no layout shift), lazy-loads with async decoding by default, and `priority` preloads the image with high fetch priority (used for the LCP hero picture). There is no runtime optimizer: files in `public/` are served as-is, so shrink large images before adding them (see `scripts/hero-thumbnails.sh`).
+Use `src/components/Image.tsx` rather than a bare `<img>`. It's a thin wrapper that requires `width`/`height` (no layout shift), lazy-loads with async decoding by default, and `priority` preloads the image with high fetch priority (used for the LCP hero picture). There is no runtime optimizer: files in `public/` are served as-is, so shrink large images before adding them.
 
 ### API (server-side proxies so secrets stay off the client)
 Vercel Functions using Web-standard handlers (`export async function GET(request: Request): Response`). Files and folders prefixed with `_` (e.g. `api/_lib/types.ts`) are helpers, not routes. Locally, `vite-plugins/api-dev-server.ts` mounts the same handlers on `/api` in `vite` and `vite preview`, loading all `.env` vars into `process.env`. Unknown `/api/*` paths return 404.

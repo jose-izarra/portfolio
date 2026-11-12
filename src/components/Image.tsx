@@ -11,7 +11,7 @@ interface Props extends Omit<ComponentProps<"img">, "src" | "width" | "height" |
 }
 
 /**
- * `<img>` with the defaults next/image used to provide: explicit dimensions to avoid layout
+ * `<img>` with sensible defaults: required dimensions to avoid layout
  * shift, lazy loading, async decoding, and `priority` for the LCP image.
  */
 export default function Image({ src, alt, width, height, priority = false, ...rest }: Props) {

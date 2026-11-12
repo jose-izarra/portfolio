@@ -17,7 +17,7 @@ const eslintConfig = defineConfig([
     plugins: { "jsx-a11y": jsxA11y },
     languageOptions: { globals: globals.browser },
     rules: {
-      // Same jsx-a11y subset that eslint-config-next enabled
+      // Curated jsx-a11y subset
       "jsx-a11y/alt-text": ["warn", { elements: ["img"], img: ["Image"] }],
       "jsx-a11y/aria-props": "warn",
       "jsx-a11y/aria-proptypes": "warn",
