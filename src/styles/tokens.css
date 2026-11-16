@@ -1,0 +1,96 @@
+/*
+ * Design palette — the single place to edit the site's colors.
+ *
+ * Every token is defined twice: once for light (`:root`) and once for dark
+ * (`[data-theme="dark"]`). Components never use literal colors; they use the
+ * Tailwind utilities generated from these tokens in `globals.css`
+ * (e.g. `bg-background`, `text-muted`, `border-border`, `shadow-glass`).
+ *
+ * The active theme is the `data-theme` attribute on <html>, set before first
+ * paint by the inline script in `index.html` and toggled by `useTheme`.
+ */
+
+:root {
+  color-scheme: light;
+
+  /* Page */
+  --background: #f6f9f8;
+  --foreground: #0f1a19;
+  --muted: #566664; /* secondary text */
+  --faint: #a9bab7; /* decorative strokes, unchecked boxes */
+  --border: #e2eae8;
+  --surface: #eef4f2; /* hover rows, wells, progress tracks */
+  --dot: #d6e1de; /* hero dot grid */
+
+  /* Accent */
+  --accent: #0d7a6f;
+  --accent-soft: #e1f1ee;
+  --on-accent: #ffffff;
+  --accent-alt: #6fa8f5; /* second blob color behind the glass */
+
+  /* Glass surfaces */
+  --card: rgb(255 255 255 / 0.58);
+  --bar: rgb(255 255 255 / 0.5); /* navbar + dock */
+  --glass: rgb(255 255 255 / 0.55); /* large panels */
+  --glass-edge: rgb(255 255 255 / 0.95);
+  --glass-highlight: rgb(255 255 255 / 0.9);
+  --blob-opacity: 0.2;
+  --glass-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.9), 0 0 0 1px rgb(255 255 255 / 0.65),
+    0 1px 2px rgb(15 40 36 / 0.04), 0 10px 30px rgb(15 40 36 / 0.07);
+
+  /* Contribution heatmap, least → most */
+  --heat-0: #eaf0ee;
+  --heat-1: #bfe3dc;
+  --heat-2: #79c5b8;
+  --heat-3: #2e9c8d;
+  --heat-4: #0d7a6f;
+
+  /* Tile behind full-color skill icons (kept light so dark logos stay visible) */
+  --icon-tile: #eef4f2;
+
+  /* Brand colors (same in both themes) */
+  --brand-mail: #2f7deb;
+  --brand-github: #1b1f23;
+  --brand-linkedin: #0a66c2;
+  --brand-spotify: #1db954;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Page */
+  --background: #0b1312;
+  --foreground: #e2ecea;
+  --muted: #8fa3a0;
+  --faint: #41605b;
+  --border: #1e2e2c;
+  --surface: #172624;
+  --dot: #182725;
+
+  /* Accent */
+  --accent: #4fd8c4;
+  --accent-soft: #12302c;
+  --on-accent: #04201c;
+  --accent-alt: #6fa8f5;
+
+  /* Glass surfaces */
+  --card: rgb(28 46 44 / 0.5);
+  --bar: rgb(18 30 29 / 0.5);
+  --glass: rgb(22 38 36 / 0.5);
+  --glass-edge: rgb(255 255 255 / 0.09);
+  --glass-highlight: rgb(255 255 255 / 0.07);
+  --blob-opacity: 0.22;
+  --glass-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.08), 0 0 0 1px rgb(255 255 255 / 0.06),
+    0 12px 32px rgb(0 0 0 / 0.4);
+
+  /* Contribution heatmap */
+  --heat-0: #1a2a28;
+  --heat-1: #15453f;
+  --heat-2: #1f7468;
+  --heat-3: #35a796;
+  --heat-4: #4fd8c4;
+
+  --icon-tile: #dbe6e3;
+}

@@ -1,10 +1,11 @@
-import Headline from "@/components/Headline";
-
 export default function NotFound() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-y-4">
-      <Headline level={1}>404</Headline>
-      <p className="text-light/65">This page could not be found.</p>
+    <main className="flex min-h-[70vh] flex-col items-center justify-center gap-4 px-6 text-center">
+      <h1 className="text-6xl font-extrabold tracking-tight">404</h1>
+      <p className="text-muted">This page could not be found.</p>
+      <a href="/" className="link-underline text-sm font-semibold">
+        Back home
+      </a>
     </main>
   );
 }

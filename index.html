@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
 
     <title>Jose Izarra</title>
@@ -17,6 +18,20 @@
     <meta property="og:locale" content="en_ES" />
     <meta property="og:type" content="website" />
 
+    <!-- Set the theme before first paint: saved choice, else the OS setting -->
+    <script>
+      (function () {
+        var theme;
+        try {
+          theme = localStorage.getItem("theme");
+        } catch (e) {}
+        if (theme !== "light" && theme !== "dark") {
+          theme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RCRTV0NMCG"></script>
     <script>
@@ -29,7 +44,7 @@
       gtag("config", "G-RCRTV0NMCG");
     </script>
   </head>
-  <body class="font-inter antialiased">
+  <body class="antialiased">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
