@@ -26,7 +26,7 @@
   "devDependencies": {
     "@eslint/js": "^9.39.5",
     "@tailwindcss/vite": "^4.3.5",
-    "@types/node": "^24.19.2",
+    "@types/node": "^26.6.6",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.2.1",
@@ -44,5 +44,8 @@
     "typescript-eslint": "^8.72.1",
     "vite": "^8.3.6"
   },
-  "type": "module"
+  "type": "module",
+  "engines": {
+    "node": "26.x"
+  }
 }

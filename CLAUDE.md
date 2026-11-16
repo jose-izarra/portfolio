@@ -13,7 +13,7 @@ Jose Izarra's personal portfolio site (joseizarra.com), built with Vite 8, React
 - `npm run preview` — serves the production build, also with `api/` handlers
 - `npm run lint` / `npm run lint:fix` — ESLint (typescript-eslint, react-hooks, react-refresh, a curated jsx-a11y subset). Prettier runs *through* ESLint via `eslint-plugin-prettier`, so formatting violations are lint errors.
 
-There is no test suite. CI (`.github/workflows/pr.yml`) only runs `npm run lint` on PRs to `main`, using the Node version from `.nvmrc` (v24). TypeScript is pinned to 6.0.x because typescript-eslint doesn't support TS 7 yet.
+There is no test suite. CI (`.github/workflows/pr.yml`) only runs `npm run lint` on PRs to `main`, using the Node version from `.nvmrc` (v26). TypeScript is pinned to 6.0.x because typescript-eslint doesn't support TS 7 yet.
 
 ## Formatting
 
