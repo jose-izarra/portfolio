@@ -19,10 +19,22 @@ export const projects: Project[] = [
     year: "2025",
     tagline: "Plan recommendations for Madrid",
     meta: "Team of 7 · 4 months",
-    description: "Recommendation system that suggests short, targeted plans around Madrid.",
+    description:
+      "Recommendation system that suggests short, targeted plans around Madrid, using an ensemble of four models (autoencoder, SVD, transfer learning, embeddings) for collaborative filtering.",
     tags: ["FastAPI", "TensorFlow", "Recommenders", "PostgreSQL"],
     url: "https://github.com/planwise-org/recommendation-system",
     image: "/images/planwise.mp4",
+  },
+  {
+    name: "Dash",
+    year: "2025",
+    tagline: "Ticketing and CRM for nightlife",
+    meta: "theHouse · Founder",
+    description:
+      "Ticket marketplace and CRM platform for nightlife venues; sold 250+ tickets for a night at one of Colombia's biggest clubs.",
+    tags: ["Django", "Next.js", "Stripe", "PostgreSQL"],
+    url: null,
+    image: null,
   },
   {
     name: "KEYONIQ",
@@ -50,10 +62,22 @@ export const projects: Project[] = [
     year: "2025",
     tagline: "Fake-news detection",
     meta: "Team of 4 · 3 months",
-    description: "API that flags fake news by combining several models with ensemble learning.",
+    description:
+      "API that flags fake news by ensembling five classifiers, from logistic regression to DistilBERT, with an NLTK pipeline and a custom CNN.",
     tags: ["FastAPI", "Transformers", "TensorFlow", "NLTK"],
     url: "https://github.com/ramcav/factos_api",
     image: "/images/factos-api.webp",
+  },
+  {
+    name: "Meeting Transcriber",
+    year: "2024",
+    tagline: "Live transcription for meetings",
+    meta: "IEU Tech Lab",
+    description:
+      "Live meeting transcription tool that cut manual note-taking by 90%, part of AI automations built for Banco Santander, LATIDO and TikTok.",
+    tags: ["Python", "AI workflows"],
+    url: null,
+    image: null,
   },
   {
     name: "Algo-visualizer",

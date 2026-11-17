@@ -53,8 +53,8 @@ export const todos: Todo[] = [
 
 export const facts: Fact[] = [
   { label: "Based in", value: "Madrid, Spain" },
-  { label: "Studied", value: "CS, [University]" },
-  { label: "Last role", value: "MVST" },
+  { label: "Studied", value: "CS & AI, IE University" },
+  { label: "Working at", value: "Fever" },
   { label: "Right now", value: "Shipping side projects", highlight: true },
 ];
 
