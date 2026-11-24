@@ -38,13 +38,12 @@ Two separate environments, each with its own tsconfig, and ESLint forbids import
 - `ui/` — primitives: `GlassCard` (the frosted surface every card is built on), `Section`, `AccordionRow` (shared by Experience and Projects; the parent owns which row is open), `Reveal` (scroll-in animation), `HoverReveal` (hovering inline text pops up an emoji or polaroid photo; decorative, safe inside buttons), `Media` (image / `.mp4` / placeholder), `Placeholder`, `Tag`, `Image`.
 - `icons/BrandIcons.tsx` — GitHub/LinkedIn/Spotify marks (not in lucide-react).
 
-Hooks: `useTheme` (reads/toggles `data-theme`, persists to `localStorage`), `useNow` (one shared 1s ticker) and `useMadridTime` on top of it, `useSpotify` (polls `/api/spotify`).
+Hooks: `useTheme` (reads/toggles `data-theme`, persists to `localStorage`), `useNow` (one shared 1s ticker) and `useMadridTime` on top of it, `useSpotify` (polls `/api/spotify`), `useContributions` (fetches `/api/github/contributions` once).
 
 ### Content data
 Content lives in typed TypeScript modules in `src/data/`, typed by interfaces in `src/lib/types.ts`. Editing site content usually means editing these:
 - `site.ts` — name, email, socials, nav links, hero copy, hero photo, to-do list, About facts, contact copy.
 - `experience.ts`, `projects.ts`, `skills.ts` — the Experience, Projects and Toolbox lists.
-- `contributions.ts` — **placeholder** generator for the hero heatmap (labelled "Sample data" in the UI); replace with real GitHub data.
 
 Placeholders: bracketed strings like `"[University]"` are copy to fill in. An `image: null` / `src: null` / `icon: null` renders a dashed placeholder (`ui/Placeholder`, or a monogram for skills). The About paragraphs are JSX in `sections/About.tsx` because they contain inline links.
 
@@ -57,6 +56,7 @@ Use `src/components/ui/Image.tsx` rather than a bare `<img>`. It's a thin wrappe
 ### API (server-side proxies so secrets stay off the client)
 Vercel Functions using Web-standard handlers (`export async function GET(request: Request): Response`). Files and folders prefixed with `_` (e.g. `api/_lib/types.ts`) are helpers, not routes. Locally, `vite-plugins/api-dev-server.ts` mounts the same handlers on `/api` in `vite` and `vite preview`, loading all `.env` vars into `process.env`. Unknown `/api/*` paths return 404.
 - `api/spotify/index.ts` — exchanges a stored refresh token for an access token and returns the currently-playing track. Consumed client-side by `SpotifyCard`.
+- `api/github/contributions.ts` — the last 26 weeks of the GitHub contribution calendar (GraphQL `contributionsCollection`, GitHub's own 0–4 levels), CDN-cached for an hour. Without `GITHUB_TOKEN` it serves a deterministic sample calendar from `api/_lib/sample-contributions.ts` with `source: "sample"`, which the card captions as "Sample data". Consumed by `useContributions` → `ContributionsCard`.
 - `api/spotify/auth.ts` + `api/spotify/callback.ts` — one-time OAuth flow used to obtain the refresh token. **Local-only**: listed in `.vercelignore` so they're never deployed; run the flow with `npm run dev`. `/api/spotify/auth?secret=<SPOTIFY_AUTH_SECRET>` redirects to Spotify; the callback returns the tokens as JSON so the `refresh_token` can be copied into env vars.
 
 ### Styling
@@ -69,4 +69,5 @@ Tailwind v4 (via `@tailwindcss/vite`), configured CSS-first — there is no `tai
 ## Environment Variables
 
 - `SPOTIFY_CLIENT_ID`, `SPOTIFY_CLIENT_SECRET`, `SPOTIFY_REFRESH_TOKEN` — now-playing card
+- `GITHUB_TOKEN` — contributions card (fine-grained PAT, no extra permissions). Unset → sample data. `GITHUB_USERNAME` is optional (default `jose-izarra`)
 - `SPOTIFY_REDIRECT_URI`, `SPOTIFY_AUTH_SECRET` — only needed for the OAuth token-acquisition flow
