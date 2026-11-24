@@ -48,6 +48,9 @@ export const experience: Experience[] = [
   },
   {
     dates: "Graduated Jul 2026",
+    // Swap for a photo once one is in public/images/:
+    // { image: { src: "/images/graduation.webp", alt: "Jose at his IE University graduation", width: 320, height: 400 } }
+    leadReveal: { emoji: "🎉" },
     role: "BSc Computer Science and Artificial Intelligence",
     org: "IE University",
     description:

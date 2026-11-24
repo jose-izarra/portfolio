@@ -1,4 +1,5 @@
 import AccordionRow from "@/components/ui/AccordionRow";
+import HoverReveal from "@/components/ui/HoverReveal";
 import Section from "@/components/ui/Section";
 import { TagList } from "@/components/ui/Tag";
 import { experience } from "@/data/experience";
@@ -14,7 +15,13 @@ export default function Experience() {
         {experience.map((item, i) => (
           <AccordionRow
             key={`${item.org}-${item.role}`}
-            lead={item.dates}
+            lead={
+              item.leadReveal ? (
+                <HoverReveal reveal={item.leadReveal}>{item.dates}</HoverReveal>
+              ) : (
+                item.dates
+              )
+            }
             title={item.role}
             subtitle={item.org}
             open={openIndex === i}

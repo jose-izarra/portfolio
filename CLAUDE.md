@@ -35,7 +35,7 @@ Two separate environments, each with its own tsconfig, and ESLint forbids import
 - `layout/` — `Navbar` (sticky menu bar, section links, Madrid clock), `ThemeToggle`, `Footer`.
 - `sections/` — the home page in order: `Hero`, `About`, `Experience`, `Projects`, `Toolbox`, `Contact`. Section ids (`about`, `experience`, …) are the navbar anchors, listed in `navLinks` in `data/site.ts`.
 - `widgets/` — the hero cards: `ClockCard`, `SpotifyCard`, `ContributionsCard`, `PhotoCard`, `TodoCard`, `Dock`.
-- `ui/` — primitives: `GlassCard` (the frosted surface every card is built on), `Section`, `AccordionRow` (shared by Experience and Projects; the parent owns which row is open), `Reveal` (scroll-in animation), `Media` (image / `.mp4` / placeholder), `Placeholder`, `Tag`, `Image`.
+- `ui/` — primitives: `GlassCard` (the frosted surface every card is built on), `Section`, `AccordionRow` (shared by Experience and Projects; the parent owns which row is open), `Reveal` (scroll-in animation), `HoverReveal` (hovering inline text pops up an emoji or polaroid photo; decorative, safe inside buttons), `Media` (image / `.mp4` / placeholder), `Placeholder`, `Tag`, `Image`.
 - `icons/BrandIcons.tsx` — GitHub/LinkedIn/Spotify marks (not in lucide-react).
 
 Hooks: `useTheme` (reads/toggles `data-theme`, persists to `localStorage`), `useNow` (one shared 1s ticker) and `useMadridTime` on top of it, `useSpotify` (polls `/api/spotify`).

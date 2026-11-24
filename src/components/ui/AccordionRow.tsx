@@ -5,7 +5,7 @@ import { type ReactNode, useId } from "react";
 
 interface Props {
   /** Short mono label in the left column (dates, year). */
-  lead: string;
+  lead: ReactNode;
   title: string;
   subtitle: string;
   open: boolean;

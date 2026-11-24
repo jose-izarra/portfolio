@@ -11,8 +11,15 @@ export interface Fact {
   highlight?: boolean;
 }
 
+/** A decorative surprise shown when hovering some text (see `ui/HoverReveal`). */
+export type RevealContent =
+  | { emoji: string }
+  | { image: { src: string; alt: string; width: number; height: number } };
+
 export interface Experience {
   dates: string;
+  /** Hovering the dates pops this up. */
+  leadReveal?: RevealContent;
   role: string;
   org: string;
   description: string;
