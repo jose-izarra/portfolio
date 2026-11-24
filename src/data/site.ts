@@ -30,7 +30,7 @@ export const navLinks: NavLink[] = [
 
 export const hero = {
   /** The word in the headline that gets the accent underline. */
-  headline: { before: "I build ", highlight: "full-stack", after: " software." },
+  headline: { before: "I build ", highlight: "software", after: "." },
   greeting: "I'm Jose.",
   intro:
     "Recent Computer Science graduate in Madrid. I design APIs, ship web and mobile apps, and wire machine learning into real products.",
