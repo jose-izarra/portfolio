@@ -1,31 +1,68 @@
-export type HeadlineLevel = 1 | 2 | 3 | 4 | 5 | 6;
+export interface NavLink {
+  label: string;
+  /** Section id on the home page, without the `#`. */
+  id: string;
+}
+
+export interface Fact {
+  label: string;
+  value: string;
+  /** Show the accent status dot before the value. */
+  highlight?: boolean;
+}
+
+/** A decorative surprise shown when hovering some text (see `ui/HoverReveal`). */
+export type RevealContent =
+  | { emoji: string }
+  | { image: { src: string; alt: string; width: number; height: number } };
+
+export interface Experience {
+  dates: string;
+  /** Hovering the dates pops this up. */
+  leadReveal?: RevealContent;
+  role: string;
+  org: string;
+  description: string;
+  highlights: string[];
+  tags: string[];
+}
+
+export interface Project {
+  name: string;
+  year: string;
+  /** One-line summary shown next to the name. */
+  tagline: string;
+  /** Team size, duration, client… shown in the side column when expanded. */
+  meta: string;
+  description: string;
+  tags: string[];
+  /** Repo or live link. `null` renders no link. */
+  url: string | null;
+  /** Image or `.mp4` in `public/images/`. `null` renders a placeholder. */
+  image: string | null;
+}
 
 export interface Skill {
   name: string;
-  path: string;
+  /** Icon in `public/icons/`. `null` renders a monogram placeholder. */
+  icon: string | null;
 }
 
-export type BackgroundPic = string;
+export interface SkillGroup {
+  name: string;
+  items: Skill[];
+}
 
-export interface Project {
+export interface Todo {
+  text: string;
+  note: string;
+  done: boolean;
+}
+
+export interface Photo {
+  /** Image in `public/images/`. `null` renders a placeholder. */
+  src: string | null;
+  alt: string;
   title: string;
-  description: string;
-  purpose: string;
-  techStack: string[];
-  duration: string;
-  status: {
-    finished: boolean;
-    message: string;
-  };
-  contributors: string;
-  project_url: string | null;
-  image_url: string;
+  caption: string;
 }
-
-export const SCREEN_SIZES = {
-  SM: 640,
-  MD: 768,
-  LG: 1024,
-  XL: 1280,
-  "2XL": 1536,
-};

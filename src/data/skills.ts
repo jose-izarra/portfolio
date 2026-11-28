@@ -1,70 +1,50 @@
-import { Skill } from "@/lib/types";
-export const skills: Skill[] = [
-  // Programming Languages
+import type { SkillGroup } from "@/lib/types";
+
+/** `icon: null` renders a monogram placeholder until an icon is added to `public/icons/`. */
+export const skillGroups: SkillGroup[] = [
   {
-    name: "Python",
-    path: "/icons/python.svg",
+    name: "Languages",
+    items: [
+      { name: "Python", icon: "/icons/python.svg" },
+      { name: "TypeScript", icon: "/icons/typescript.svg" },
+      { name: "SQL", icon: "/icons/sql.svg" },
+      { name: "C++", icon: "/icons/cpp.svg" },
+      { name: "C", icon: "/icons/c.svg" },
+    ],
   },
   {
-    name: "TypeScript",
-    path: "/icons/typescript.svg",
+    name: "Frameworks",
+    items: [
+      { name: "Django", icon: "/icons/django.svg" },
+      { name: "Flask", icon: "/icons/flask.svg" },
+      { name: "FastAPI", icon: "/icons/fastapi.png" },
+      { name: "React", icon: "/icons/react.svg" },
+      { name: "React Native", icon: "/icons/react.svg" },
+      { name: "Next.js", icon: "/icons/nextjs.svg" },
+      { name: "NestJS", icon: "/icons/nestjs.svg" },
+    ],
   },
   {
-    name: "C++",
-    path: "/icons/cpp.svg",
+    name: "Data & ML",
+    items: [
+      { name: "PostgreSQL", icon: "/icons/postgresql.svg" },
+      { name: "Kafka", icon: "/icons/kafka.svg" },
+      { name: "MongoDB", icon: "/icons/mongodb.svg" },
+      { name: "TensorFlow", icon: "/icons/tensorflow.svg" },
+      { name: "Transformers", icon: "/icons/huggingface.svg" },
+    ],
   },
   {
-    name: "C",
-    path: "/icons/c.svg",
+    name: "Cloud & DevOps",
+    items: [
+      { name: "Docker", icon: "/icons/docker.svg" },
+      { name: "GitHub Actions", icon: "/icons/github-actions.svg" },
+      { name: "Supabase", icon: "/icons/supabase.svg" },
+      { name: "Deno", icon: "/icons/deno.svg" },
+      { name: "AWS", icon: "/icons/aws.svg" },
+      { name: "Azure", icon: "/icons/azure.svg" },
+      { name: "Firebase", icon: "/icons/firebase.svg" },
+      { name: "Linux", icon: "/icons/linux.svg" },
+    ],
   },
-  // Frameworks
-  {
-    name: "React",
-    path: "/icons/react.svg",
-  },
-  {
-    name: "FastAPI",
-    path: "/icons/fastapi.png",
-  },
-  {
-    name: "NestJS",
-    path: "/icons/nestjs.svg",
-  },
-  // Rest
-  {
-    name: "MongoDB",
-    path: "/icons/mongodb.svg",
-  },
-  {
-    name: "Docker",
-    path: "/icons/docker.svg",
-  },
-  {
-    name: "Linux",
-    path: "/icons/linux.svg",
-  },
-  {
-    name: "Azure",
-    path: "/icons/azure.svg",
-  },
-  {
-    name: "Firebase",
-    path: "/icons/firebase.svg",
-  },
-  {
-    name: "AWS",
-    path: "/icons/aws.svg",
-  },
-  {
-    name: "PostgreSQL",
-    path: "/icons/postgresql.svg",
-  },
-  {
-    name: "GitHub",
-    path: "/icons/github.svg",
-  },
-  {
-    name: "GitHub Actions",
-    path: "/icons/github-actions.svg",
-  },
-] as const;
+];

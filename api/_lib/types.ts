@@ -132,3 +132,45 @@ export interface SpotifyCurrentlyPlaying {
     external_urls: { spotify: string };
   } | null;
 }
+
+export type ContributionLevel = 0 | 1 | 2 | 3 | 4;
+
+export interface ContributionDay {
+  /** "YYYY-MM-DD" */
+  date: string;
+  count: number;
+  level: ContributionLevel;
+}
+
+export interface ContributionsResponse {
+  source: "github" | "sample";
+  /** Total contributions in the range */
+  total: number;
+  /** Oldest first, starting on a Sunday */
+  days: ContributionDay[];
+}
+
+export interface GitHubContributionsQueryResponse {
+  data?: {
+    user: {
+      contributionsCollection: {
+        contributionCalendar: {
+          totalContributions: number;
+          weeks: {
+            contributionDays: {
+              date: string;
+              contributionCount: number;
+              contributionLevel:
+                | "NONE"
+                | "FIRST_QUARTILE"
+                | "SECOND_QUARTILE"
+                | "THIRD_QUARTILE"
+                | "FOURTH_QUARTILE";
+            }[];
+          }[];
+        };
+      };
+    } | null;
+  };
+  errors?: { message: string }[];
+}

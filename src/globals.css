@@ -1,112 +1,134 @@
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap");
 @import "tailwindcss";
-@plugin "tailwindcss-animate";
+@import "./styles/tokens.css";
 
-@theme {
-  --font-inter: "Inter Variable", "Inter", sans-serif;
-  --font-lora: "Lora", serif;
+/* `dark:` follows the data-theme attribute, not the OS setting */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
-  --color-light: #ffffff;
+/* Expose the palette in tokens.css as Tailwind utilities */
+@theme inline {
+  --font-sans: "Bricolage Grotesque Variable", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, "SF Mono", Menlo, monospace;
 
-  --color-primary-400: #00ccbb;
-  --color-primary-500: #00998c;
-  --color-primary-600: #00a89a;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-border: var(--border);
+  --color-surface: var(--surface);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-on-accent: var(--on-accent);
+  --color-accent-alt: var(--accent-alt);
+  --color-card: var(--card);
+  --color-bar: var(--bar);
+  --color-glass: var(--glass);
+  --color-glass-edge: var(--glass-edge);
+  --color-heat-0: var(--heat-0);
+  --color-heat-1: var(--heat-1);
+  --color-heat-2: var(--heat-2);
+  --color-heat-3: var(--heat-3);
+  --color-heat-4: var(--heat-4);
+  --color-icon-tile: var(--icon-tile);
+  --color-brand-mail: var(--brand-mail);
+  --color-brand-github: var(--brand-github);
+  --color-brand-linkedin: var(--brand-linkedin);
+  --color-brand-spotify: var(--brand-spotify);
 
-  --color-background: #34383c;
+  --shadow-glass: var(--glass-shadow);
+  --shadow-glass-panel: inset 0 1px 0 var(--glass-highlight), var(--glass-shadow);
 
-  --color-border: #00332f;
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 
-  --text-7xl: 5rem;
+  --animate-equalizer: equalizer 1s ease-in-out infinite;
+  --animate-drift: drift 18s ease-in-out infinite alternate;
 
-  --shadow-card: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
-  --shadow-project-card-hover: 0 8px 32px 0 rgba(0, 204, 187, 0.2);
-
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
+  @keyframes equalizer {
+    0%,
     100% {
-      transform: translateX(-100%);
+      transform: scaleY(0.3);
+    }
+    50% {
+      transform: scaleY(1);
     }
   }
 
-  --animate-move-left: scroll 24s linear infinite;
-  --animate-move-right: scroll 24s linear infinite reverse;
-}
-
-@layer utilities {
-  .shadow-headline {
-    text-shadow: 2px 2px 2px rgb(0, 0, 0, 0.2);
+  @keyframes drift {
+    from {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    to {
+      transform: translate3d(24px, -18px, 0) scale(1.08);
+    }
   }
 }
 
 @layer base {
-  p {
-    font-family: var(--font-lora);
-    font-size: 1.125rem;
+  *,
+  ::before,
+  ::after {
+    border-color: var(--color-border);
   }
 
-  a {
-    text-decoration: none;
+  html {
+    scroll-behavior: smooth;
+    /* keep anchored sections clear of the sticky navbar */
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    transition:
+      background-color 0.2s,
+      color 0.2s;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
   }
 }
 
-html {
-  background-color: var(--color-background);
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  min-width: 0;
-  color: var(--color-light);
+/* Frosted backdrop shared by every glass surface */
+@utility glass {
+  -webkit-backdrop-filter: blur(18px) saturate(170%);
+  backdrop-filter: blur(18px) saturate(170%);
 }
 
-
-.project p {
-  font-family: var(--font-inter);
+/* Dot grid behind the hero */
+@utility bg-dots {
+  background-image: radial-gradient(var(--dot) 1px, transparent 1.2px);
+  background-size: 24px 24px;
 }
 
+/* Inline text link with an accent underline */
+@utility link-underline {
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  transition: color 0.15s;
 
-skills > * {
-  @apply sm:mx-2 md:mx-3 lg:mx-5;
-  max-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.skills div {
-  @apply my-5 w-[8vw] lg:w-[55px];
-  max-width: 90px;
-  min-width: 30px;
-
-  min-height: 50px;
-  position: relative;
-  cursor: grab;
-
-  z-index: 100;
-}
-
-.skills div div:nth-child(odd) {
-  @apply ml-[5vw] sm:ml-[4vw];
-}
-
-.skills div div:nth-child(2n) {
-  @apply mr-[5vw] sm:mr-[4vw];
-}
-
-.skills div img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10002;
-  translate: none;
-  rotate: none;
-  scale: none;
-  touch-action: none;
-  cursor: grab;
-  user-select: none;
-}
-
-.skills div img:active {
-  cursor: grabbing;
-  cursor: -moz-grabbing;
-  cursor: -webkit-grabbing;
+  &:hover {
+    color: var(--color-accent);
+  }
 }
